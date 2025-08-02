@@ -7,3 +7,16 @@
     padding-bottom: 60px;
   }
 }
+
+@media screen and (min-width: 768px){
+  .page-underpage{
+    padding-top: 200px;
+    .section-main{
+      margin-bottom: 60px;
+    }
+    .section-form{
+      padding-bottom: 120px;
+    }
+  }
+
+}

@@ -116,3 +116,113 @@ footer{
     }
   }
 }
+
+@media screen and (min-width: 768px){
+  footer{
+    padding: 80px 0;
+    .footer_inner{
+      @include wrapper;
+      @include flexSet;
+      align-items: flex-start;
+      justify-content: space-between;
+      .footer_upper{
+        margin-bottom: 0px;
+        .footer_logo{
+          width: 320px;
+          margin: 0 auto 30px;
+          a{
+            img{
+              width: 100%;
+            }
+          }
+        }
+        .footer_sns{
+          padding-left: 5px;
+          justify-content: flex-start;
+          .sns_item{
+            margin-right: 20px;
+            &:nth-last-of-type(1){
+              margin-right: 0;
+            }
+            a{
+              img{
+                height: 20px;
+              }
+            }
+          }
+        }
+      }
+      .footer_lower{
+        .footer_navigation{
+          @include flexSet;
+          align-items: center;
+          justify-content: flex-end;
+          margin-bottom: 30px;
+          ul{
+            @include flexSet;
+            justify-content: center;
+            margin-bottom: 0px;
+            li{
+              margin-right: 20px;
+              padding-right:0px;
+              &::after{
+                display: none;
+              }
+              a{
+                font-size: 1.6rem;
+              }
+              &:nth-of-type(2),
+              &:nth-last-of-type(1){
+                margin-right: 20px;
+              }
+              &.dummy{
+                display: none;
+              }
+            }
+          }
+          .saiyo_link{
+            a{
+              padding: 10px 20px;
+              .txt{
+                font-size: 1.5rem;
+                margin-right: 6px;
+              }
+            }
+          }
+        }
+        .copyright_wrap{
+          @include flexSet;
+          align-items: center;
+          justify-content: flex-end;
+          text-align: left;
+          .privacy_link{
+            position: relative;
+            padding-right: 15px;
+            margin-right: 15px;
+            margin-bottom: 0px;
+            &::after{
+              display: block;
+              content: "";
+              position: absolute;
+              top:2px;
+              bottom:0;
+              right:0;
+              margin: auto;
+              width: 1px;
+              height: 15px;
+              background: $fontColorWhite;
+            }
+            a{
+              text-align: center;
+              font-size: 1.3rem;
+              color: inherit;
+            }
+          }
+          .copyright{
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}

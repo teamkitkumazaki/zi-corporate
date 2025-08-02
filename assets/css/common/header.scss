@@ -69,3 +69,76 @@ header{
     }
   }
 }
+
+@media screen and (min-width: 768px){
+  header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    z-index: 1000;
+    background: $bgColor;
+    .header_inner {
+      width: 100%;
+      @include flexSet;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid $keyColor;
+      .header_left{
+        padding-left: 25px;
+        a{
+          display: block;
+          width: 240px;
+        }
+      }
+      .header_right{
+        .header_navigation{
+          @include flexSet;
+          align-items: center;
+          ul{
+            @include flexSet;
+            align-items: center;
+            li{
+              margin-right: 20px;
+              a{
+                display: block;
+                font-size: 1.6rem;
+                color: inherit;
+              }
+            }
+          }
+          .saiyo_link{
+            padding: 0 20px;
+            height: 70px;
+            line-height: 70px;
+            background: $keyColor;
+            a{
+              @include flexSet;
+              align-items: center;
+              justify-content:center;
+              color: $fontColorWhite;
+              .txt{
+                font-size: 1.5rem;
+                margin-right: 6px;
+              }
+              .outer{
+                width: 9px;
+                svg{
+                  .cls-1{
+                    fill:none;
+                    stroke:#fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .hummenu_wrap {
+          display: none;
+        }
+      }
+    }
+  }
+}
