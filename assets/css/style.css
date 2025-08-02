@@ -494,6 +494,9 @@ header {
   width: 100%;
   z-index: 1000;
   background: #FAFAFA;
+  -webkit-transition: background 0.2s, color;
+  transition: background 0.2s, color;
+  will-change: background, color;
 }
 header .header_inner {
   width: 100%;
@@ -509,6 +512,9 @@ header .header_inner {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border-bottom: 1px solid #000000;
+  -webkit-transition: border 0.2s;
+  transition: border 0.2s;
+  will-change: border;
 }
 header .header_inner .header_left {
   padding-left: 15px;
@@ -552,13 +558,30 @@ header .header_inner .header_right .hummenu_wrap button span:nth-of-type(1) {
 header .header_inner .header_right .hummenu_wrap button span:nth-of-type(2) {
   bottom: 27px;
 }
-header .header_inner .header_right .hummenu_wrap button.hum_open span:nth-of-type(1) {
-  -webkit-transform: translateY(4px) rotate(45deg);
-          transform: translateY(4px) rotate(45deg);
+header.hum_open {
+  background: #000000;
+  color: #fff;
 }
-header .header_inner .header_right .hummenu_wrap button.hum_open span:nth-of-type(2) {
-  -webkit-transform: translateY(-4px) rotate(-45deg);
-          transform: translateY(-4px) rotate(-45deg);
+header.hum_open .header_inner {
+  border-bottom: 1px solid #FAFAFA;
+}
+header.hum_open .header_inner .header_left a {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+header.hum_open .header_inner .header_right .hummenu_wrap button {
+  border-left: 1px solid #FAFAFA;
+}
+header.hum_open .header_inner .header_right .hummenu_wrap button span {
+  background: #FAFAFA;
+}
+header.hum_open .header_inner .header_right .hummenu_wrap button span:nth-of-type(1) {
+  -webkit-transform: translateY(2.5px) rotate(45deg);
+          transform: translateY(2.5px) rotate(45deg);
+}
+header.hum_open .header_inner .header_right .hummenu_wrap button span:nth-of-type(2) {
+  -webkit-transform: translateY(-2.5px) rotate(-45deg);
+          transform: translateY(-2.5px) rotate(-45deg);
 }
 
 @media screen and (min-width: 768px) {
@@ -1057,13 +1080,80 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
   overflow: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  color: #EEEDED;
 }
 .comp-hummenu .contents::-webkit-scrollbar {
   display: none;
 }
 .comp-hummenu .contents .hummenu_inner {
-  position: relative;
-  padding: 100px 6vw 0;
+  padding: 120px 40px 0;
+}
+.comp-hummenu .contents .hummenu_inner .hummenu_navigation ul li {
+  margin-bottom: 20px;
+}
+.comp-hummenu .contents .hummenu_inner .hummenu_navigation ul li a {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: inherit;
+}
+.comp-hummenu .contents .hummenu_inner .hummenu_navigation .saiyo_link a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: inherit;
+}
+.comp-hummenu .contents .hummenu_inner .hummenu_lower {
+  position: absolute;
+  width: calc(100% - 80px);
+  left: 40px;
+  right: 40px;
+  margin: auto;
+  bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.comp-hummenu .contents .hummenu_inner .hummenu_lower .footer_sns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.comp-hummenu .contents .hummenu_inner .hummenu_lower .footer_sns .sns_item {
+  margin-right: 15px;
+}
+.comp-hummenu .contents .hummenu_inner .hummenu_lower .footer_sns .sns_item:nth-last-of-type(1) {
+  margin-right: 0;
+}
+.comp-hummenu .contents .hummenu_inner .hummenu_lower .footer_sns .sns_item a {
+  display: block;
+}
+.comp-hummenu .contents .hummenu_inner .hummenu_lower .footer_sns .sns_item a img {
+  height: 18px;
+}
+.comp-hummenu .contents .hummenu_inner .hummenu_lower .privacy_link a {
+  color: inherit;
+  font-size: 1.2rem;
 }
 
 /*########## ページ個別レイアウト ##########*/

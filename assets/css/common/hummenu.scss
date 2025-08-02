@@ -29,12 +29,67 @@
     overflow: scroll;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    color: $fontColorWhite;
     &::-webkit-scrollbar {
       display: none;
     }
     .hummenu_inner{
-      position: relative;
-      padding: 100px 6vw 0;
+      padding: 120px 40px 0;
+      .hummenu_navigation{
+        ul{
+          li{
+            margin-bottom: 20px;
+            a{
+              display: block;
+              font-size: 1.6rem;
+              line-height: 1.6;
+              color: inherit;
+            }
+          }
+        }
+        .saiyo_link{
+          a{
+            @include flexSet;
+            font-size: 1.6rem;
+            line-height: 1.6;
+            color: inherit;
+          }
+        }
+      }
+      .hummenu_lower{
+        position: absolute;
+        width: calc(100% - 80px);
+        left: 40px;
+        right: 40px;
+        margin: auto;
+        bottom: 40px;
+        @include flexSet;
+        align-items: center;
+        justify-content: space-between;
+        .footer_sns{
+          @include flexSet;
+          justify-content: center;
+          align-items: center;
+          .sns_item{
+            margin-right: 15px;
+            &:nth-last-of-type(1){
+              margin-right: 0;
+            }
+            a{
+              display: block;
+              img{
+                height: 18px;
+              }
+            }
+          }
+        }
+        .privacy_link{
+          a{
+            color: inherit;
+            font-size: 1.2rem;
+          }
+        }
+      }
     }
   }
 }

@@ -50,7 +50,7 @@ $(function() {
           $(this).removeClass('effect');
         };
       });
-      
+
     }
 
     function setProperties() {
@@ -86,11 +86,11 @@ $(function() {
     function hummenuMove(){
       if(humState == 0){
         target.addClass('open');
-        humButton.addClass('hum_open');
+        header.addClass('hum_open');
         humState = 1;
       }else{
         target.removeClass('open');
-        humButton.removeClass('hum_open');
+        header.removeClass('hum_open');
         humState = 0;
       }
     }
