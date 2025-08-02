@@ -11,194 +11,58 @@ header{
     @include flexSet;
     align-items: center;
     justify-content: space-between;
-
-    .header_left {
-      a {
+    border-bottom: 1px solid $keyColor;
+    .header_left{
+      padding-left: 15px;
+      a{
         display: block;
-        width: 160px;
-        margin-left: 15px;
-
-        img {
-          width: 100%;
-        }
+        width: 150px;
       }
     }
-
-    .header_right {
-      .header_navigation {
+    .header_right{
+      .header_navigation{
         display: none;
       }
-
-      .user_naviation {
-        @include flexSet;
-        align-items: center;
-
-        .nav_item {
-          padding: 0 20px;
-          margin-right: 0;
-
-          &:nth-of-type(1) {
-            margin-right: 0;
-            position: relative;
-
-            &::after {
-              display: block;
-              content: "";
-              position: absolute;
-              width: 1px;
-              height: 18px;
-              background: $keyColor;
-              top: 0;
-              bottom: 0;
-              right: 0;
-              margin: auto;
-              transition: background 0.2s;
-              will-change: background;
-            }
-          }
-
-          a {
-            position: relative;
-            display: block;
-            @include hover;
-
-            .icon {
-              display: block;
-              width: auto;
-
-              svg {
-                width: auto;
-                height: 22px;
-                fill: $keyColor;
-                transition: fill 0.3s;
-                will-change: fill;
-              }
-            }
-
-            .cart_item_num {
-              position: absolute;
-              width: 14px;
-              height: 14px;
-              border-radius: 50%;
-              background-color: $keyColor;
-              text-align: center;
-              color: #fff;
-              bottom: -4px;
-              right: -4px;
-              line-height: 12px;
-              box-sizing: border-box;
-              /*@include Glida;*/
-              font-size: 10px;
-              text-indent: 0.1em;
-              border: 1px solid $keyColor;
-              transition: background 0.3s, border 0.3s, color 0.3s;
-              will-change: background, border, color;
-            }
-          }
-        }
-
-        .hummenu_wrap {
-          button {
-            position: relative;
-            display: block;
-            width: 70px;
-            height: 70px;
-            border-radius: 0 0 0 10px;
-            background: $keyColor;
-            transition: background 0.2s;
-            will-change: background;
-
-            span {
-              position: absolute;
-              width: 24px;
-              height: 2px;
-              left: 0;
-              right: 0;
-              margin: auto;
-              background: #fff;
-              margin: auto;
-              transition: background 0.3s, transform 0.3s;
-              will-change: background, transform;
-
-              &:nth-of-type(1) {
-                top: 30px;
-              }
-
-              &:nth-of-type(2) {
-                bottom: 30px;
-              }
-            }
-            &.hum_open{
-              span {
-                &:nth-of-type(1) {
-                  transform:translateY(4px) rotate(45deg);
-                }
-                &:nth-of-type(2) {
-                  transform:translateY(-4px) rotate(-45deg);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 768px){
-  header{
-    border-top: 5px solid $keyColor;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 100%;
-    z-index: 1000;
-    .header_inner {
-      display: block;
-      padding: 30px 0;
-      .header_left {
-        display: none;
-      }
-
-      .header_right {
-        .header_navigation {
+      .hummenu_wrap {
+        button {
+          position: relative;
           display: block;
-          ul{
-            @include flexSet;
-            align-items: center;
-            justify-content: center;
-            .logo_button{
-              margin-right: 50px;
-              a{
-                @include hover;
-                display: block;
-              }
+          width: 60px;
+          height: 60px;
+          border-left: 1px solid $keyColor;
+          background: transparent;
+          transition: background 0.2s;
+          will-change: background;
+          span {
+            position: absolute;
+            width: 20px;
+            height: 1px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background: $keyColor;
+            margin: auto;
+            transition: background 0.3s, transform 0.3s;
+            will-change: background, transform;
+
+            &:nth-of-type(1) {
+              top: 27px;
             }
-            .navigation{
-              margin-right: 50px;
-              &:nth-last-of-type(1){
-                margin-right: 0;
+
+            &:nth-of-type(2) {
+              bottom: 27px;
+            }
+          }
+          &.hum_open{
+            span {
+              &:nth-of-type(1) {
+                transform:translateY(4px) rotate(45deg);
               }
-              a{
-                display: block;
-                padding: 5px 0;
-                @include rotunda;
-                color: inherit;
-                font-size: 1.8rem;
-                transition: color .5s;
-                will-change: color;
-                &:hover{
-                  color: #646464;
-                }
+              &:nth-of-type(2) {
+                transform:translateY(-4px) rotate(-45deg);
               }
             }
           }
-        }
-
-        .user_naviation {
-          display: none;
         }
       }
     }

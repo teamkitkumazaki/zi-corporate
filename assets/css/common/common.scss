@@ -23,9 +23,9 @@ body {
   line-height: 1;
 	letter-spacing: 0.03em;
   color: $keyColor;
-	background: #fff;
-	font-weight: 500; // M 500, B 600
-	font-family: YakuHanJP,"noto-sans-cjk-jp","ヒラギノ角ゴ ProN W3", "HiraKakuProN-W3", "ヒラギノ角ゴ Pro W3", "HiraKakuPro-W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS Pgothic", "Osaka", sans-serif, Helvetica, Helvetica Neue, Arial, Verdana;
+	background: $bgColor;
+	font-weight: 400; // M 500, B 600
+	font-family: YakuHanJP,"Noto Sans JP","ヒラギノ角ゴ ProN W3", "HiraKakuProN-W3", "ヒラギノ角ゴ Pro W3", "HiraKakuPro-W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS Pgothic", "Osaka", sans-serif, Helvetica, Helvetica Neue, Arial, Verdana;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%;
 }
