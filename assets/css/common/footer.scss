@@ -1,3 +1,118 @@
 footer{
-  
+  padding: 50px 0;
+  background: $keyColor;
+  color: $fontColorWhite;
+  .footer_inner{
+    @include wrapper;
+    .footer_upper{
+      margin-bottom: 40px;
+      .footer_logo{
+        width: 80%;
+        margin: 0 auto 30px;
+        a{
+          display: block;
+        }
+      }
+      .footer_sns{
+        @include flexSet;
+        justify-content: center;
+        align-items: center;
+        .sns_item{
+          margin-right: 15px;
+          &:nth-last-of-type(1){
+            margin-right: 0;
+          }
+          a{
+            display: block;
+            img{
+              height: 18px;
+            }
+          }
+        }
+      }
+    }
+    .footer_lower{
+      .footer_navigation{
+        margin-bottom: 40px;
+        ul{
+          @include flexSet;
+          justify-content: center;
+          margin-bottom: 40px;
+          li{
+            position: relative;
+            margin-right: 20px;
+            padding-right:20px;
+            &::after{
+              display: block;
+              content: "";
+              width: 1px;
+              height: 15px;
+              background: $fontColorWhite;
+              position: absolute;
+              top:0;
+              right:0;
+              bottom:0;
+              margin: auto;
+            }
+            a{
+              font-size: 1.5rem;
+              color: $fontColorWhite;
+            }
+            &:nth-of-type(2),
+            &:nth-last-of-type(1){
+              margin-right: 0;
+              padding-right: 0;
+              &::after{
+                display: none;
+              }
+            }
+            &.dummy{
+              width: 100%;
+              height: 20px;
+              &::after{
+                display: none;
+              }
+            }
+          }
+        }
+        .saiyo_link{
+          a{
+            @include flexSet;
+            justify-content: center;
+            border: 1px solid $fontColorWhite;
+            border-radius: 200px;
+            padding: 15px 0;
+            color: $fontColorWhite;
+            .txt{
+              font-size: 1.5rem;
+              margin-right: 6px;
+            }
+            .outer{
+              width: 9px;
+              svg{
+                .cls-1{
+                  fill:none;
+                  stroke:#fff;
+                }
+              }
+            }
+          }
+        }
+      }
+      .copyright_wrap{
+        text-align: center;
+        .privacy_link{
+          margin-bottom: 35px;
+          a{
+            text-align: center;
+            font-size: 1.3rem;
+            color: inherit;
+          }
+        }
+        .copyright{
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
 }

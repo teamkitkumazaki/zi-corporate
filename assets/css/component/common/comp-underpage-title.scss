@@ -1,0 +1,13 @@
+.comp-underpage-title{
+  .ttl{
+    font-weight: 400;
+    font-size: 2.4rem;
+  }
+  .title_description{
+    margin-top: 15px;
+    @include basicP;
+    br{
+      display: none;
+    }
+  }
+}

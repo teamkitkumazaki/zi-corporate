@@ -14,9 +14,17 @@
 
 /*########## ページ個別レイアウト ##########*/
 @import 'pages/index.scss';
-@import 'pages/contact.scss';
+@import 'pages/underpage.scss';
 
 
 /*########## コンポーネント ##########*/
 /* 共通パーツ */
-/*@import 'component/common/comp-section-title.scss';*/
+
+@import 'component/common/comp-section-title.scss';
+@import 'component/common/comp-underpage-title.scss';
+@import 'component/common/comp-form-wrap.scss';
+@import 'component/common/comp-link-button.scss';
+
+
+/* 共通セクション */
+@import 'component/section/comp-section-recruit.scss';

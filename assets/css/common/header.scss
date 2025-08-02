@@ -6,6 +6,7 @@ header{
   margin: auto;
   width: 100%;
   z-index: 1000;
+  background: $bgColor;
   .header_inner {
     width: 100%;
     @include flexSet;

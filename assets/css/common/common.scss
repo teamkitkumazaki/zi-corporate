@@ -55,6 +55,15 @@ section{
 		@include wrapper;
 		@media screen and (min-width: 720px){
 			min-width: 1200px;
+			.flex_layout{
+				@include flexSet;
+				.flex_left{
+					width: 50%;
+				}
+				.flex_right{
+					width: 50%;
+				}
+			}
 		}
 	}
 }
