@@ -91,6 +91,7 @@ header{
         a{
           display: block;
           width: 240px;
+          @include hover;
         }
       }
       .header_right{
@@ -103,22 +104,43 @@ header{
             li{
               margin-right: 20px;
               a{
+                position: relative;
                 display: block;
                 font-size: 1.6rem;
                 color: inherit;
+                padding: 10px 0;
+                &::before{
+                  position: absolute;
+                  display: block;
+                  content: "";
+                  top:0;
+                  left:0;
+                  width: 0;
+                  height: 1px;
+                  background: $fontColor;
+                  transition: width .2s;
+                  will-change: width;
+                }
+                &:hover{
+                  &::before{
+                    width: 80%;
+                  }
+                }
               }
             }
           }
           .saiyo_link{
-            padding: 0 20px;
             height: 70px;
             line-height: 70px;
-            background: $keyColor;
             a{
               @include flexSet;
               align-items: center;
               justify-content:center;
               color: $fontColorWhite;
+              padding: 0 20px;
+              background: $keyColor;
+              transition: background .2s;
+              will-change: background;
               .txt{
                 font-size: 1.5rem;
                 margin-right: 6px;
@@ -131,6 +153,9 @@ header{
                     stroke:#fff;
                   }
                 }
+              }
+              &:hover{
+                background: $hoverColor;
               }
             }
           }

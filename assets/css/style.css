@@ -593,6 +593,12 @@ header .header_inner .header_right .hummenu_wrap button.hum_open span:nth-of-typ
   header .header_inner .header_left a {
     display: block;
     width: 240px;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    will-change: opacity;
+  }
+  header .header_inner .header_left a:hover {
+    opacity: 0.75;
   }
   header .header_inner .header_right .header_navigation {
     display: -webkit-box;
@@ -618,15 +624,31 @@ header .header_inner .header_right .hummenu_wrap button.hum_open span:nth-of-typ
     margin-right: 20px;
   }
   header .header_inner .header_right .header_navigation ul li a {
+    position: relative;
     display: block;
     font-size: 1.6rem;
     color: inherit;
+    padding: 10px 0;
+  }
+  header .header_inner .header_right .header_navigation ul li a::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #000000;
+    -webkit-transition: width 0.2s;
+    transition: width 0.2s;
+    will-change: width;
+  }
+  header .header_inner .header_right .header_navigation ul li a:hover::before {
+    width: 80%;
   }
   header .header_inner .header_right .header_navigation .saiyo_link {
-    padding: 0 20px;
     height: 70px;
     line-height: 70px;
-    background: #000000;
   }
   header .header_inner .header_right .header_navigation .saiyo_link a {
     display: -webkit-box;
@@ -641,6 +663,11 @@ header .header_inner .header_right .hummenu_wrap button.hum_open span:nth-of-typ
         -ms-flex-pack: center;
             justify-content: center;
     color: #EEEDED;
+    padding: 0 20px;
+    background: #000000;
+    -webkit-transition: background 0.2s;
+    transition: background 0.2s;
+    will-change: background;
   }
   header .header_inner .header_right .header_navigation .saiyo_link a .txt {
     font-size: 1.5rem;
@@ -652,6 +679,9 @@ header .header_inner .header_right .hummenu_wrap button.hum_open span:nth-of-typ
   header .header_inner .header_right .header_navigation .saiyo_link a .outer svg .cls-1 {
     fill: none;
     stroke: #fff;
+  }
+  header .header_inner .header_right .header_navigation .saiyo_link a:hover {
+    background: #251e1c;
   }
   header .header_inner .header_right .hummenu_wrap {
     display: none;
@@ -832,6 +862,14 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
     width: 320px;
     margin: 0 auto 30px;
   }
+  footer .footer_inner .footer_upper .footer_logo a {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    will-change: opacity;
+  }
+  footer .footer_inner .footer_upper .footer_logo a:hover {
+    opacity: 0.75;
+  }
   footer .footer_inner .footer_upper .footer_logo a img {
     width: 100%;
   }
@@ -846,6 +884,14 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
   }
   footer .footer_inner .footer_upper .footer_sns .sns_item:nth-last-of-type(1) {
     margin-right: 0;
+  }
+  footer .footer_inner .footer_upper .footer_sns .sns_item a {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    will-change: opacity;
+  }
+  footer .footer_inner .footer_upper .footer_sns .sns_item a:hover {
+    opacity: 0.75;
   }
   footer .footer_inner .footer_upper .footer_sns .sns_item a img {
     height: 20px;
@@ -883,7 +929,25 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
     display: none;
   }
   footer .footer_inner .footer_lower .footer_navigation ul li a {
+    position: relative;
     font-size: 1.6rem;
+    padding: 10px 0;
+  }
+  footer .footer_inner .footer_lower .footer_navigation ul li a::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #EEEDED;
+    -webkit-transition: width 0.2s;
+    transition: width 0.2s;
+    will-change: width;
+  }
+  footer .footer_inner .footer_lower .footer_navigation ul li a:hover::before {
+    width: 80%;
   }
   footer .footer_inner .footer_lower .footer_navigation ul li:nth-of-type(2), footer .footer_inner .footer_lower .footer_navigation ul li:nth-last-of-type(1) {
     margin-right: 20px;
@@ -893,10 +957,25 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
   }
   footer .footer_inner .footer_lower .footer_navigation .saiyo_link a {
     padding: 10px 20px;
+    -webkit-transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s;
+    will-change: background, color;
   }
   footer .footer_inner .footer_lower .footer_navigation .saiyo_link a .txt {
     font-size: 1.5rem;
     margin-right: 6px;
+  }
+  footer .footer_inner .footer_lower .footer_navigation .saiyo_link a .outer svg .cls-1 {
+    -webkit-transition: stroke 0.2s;
+    transition: stroke 0.2s;
+    will-change: stroke;
+  }
+  footer .footer_inner .footer_lower .footer_navigation .saiyo_link a:hover {
+    background: #EEEDED;
+    color: #000000;
+  }
+  footer .footer_inner .footer_lower .footer_navigation .saiyo_link a:hover .outer svg .cls-1 {
+    stroke: #000000;
   }
   footer .footer_inner .footer_lower .copyright_wrap {
     display: -webkit-box;
@@ -931,9 +1010,13 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
     background: #EEEDED;
   }
   footer .footer_inner .footer_lower .copyright_wrap .privacy_link a {
-    text-align: center;
     font-size: 1.3rem;
-    color: inherit;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    will-change: opacity;
+  }
+  footer .footer_inner .footer_lower .copyright_wrap .privacy_link a:hover {
+    opacity: 0.75;
   }
   footer .footer_inner .footer_lower .copyright_wrap .copyright {
     font-size: 1.3rem;
@@ -1754,7 +1837,7 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
   background: #000000;
   color: #fff;
   padding: 20px 0;
-  border-radius: 0px;
+  border-radius: 200px;
   cursor: pointer;
   -webkit-transition: background 0.3s, opacity 0.3s;
   transition: background 0.3s, opacity 0.3s;
@@ -1779,7 +1862,7 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
           user-select: none;
 }
 .comp-form-wrap .submit_wrap:hover {
-  background: #000000;
+  background: #251e1c;
 }
 .comp-form-wrap .submit_wrap .text_wrap {
   text-align: center;

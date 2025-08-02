@@ -131,6 +131,7 @@ footer{
           width: 320px;
           margin: 0 auto 30px;
           a{
+            @include hover;
             img{
               width: 100%;
             }
@@ -145,6 +146,7 @@ footer{
               margin-right: 0;
             }
             a{
+              @include hover;
               img{
                 height: 20px;
               }
@@ -169,7 +171,26 @@ footer{
                 display: none;
               }
               a{
+                position: relative;
                 font-size: 1.6rem;
+                padding: 10px 0;
+                &::before{
+                  position: absolute;
+                  display: block;
+                  content: "";
+                  top:0;
+                  left:0;
+                  width: 0;
+                  height: 1px;
+                  background: $fontColorWhite;
+                  transition: width .2s;
+                  will-change: width;
+                }
+                &:hover{
+                  &::before{
+                    width: 80%;
+                  }
+                }
               }
               &:nth-of-type(2),
               &:nth-last-of-type(1){
@@ -183,9 +204,30 @@ footer{
           .saiyo_link{
             a{
               padding: 10px 20px;
+              transition: background .2s, color .2s;
+              will-change: background, color;
               .txt{
                 font-size: 1.5rem;
                 margin-right: 6px;
+              }
+              .outer{
+                svg{
+                  .cls-1{
+                    transition: stroke .2s;
+                    will-change: stroke;
+                  }
+                }
+              }
+              &:hover{
+                background: $fontColorWhite;
+                color: $keyColor;
+                .outer{
+                  svg{
+                    .cls-1{
+                      stroke: $keyColor;
+                    }
+                  }
+                }
               }
             }
           }
@@ -213,9 +255,8 @@ footer{
               background: $fontColorWhite;
             }
             a{
-              text-align: center;
               font-size: 1.3rem;
-              color: inherit;
+              @include hover;
             }
           }
           .copyright{
