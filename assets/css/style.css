@@ -1163,6 +1163,12 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
 .page-underpage .section-main {
   margin-bottom: 30px;
 }
+.page-underpage .section-main .comp-news-category {
+  margin-top: 30px;
+}
+.page-underpage .section-news {
+  padding-bottom: 60px;
+}
 .page-underpage .section-form {
   padding-bottom: 60px;
 }
@@ -1173,6 +1179,12 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
   }
   .page-underpage .section-main {
     margin-bottom: 60px;
+  }
+  .page-underpage .section-main .comp-news-category {
+    margin-top: 40px;
+  }
+  .page-underpage .section-news {
+    padding-bottom: 120px;
   }
   .page-underpage .section-form {
     padding-bottom: 120px;
@@ -2218,4 +2230,310 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
   .comp-section-recruit .flex_layout .flex_left {
     margin-bottom: 0px;
   }
+}
+/* 最新情報 */
+.comp-news-category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.comp-news-category .news_item {
+  margin-right: 8px;
+  margin-bottom: 10px;
+}
+.comp-news-category .news_item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border: 1px solid #000000;
+  background: #FAFAFA;
+  border-radius: 200px;
+  color: inherit;
+  padding: 10px 12px;
+  -webkit-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
+  will-change: background, color;
+}
+.comp-news-category .news_item a .name {
+  font-size: 1.3rem;
+  margin-right: 25px;
+}
+.comp-news-category .news_item a .caret {
+  width: 10px;
+  -webkit-transform: translate(0, -2px);
+          transform: translate(0, -2px);
+}
+.comp-news-category .news_item a .caret .cls-1 {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 2px;
+  stroke-miterlimit: 10;
+}
+.comp-news-category .news_item.active {
+  pointer-events: none;
+}
+.comp-news-category .news_item.active a {
+  background: #000000;
+  color: #FAFAFA;
+}
+.comp-news-category .news_item.active a .caret .cls-1 {
+  stroke: #FAFAFA;
+}
+
+@media screen and (min-width: 768px) {
+  .comp-news-category {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .comp-news-category .news_item {
+    margin-right: 8px;
+    margin-bottom: 10px;
+  }
+  .comp-news-category .news_item a {
+    padding: 12px 15px;
+  }
+  .comp-news-category .news_item a .name {
+    font-size: 1.5rem;
+    margin-right: 25px;
+  }
+  .comp-news-category .news_item a .caret {
+    width: 10px;
+    -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+  }
+  .comp-news-category .news_item a .caret .cls-1 {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 2px;
+    stroke-miterlimit: 10;
+  }
+  .comp-news-category .news_item a:hover {
+    background: #f1f1f1;
+  }
+}
+.comp-news-list {
+  border-bottom: 1px solid #d8d8d8;
+}
+.comp-news-list .news_item {
+  border-top: 1px solid #d8d8d8;
+  padding: 10px 0;
+}
+.comp-news-list .news_item a {
+  padding: 10px 0;
+  display: block;
+  color: inherit;
+}
+.comp-news-list .news_item a .news_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.comp-news-list .news_item a .news_header .date {
+  font-size: 1.4rem;
+  font-family: larsseit, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-right: 15px;
+}
+.comp-news-list .news_item a .news_title {
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 768px) {
+  .comp-news-list {
+    border-bottom: 0px solid #d8d8d8;
+  }
+  .comp-news-list .news_item {
+    border-top: 0px solid #d8d8d8;
+    padding: 0px 0;
+  }
+  .comp-news-list .news_item a {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    will-change: opacity;
+    padding: 0px 0;
+    display: block;
+    color: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    line-height: 100px;
+  }
+  .comp-news-list .news_item a:hover {
+    opacity: 0.75;
+  }
+  .comp-news-list .news_item a .news_header {
+    width: 240px;
+    margin-right: 35px;
+    margin-bottom: 0px;
+    border-top: 1px solid #d8d8d8;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-size: 1.3rem;
+  }
+  .comp-news-list .news_item a .news_header .date {
+    font-size: 1.4rem;
+    font-family: larsseit, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    margin-right: 0px;
+  }
+  .comp-news-list .news_item a .news_title {
+    border-top: 1px solid #d8d8d8;
+    width: calc(100% - 275px);
+    font-size: 1.4rem;
+    line-height: 100px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+.comp-pager {
+  margin: 60px auto 0;
+  max-width: 400px;
+}
+@media screen and (min-width: 720px) {
+  .comp-pager {
+    margin-top: 80px;
+  }
+}
+.comp-pager .comp_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.comp-pager .comp_inner .link {
+  width: 25%;
+  text-align: center;
+  color: inherit;
+  border: 1px solid #000000;
+  background: #FAFAFA;
+  font-size: 1.4rem;
+  height: 50px;
+  line-height: 46px;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  will-change: opacity;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.comp-pager .comp_inner .link:hover {
+  opacity: 0.75;
+}
+.comp-pager .comp_inner .link span {
+  display: inline-block;
+  position: relative;
+}
+.comp-pager .comp_inner .link span::after {
+  display: block;
+  content: "";
+  top: 2px;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+.comp-pager .comp_inner .link.previous span {
+  padding-left: 12px;
+}
+.comp-pager .comp_inner .link.previous span::after {
+  left: 0;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+.comp-pager .comp_inner .link.next span {
+  padding-right: 12px;
+}
+.comp-pager .comp_inner .link.next span::after {
+  right: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.comp-pager .comp_inner .pager_select {
+  width: 48%;
+  margin: 0 1%;
+  background: #000000;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+}
+.comp-pager .comp_inner .pager_select .pager_select_label {
+  text-align: center;
+  height: 50px;
+  color: #fff;
+  font-size: 1.6rem;
+  position: relative;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.comp-pager .comp_inner .pager_select .pager_select_label .label_divider {
+  display: inline-block;
+  padding: 0 0.1em;
+}
+.comp-pager .comp_inner .pager_select .pager_select_label .label_arrow {
+  display: block;
+  width: 8px;
+  height: 12px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 15px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url(../img/common/select_caret_white.svg);
+  -webkit-filter: brightness(1000);
+          filter: brightness(1000);
+}
+.comp-pager .comp_inner .pager_select select {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
 }
