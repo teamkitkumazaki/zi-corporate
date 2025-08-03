@@ -66,6 +66,18 @@
           overflow: hidden;
         }
       }
+      &:nth-last-of-type(1){
+        a{
+          .news_header{
+            border-top: 1px solid $borderColor2;
+            border-bottom: 1px solid $borderColor2;
+          }
+          .news_title{
+            border-top: 1px solid $borderColor2;
+            border-bottom: 1px solid $borderColor2;
+          }
+        }
+      }
     }
   }
 }
