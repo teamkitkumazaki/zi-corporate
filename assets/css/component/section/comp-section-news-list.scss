@@ -1,0 +1,17 @@
+.comp-section-news-list{
+  padding-bottom: 50px;
+  .section_inner{
+    .newslist_flex{
+      position: relative;
+      padding-bottom: 80px;
+      .newslist_ttl{
+        margin-bottom: 35px;
+        .comp-link-button{
+          position: absolute;
+          bottom:0;
+          left:0;
+        }
+      }
+    }
+  }
+}

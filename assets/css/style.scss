@@ -14,6 +14,7 @@
 
 /*########## ページ個別レイアウト ##########*/
 @import 'pages/index.scss';
+@import 'pages/newsDetail.scss';
 @import 'pages/underpage.scss';
 
 
@@ -24,12 +25,15 @@
 @import 'component/common/comp-underpage-title.scss';
 @import 'component/common/comp-form-wrap.scss';
 @import 'component/common/comp-link-button.scss';
+@import 'component/common/comp-page-bread.scss';
 
 
 /* 共通セクション */
 @import 'component/section/comp-section-recruit.scss';
+@import 'component/section/comp-section-news-list.scss';
 
 /* 最新情報 */
 @import 'component/news/comp-news-category.scss';
 @import 'component/news/comp-news-list.scss';
 @import 'component/news/comp-pager.scss';
+@import 'component/news/comp-news-article.scss';
