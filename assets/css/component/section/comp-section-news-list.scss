@@ -1,0 +1,40 @@
+.comp-section-news-list{
+  padding-bottom: 50px;
+  .section_inner{
+    .newslist_flex{
+      position: relative;
+      padding-bottom: 80px;
+      .newslist_ttl{
+        margin-bottom: 35px;
+        .comp-link-button{
+          position: absolute;
+          bottom:0;
+          left:0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px){
+  .comp-section-news-list{
+    padding-bottom: 100px;
+    .section_inner{
+      .newslist_flex{
+        @include flexSet;
+        padding-bottom: 0px;
+        .newslist_ttl{
+          width: 30%;
+          margin-bottom: 0px;
+          .comp-link-button{
+            position: static;
+            margin-top: 50px;
+          }
+        }
+        .newslist_contents{
+          width: 70%;
+        }
+      }
+    }
+  }
+}

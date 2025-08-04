@@ -1,0 +1,83 @@
+.comp-news-list{
+  border-bottom: 1px solid $borderColor2;
+  .news_item{
+    border-top: 1px solid $borderColor2;
+    padding: 10px 0;
+    a{
+      padding: 10px 0;
+      display: block;
+      color: inherit;
+      .news_header{
+        @include flexSet;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        .date{
+          font-size: 1.4rem;
+          @include larsseit;
+          margin-right: 15px;
+        }
+      }
+      .news_title{
+        font-size: 1.4rem;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px){
+  .comp-news-list{
+    border-bottom: 0px solid $borderColor2;
+    .news_item{
+      border-top: 0px solid $borderColor2;
+      padding: 0px 0;
+      a{
+        @include hover;
+        padding: 0px 0;
+        display: block;
+        color: inherit;
+        @include flexSet;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 100px;
+        .news_header{
+          width: 240px;
+          margin-right: 35px;
+          margin-bottom: 0px;
+          border-top: 1px solid $borderColor2;
+          @include flexSet;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 1.3rem;
+          .date{
+            font-size: 1.4rem;
+            @include larsseit;
+            margin-right: 0px;
+          }
+        }
+        .news_title{
+          border-top: 1px solid $borderColor2;
+          width: calc(100% - 275px);
+          font-size: 1.4rem;
+          line-height: 100px;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      }
+      &:nth-last-of-type(1){
+        a{
+          .news_header{
+            border-top: 1px solid $borderColor2;
+            border-bottom: 1px solid $borderColor2;
+          }
+          .news_title{
+            border-top: 1px solid $borderColor2;
+            border-bottom: 1px solid $borderColor2;
+          }
+        }
+      }
+    }
+  }
+}
