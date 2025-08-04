@@ -1271,6 +1271,84 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
   color: #EEEDED;
 }
 
+@media screen and (min-width: 768px) {
+  .page-index {
+    padding-top: 0;
+  }
+  .page-index .section-technology {
+    padding: 100px 0;
+    background: #000000;
+    color: #EEEDED;
+  }
+  .page-index .section-technology .flex_layout {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .page-index .section-technology .flex_layout .flex_left .comp-section-title .ttl_description span {
+    display: block;
+  }
+  .page-index .section-technology .flex_layout .flex_right {
+    margin-bottom: 0px;
+  }
+  .page-index .section-zenshot {
+    padding: 100px 0;
+  }
+  .page-index .section-zenshot .zenshot_logo {
+    width: 200px;
+    margin: 0 auto 25px;
+  }
+  .page-index .section-zenshot .zenshot_ttl {
+    font-size: 4.2rem;
+    margin-bottom: 30px;
+  }
+  .page-index .section-zenshot .zenshot_ttl br {
+    display: none;
+  }
+  .page-index .section-zenshot .zenshot_description {
+    text-align: center;
+  }
+  .page-index .section-zenshot .zenshot_description br {
+    display: block;
+  }
+  .page-index .section-zenshot .comp-link-button {
+    margin-top: 40px;
+  }
+  .page-index .section-zenshot .comp-link-button a {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .page-index .section-corporate {
+    padding: 120px 0 160px;
+    background: #000000;
+    border-bottom: 0px solid #979797;
+  }
+  .page-index .section-corporate .flex_layout {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .page-index .section-corporate .flex_layout .flex_left .comp-section-title .ttl_description span {
+    display: block;
+  }
+  .page-index .section-corporate .flex_layout .flex_right {
+    margin-bottom: 0px;
+  }
+  .page-index .section-news-list {
+    padding: 0 0 120px;
+    background: #000000;
+    color: #EEEDED;
+  }
+}
 .page-news-detail {
   padding-top: 120px;
 }
@@ -1432,22 +1510,19 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
 .comp-section-title.white .ttl::before {
   background: #EEEDED;
 }
-.comp-section-title.white .comp-link-button {
-  margin-top: 25px;
-}
 
 @media screen and (min-width: 768px) {
   .comp-section-title .ttl {
     position: relative;
     font-size: 2rem;
     font-weight: 500;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
   }
   .comp-section-title .ttl::before {
     display: block;
     content: "";
     position: absolute;
-    left: 0;
+    left: 3px;
     bottom: 0;
     width: 20px;
     height: 3px;
@@ -2616,6 +2691,47 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
   display: none;
 }
 
+@media screen and (min-width: 768px) {
+  .comp-section-index-main {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+  }
+  .comp-section-index-main::before {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .comp-section-index-main .title_wrap {
+    width: 87vw;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 20;
+    color: #EEEDED;
+    padding-bottom: 0px;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 720px) {
+  .comp-section-index-main .title_wrap {
+    width: 86%;
+    max-width: 1590px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .comp-section-index-main .title_wrap .site_ttl {
+    font-size: 4.2rem;
+    margin-bottom: 10px;
+  }
+  .comp-section-index-main .title_wrap .title_en {
+    font-size: 1.4rem;
+  }
+  .comp-section-index-main .main_image_wrap img.sp_img {
+    display: none;
+  }
+  .comp-section-index-main .main_image_wrap img.pc_img {
+    display: block;
+  }
+}
 /* 最新情報 */
 .comp-news-category {
   display: -webkit-box;

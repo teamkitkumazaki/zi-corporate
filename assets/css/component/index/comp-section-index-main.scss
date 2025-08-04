@@ -53,3 +53,37 @@
     }
   }
 }
+
+@media screen and (min-width: 768px){
+  .comp-section-index-main{
+    align-items: center;
+    height: 100vh;
+    &::before{
+      background: rgba($keyColor, 0.4);
+    }
+    .title_wrap{
+      @include wrapper;
+      position: relative;
+      z-index: 20;
+      color: $fontColorWhite;
+      padding-bottom: 0px;
+      .site_ttl{
+        font-size: 4.2rem;
+        margin-bottom: 10px;
+      }
+      .title_en{
+        font-size: 1.4rem;
+      }
+    }
+    .main_image_wrap{
+      img{
+        &.sp_img{
+          display: none;
+        }
+        &.pc_img{
+          display: block;
+        }
+      }
+    }
+  }
+}

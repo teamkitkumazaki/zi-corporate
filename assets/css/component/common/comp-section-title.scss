@@ -31,9 +31,6 @@
         background: $fontColorWhite;
       }
     }
-    .comp-link-button{
-      margin-top: 25px;
-    }
   }
 }
 
@@ -43,12 +40,12 @@
       position: relative;
       font-size: 2.0rem;
       font-weight: 500;
-      padding-bottom: 20px;
+      padding-bottom: 30px;
       &::before{
         display: block;
         content: "";
         position: absolute;
-        left:0;
+        left:3px;
         bottom:0;
         width: 20px;
         height: 3px;
