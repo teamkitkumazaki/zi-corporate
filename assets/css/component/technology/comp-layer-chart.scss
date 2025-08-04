@@ -1,0 +1,61 @@
+.comp-layer-chart{
+  .chart_item{
+    @include flexSet;
+    margin-bottom: 50px;
+    &:nth-last-of-type(1){
+      margin-bottom: 0;
+    }
+    .layer_ttl_wrap{
+      width: 125px;
+      border-top: 1px solid $keyColor;
+      padding-top: 20px;
+      .layer_num{
+        position: relative;
+        @include larsseit;
+        font-size: 1.6rem;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+        &::after{
+          position: absolute;
+          bottom:0;
+          left:0;
+          display: block;
+          content: "";
+          width: 15px;
+          height: 1px;
+          background: $keyColor;
+        }
+      }
+      .layer_ttl{
+        writing-mode: vertical-rl;
+        font-size: 1.6rem;
+        font-weight: 400;
+        letter-spacing: 0.3em;
+      }
+    }
+    .layer_img{
+      width: calc(100% - 125px);
+      img{
+        max-width: 130%;
+        width: 130%;
+        transform: translate(-25%, 0px);
+        margin-top: 50px;
+      }
+    }
+    .layer_desc{
+      width: 100%;
+      padding-top: 25px;
+      margin-top: 25px;
+      border-top: 1px solid $keyColor;
+      .layer_subttl{
+        font-size: 2.0rem;
+        font-weight: 400;
+        @include larsseit;
+        margin-bottom: 15px;
+      }
+      .description{
+        @include basicP;
+      }
+    }
+  }
+}

@@ -1349,6 +1349,38 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
     color: #EEEDED;
   }
 }
+.page-technology {
+  padding-top: 0;
+}
+.page-technology .section-tech-header {
+  padding: 100px 0 60px;
+  background: #000000;
+  color: #EEEDED;
+}
+.page-technology .section-tech-header .section_inner .flex_layout {
+  margin-bottom: 35px;
+}
+.page-technology .section-tech-header .section_inner .flex_layout .flex_left {
+  margin-bottom: 30px;
+}
+.page-technology .section-tech-header .section_inner .chart_wrap .chrart_img_wrap {
+  margin-bottom: 30px;
+}
+.page-technology .section-tech-header .section_inner .chart_wrap .chart_ttl {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.page-technology .section-layer-chart {
+  padding: 60px 0;
+}
+.page-technology .section-layer-chart .layer_ttl_wrap .layer_subttl {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 20px auto 30px;
+}
+
 .page-news-detail {
   padding-top: 120px;
 }
@@ -1535,6 +1567,39 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
     margin-top: 40px;
   }
 }
+.comp-page-title {
+  font-size: 1.6rem;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #EEEDED;
+}
+
+.comp-flex-txt-wrap .flex_subttl {
+  font-size: 2.4rem;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+.comp-flex-txt-wrap .flex_description {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.comp-flex-txt-wrap .flex_description p {
+  margin-bottom: 1em;
+}
+.comp-flex-txt-wrap .flex_description p:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1100px) {
+  .comp-flex-txt-wrap .flex_description {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+}
+
 .comp-underpage-title .ttl {
   font-weight: 400;
   font-size: 2.4rem;
@@ -2732,6 +2797,94 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
     display: block;
   }
 }
+/* 技術ページ */
+.comp-layer-chart .chart_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+.comp-layer-chart .chart_item:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.comp-layer-chart .chart_item .layer_ttl_wrap {
+  width: 125px;
+  border-top: 1px solid #000000;
+  padding-top: 20px;
+}
+.comp-layer-chart .chart_item .layer_ttl_wrap .layer_num {
+  position: relative;
+  font-family: larsseit, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  font-size: 1.6rem;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+.comp-layer-chart .chart_item .layer_ttl_wrap .layer_num::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  content: "";
+  width: 15px;
+  height: 1px;
+  background: #000000;
+}
+.comp-layer-chart .chart_item .layer_ttl_wrap .layer_ttl {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+}
+.comp-layer-chart .chart_item .layer_img {
+  width: calc(100% - 125px);
+}
+.comp-layer-chart .chart_item .layer_img img {
+  max-width: 130%;
+  width: 130%;
+  -webkit-transform: translate(-25%, 0px);
+          transform: translate(-25%, 0px);
+  margin-top: 50px;
+}
+.comp-layer-chart .chart_item .layer_desc {
+  width: 100%;
+  padding-top: 25px;
+  margin-top: 25px;
+  border-top: 1px solid #000000;
+}
+.comp-layer-chart .chart_item .layer_desc .layer_subttl {
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: larsseit, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-bottom: 15px;
+}
+.comp-layer-chart .chart_item .layer_desc .description {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.comp-layer-chart .chart_item .layer_desc .description p {
+  margin-bottom: 1em;
+}
+.comp-layer-chart .chart_item .layer_desc .description p:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1100px) {
+  .comp-layer-chart .chart_item .layer_desc .description {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+}
+
 /* 最新情報 */
 .comp-news-category {
   display: -webkit-box;
