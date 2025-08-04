@@ -6,7 +6,7 @@ header{
   margin: auto;
   width: 100%;
   z-index: 1000;
-  background: $bgColor;
+  background: $keyColor;
   transition: background .2s, color;
   will-change: background, color;
   .header_inner {
@@ -14,7 +14,7 @@ header{
     @include flexSet;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid $keyColor;
+    border-bottom: 1px solid $bgColor;
     transition: border .2s;
     will-change: border;
     .header_left{
@@ -22,6 +22,7 @@ header{
       a{
         display: block;
         width: 150px;
+        filter:invert(1);
       }
     }
     .header_right{
@@ -34,7 +35,7 @@ header{
           display: block;
           width: 60px;
           height: 60px;
-          border-left: 1px solid $keyColor;
+          border-left: 1px solid $bgColor;
           background: transparent;
           transition: background 0.2s;
           will-change: background;
@@ -45,7 +46,7 @@ header{
             left: 0;
             right: 0;
             margin: auto;
-            background: $keyColor;
+            background: $bgColor;
             margin: auto;
             transition: background 0.3s, transform 0.3s;
             will-change: background, transform;
@@ -56,6 +57,28 @@ header{
 
             &:nth-of-type(2) {
               bottom: 27px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.underpage{
+    background: $bgColor;
+    .header_inner {
+      border-bottom: 1px solid $keyColor;
+      .header_left{
+        padding-left: 15px;
+        a{
+          filter:unset;
+        }
+      }
+      .header_right{
+        .hummenu_wrap {
+          button {
+            border-left: 1px solid $bgColor;
+            span {
+              background: $bgColor;
             }
           }
         }
@@ -101,13 +124,14 @@ header{
     margin: auto;
     width: 100%;
     z-index: 1000;
-    background: $bgColor;
+    background: $keyColor;
+    color: $bgColor;
     .header_inner {
       width: 100%;
       @include flexSet;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid $keyColor;
+      border-bottom: 1px solid $bgColor;
       .header_left{
         padding-left: 25px;
         a{
@@ -139,7 +163,7 @@ header{
                   left:0;
                   width: 0;
                   height: 1px;
-                  background: $fontColor;
+                  background: $bgColor;
                   transition: width .2s;
                   will-change: width;
                 }
@@ -158,11 +182,12 @@ header{
               @include flexSet;
               align-items: center;
               justify-content:center;
-              color: $fontColorWhite;
+              color: $keyColor;
               padding: 0 20px;
-              background: $keyColor;
+              background: $bgColor;
               transition: background .2s;
               will-change: background;
+              @include hover;
               .txt{
                 font-size: 1.5rem;
                 margin-right: 6px;
@@ -172,18 +197,53 @@ header{
                 svg{
                   .cls-1{
                     fill:none;
-                    stroke:#fff;
+                    stroke:$keyColor;
                   }
                 }
-              }
-              &:hover{
-                background: $hoverColor;
               }
             }
           }
         }
         .hummenu_wrap {
           display: none;
+        }
+      }
+    }
+    &.underpage{
+      background: $bgColor;
+      color: $keyColor;
+      .header_inner {
+        border-bottom: 1px solid $keyColor;
+        .header_right{
+          .header_navigation{
+            ul{
+              li{
+                a{
+                  &::before{
+                    background: $fontColor;
+                  }
+                  &:hover{
+                    &::before{
+                      background: $fontColor;
+                    }
+                  }
+                }
+              }
+            }
+            .saiyo_link{
+              a{
+                color: $bgColor;
+                background: $keyColor;
+                .outer{
+                  svg{
+                    .cls-1{
+                      stroke:$bgColor;
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
