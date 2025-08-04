@@ -50,4 +50,26 @@
       }
     }
   }
+  &.white{
+    a{
+      color: $fontColorWhite;
+      .txt{
+        &::before{
+          background: $fontColorWhite;
+        }
+      }
+      .caret{
+        .arrow{
+          .cls-1{
+            stroke:$fontColorWhite;
+          }
+        }
+        .circle{
+          .st1{
+            stroke: $fontColorWhite;
+          }
+        }
+      }
+    }
+  }
 }

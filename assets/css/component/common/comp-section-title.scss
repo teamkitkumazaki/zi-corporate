@@ -24,6 +24,17 @@
   .comp-link-button{
     margin-top: 25px;
   }
+  &.white{
+    color: $fontColorWhite;
+    .ttl{
+      &::before{
+        background: $fontColorWhite;
+      }
+    }
+    .comp-link-button{
+      margin-top: 25px;
+    }
+  }
 }
 
 @media screen and (min-width: 768px){
