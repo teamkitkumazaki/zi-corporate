@@ -1,0 +1,17 @@
+.comp-partner-list{
+  @include flexSet;
+  .partner_item{
+    width: 48%;
+    margin-right: 4%;
+    margin-bottom: 40px;
+    &:nth-of-type(2n){
+      margin-right: 0;
+    }
+    .partner_img{
+      margin-bottom: 12px;
+    }
+    .partner_name{
+      font-size: 1.2rem;
+    }
+  }
+}
