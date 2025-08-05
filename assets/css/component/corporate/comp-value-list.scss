@@ -1,0 +1,60 @@
+.comp-value-list{
+  .value_item{
+    .value_txt{
+      padding: 20px 0;
+      text-align: center;
+      border: 1px solid $borderColor;
+      border-bottom: 0px;
+      .value_en{
+        font-size: 2.0rem;
+        font-weight: 400;
+        margin-bottom: 5px;
+      }
+      .value_jp{
+        font-size: 1.2rem;
+      }
+    }
+    .spacer{
+      display: block;
+      height: 10px;
+      border: 1px solid $borderColor;
+      border-top: 0px;
+    }
+  }
+  .dot_line{
+    width: 100%;
+    height: 45px;
+    margin: 0 auto;
+    background-size: 3px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../img/corporate/dots.svg);
+  }
+}
+
+@media screen and (min-width: 768px){
+  .comp-value-list{
+    @include flexSet;
+    align-items: center;
+    .value_item{
+      width: 30%;
+      .value_txt{
+        padding: 30px 0;
+        .value_en{
+          font-size: 2.2rem;
+          margin-bottom: 10px;
+        }
+        .value_jp{
+          font-size: 1.4rem;
+        }
+      }
+    }
+    .dot_line{
+      width: 5%;
+      height: 4px;
+      margin: 0 auto;
+      background-size: 36px;
+      background-image: url(../img/corporate/dots_pc.svg);
+    }
+  }
+}

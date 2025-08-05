@@ -1,0 +1,89 @@
+.comp-office-slider{
+  max-width: 88%;
+  margin: 0 auto;
+  .slick-slider{
+    width: 100%;
+    position: relative;
+  }
+  .comp-slider-caret{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    .circle{
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid $bgColor;
+      @include flexSet;
+      align-items: center;
+      justify-content: center;
+      svg{
+        width: 9px;
+        .cls-1{
+          fill:none;
+          stroke:$bgColor;
+          stroke-width: 2px;
+          stroke-miterlimit:10;
+        }
+      }
+    }
+    &.prev-arrow{
+      left: -35px;
+      right: unset;
+    }
+    &.next-arrow{
+      left: unset;
+      right: -35px;
+    }
+  }
+  .slick-list{
+    overflow: hidden;
+  }
+  .slick-track{
+    min-width: 100%;
+    @include flexSet;
+    &::after{
+      display: block;
+      content: "";
+      clear: both;
+    }
+    .slick-slide{
+      float: left;
+      margin: 0;
+      box-sizing: border-box;
+    }
+  }
+}
+
+@media screen and (min-width: 768px){
+  .comp-office-slider{
+    max-width: 100%;
+    margin: 0 auto;
+    .slick-slider{
+      width: 100%;
+      position: relative;
+    }
+    .comp-slider-caret{
+      .circle{
+        width: 40px;
+        height: 40px;
+        svg{
+          width: 16px;
+          .cls-1{
+            stroke:$bgColor;
+          }
+        }
+      }
+      &.prev-arrow{
+        left: -55px;
+      }
+      &.next-arrow{
+        right: -55px;
+      }
+    }
+    .slick-list{
+      overflow: hidden;
+    }
+  }
+}

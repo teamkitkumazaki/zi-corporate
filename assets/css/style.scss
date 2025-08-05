@@ -15,6 +15,7 @@
 /*########## ページ個別レイアウト ##########*/
 @import 'pages/index.scss';
 @import 'pages/technology.scss';
+@import 'pages/corporate.scss';
 @import 'pages/newsDetail.scss';
 @import 'pages/underpage.scss';
 
@@ -41,6 +42,13 @@
 
 /* 技術ページ */
 @import 'component/technology/comp-layer-chart.scss';
+
+/* 会社情報ページ */
+@import 'component/corporate/comp-value-list.scss';
+@import 'component/corporate/comp-corporate-profile.scss';
+@import 'component/corporate/comp-partner-list.scss';
+@import 'component/corporate/comp-office-slider.scss';
+
 
 
 /* 最新情報 */

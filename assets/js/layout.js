@@ -911,6 +911,37 @@ $(function() {
   if (document.getElementById('contactWrap')) {
     setMyForm($('#contactWrap'));
   }
+  
+  
+  var prevButtonHTML = '<button class="comp-slider-caret prev-arrow"><span class="circle"><svg viewBox="0 0 22.6 19.69"><path class="cls-1" d="M9.33.35L.96,8.72c-.62.62-.62,1.63,0,2.25l8.37,8.37M.73,9.85h21.88"/></svg></span></button>';
+  var nextButtonHTML = '<button class="comp-slider-caret next-arrow"><span class="circle"><svg viewBox="0 0 22.6 19.69"><path class="cls-1" d="M13.27.35l8.37,8.37c.62.62.62,1.63,0,2.25l-8.37,8.37M21.88,9.85H0"/></svg></span></button>';
+  
+  // バナースライダー
+  if (document.getElementById('officeSlider')) {
+    $('#officeSlider').slick({
+    accessibility: false,
+    infinite: true,
+    dots: false,
+    slidesToShow: 1,
+    centerMode: false,
+    autoplay: true,
+    speed: 600,
+    prevArrow: prevButtonHTML,
+    nextArrow: nextButtonHTML,
+    responsive: [
+      {
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '0',
+          centerMode: false,
+          autoplay: true,
+        }
+      }
+    ]
+    });
+  }
+  
 
 
 
