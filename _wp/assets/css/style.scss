@@ -1,0 +1,58 @@
+
+/*########## ミックスイン ##########*/
+@import 'mixin.scss';
+
+/*########## 共通レイアウト ##########*/
+@import 'common/animation.scss';
+@import 'common/reset.scss';
+@import 'common/form.scss';
+@import 'common/common.scss';
+@import 'common/header.scss';
+@import 'common/footer.scss';
+@import 'common/hummenu.scss';
+
+
+/*########## ページ個別レイアウト ##########*/
+@import 'pages/index.scss';
+@import 'pages/technology.scss';
+@import 'pages/corporate.scss';
+@import 'pages/newsDetail.scss';
+@import 'pages/underpage.scss';
+
+
+/*########## コンポーネント ##########*/
+/* 共通パーツ */
+
+@import 'component/common/comp-section-title.scss';
+@import 'component/common/comp-page-title.scss';
+@import 'component/common/comp-flex-txt-wrap.scss';
+
+@import 'component/common/comp-underpage-title.scss';
+@import 'component/common/comp-form-wrap.scss';
+@import 'component/common/comp-link-button.scss';
+@import 'component/common/comp-page-bread.scss';
+
+
+/* 共通セクション */
+@import 'component/section/comp-section-recruit.scss';
+@import 'component/section/comp-section-news-list.scss';
+
+/* トップページ */
+@import 'component/index/comp-section-index-main.scss';
+
+/* 技術ページ */
+@import 'component/technology/comp-layer-chart.scss';
+
+/* 会社情報ページ */
+@import 'component/corporate/comp-value-list.scss';
+@import 'component/corporate/comp-corporate-profile.scss';
+@import 'component/corporate/comp-partner-list.scss';
+@import 'component/corporate/comp-office-slider.scss';
+
+
+
+/* 最新情報 */
+@import 'component/news/comp-news-category.scss';
+@import 'component/news/comp-news-list.scss';
+@import 'component/news/comp-pager.scss';
+@import 'component/news/comp-news-article.scss';

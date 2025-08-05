@@ -1,0 +1,133 @@
+.page-index{
+  padding-top: 0;
+  .section-technology{
+    padding: 50px 0;
+    background: $keyColor;
+    color: $fontColorWhite;
+    .flex_layout{
+      .flex_right{
+        margin-bottom: 35px;
+      }
+    }
+  }
+  .section-zenshot{
+    padding: 50px 0;
+    .zenshot_logo{
+      width: 180px;
+      margin: 0 auto 15px;
+    }
+    .zenshot_ttl{
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .zenshot_description{
+      @include basicP;
+      br{
+        display: none;
+      }
+    }
+    .comp-link-button{
+      margin-top: 25px;
+      a{
+        justify-content: center;
+      }
+    }
+  }
+  .section-corporate{
+    padding: 50px 0;
+    background: $keyColor;
+    border-bottom: 1px solid $borderColor;
+    .flex_layout{
+      .flex_right{
+        margin-bottom: 35px;
+      }
+    }
+  }
+  .section-news-list{
+    padding: 50px 0;
+    background: $keyColor;
+    color: $fontColorWhite;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .page-index{
+    padding-top: 0;
+    .section-technology{
+      padding: 100px 0;
+      background: $keyColor;
+      color: $fontColorWhite;
+      .flex_layout{
+        align-items: center;
+        flex-direction: row-reverse;
+        .flex_left{
+          .comp-section-title{
+            .ttl_description{
+              span{
+                display: block;
+              }
+            }
+          }
+        }
+        .flex_right{
+          margin-bottom: 0px;
+        }
+      }
+    }
+    .section-zenshot{
+      padding: 100px 0;
+      .zenshot_logo{
+        width: 200px;
+        margin: 0 auto 25px;
+      }
+      .zenshot_ttl{
+        font-size: 4.2rem;
+        margin-bottom: 30px;
+        br{
+          display: none;
+        }
+      }
+      .zenshot_description{
+        text-align: center;
+        br{
+          display: block;
+        }
+      }
+      .comp-link-button{
+        margin-top: 40px;
+        a{
+          justify-content: center;
+        }
+      }
+    }
+    .section-corporate{
+      padding: 120px 0 160px;
+      background: $keyColor;
+      border-bottom: 0px solid $borderColor;
+      .flex_layout{
+        align-items: center;
+        flex-direction: row-reverse;
+        .flex_left{
+          .comp-section-title{
+            .ttl_description{
+              span{
+                display: block;
+              }
+            }
+          }
+        }
+        .flex_right{
+          margin-bottom: 0px;
+        }
+      }
+    }
+    .section-news-list{
+      padding: 0 0 120px;
+      background: $keyColor;
+      color: $fontColorWhite;
+    }
+  }
+}
