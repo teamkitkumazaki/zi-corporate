@@ -748,10 +748,12 @@ $(function() {
       //input要素を配列に格納
       items = [
         target.find('input[name="yourname"]'), //0 お名前
-        target.find('input[name="corpname"]'), //1 会社名
-        target.find('input[name="useremail"]'), //2 メールアドレス
-        target.find('input[name="useremail2"]'), //3 メールアドレス確認用
-        target.find('input[name="userphone"]'), //4 電話番号
+        target.find('input[name="useremail"]'), //1 メールアドレス
+        target.find('input[name="useremail2"]'), //2 メールアドレス確認用
+        target.find('input[name="userphone"]'), //3 電話番号
+        target.find('input[name="corpname"]'), //4 会社名
+        target.find('input[name="corpname2"]'), //5 部署名
+        target.find('input[name="corpname3"]'), //6 役職
         target.find('textarea[name="content"]'), //5 ご相談内容
         target.find('input[name=agreement]'), //6 プラポリへの合意
       ];
@@ -774,26 +776,23 @@ $(function() {
         }
       });
 
-      //1 会社名
-      items[1].prop('isSuccess', true);
-
       //2 メールアドレス
-      items[2].on({
+      items[1].on({
         'blur': function(){
-          checkEmptyText( items[2], '※メールアドレスをご入力ください。' );
-          if( items[2].prop('isSuccess') ) checkFormatText( items[2], 3, 'アドレスの形式をご確認ください' );
+          checkEmptyText( items[1], '※メールアドレスをご入力ください。' );
+          if( items[1].prop('isSuccess') ) checkFormatText( items[1], 3, 'アドレスの形式をご確認ください' );
           checkAll();
         }
       });
 
       //3 メールアドレス(確認用)
-      items[3].on({
+      items[2].on({
         'blur': function(){
-          checkEmptyText( items[3], '※確認用メールアドレスは必須です。');
-          if( items[3].prop('isSuccess') ){
-            checkFormatText( items[3], 3, '※確認用メールアドレスの形式をご確認ください' );
-            if(items[2].val() != items[3].val()){
-              checkFormatText( items[3], 5, '※メールアドレスが一致しません。' );
+          checkEmptyText( items[2], '※確認用メールアドレスは必須です。');
+          if( items[2].prop('isSuccess') ){
+            checkFormatText( items[2], 3, '※確認用メールアドレスの形式をご確認ください' );
+            if(items[1].val() != items[2].val()){
+              checkFormatText( items[2], 5, '※メールアドレスが一致しません。' );
             }
           }
 
@@ -802,37 +801,60 @@ $(function() {
         }
       });
 
-      //4 電話番号
-      items[4].prop('isSuccess', true);
-
-      items[4].on({
+      //3 電話番号
+      items[3].on({
         'blur': function(){
           hankaku2Zenkaku($(this));
-          /*if( items[4].prop('isSuccess') ) checkFormatText( items[4], 2, '※電話番号は数字で入力してください。');*/
+          checkEmptyText( items[3], '※電話番号を入力してください。' );
+          if( items[3].prop('isSuccess') ) checkFormatText( items[3], 2, '※電話番号は数字で入力してください。');
           checkAll();
         }
       });
 
-      //5 ご相談内容
+      //4 会社名
+      items[4].on({
+        'blur': function(){
+          checkEmptyText( items[4], '※会社名を入力してください。' );
+          checkAll();
+        }
+      });
+
+      //5 部署名
       items[5].on({
         'blur': function(){
-          checkEmptyText( items[5], '※ご相談内容を入力してください。' );
+          checkEmptyText( items[5], '※部署名を入力してください。' );
           checkAll();
         }
       });
 
-      console.log('items[6]:' + items[6].attr('id'));
+      //6 役職
+      items[6].on({
+        'blur': function(){
+          checkEmptyText( items[6], '※役職を入力してください。' );
+          checkAll();
+        }
+      });
+
+
+      //7 ご相談内容
+      items[7].on({
+        'blur': function(){
+          checkEmptyText( items[7], '※ご相談内容を入力してください。' );
+          checkAll();
+        }
+      });
+
 
       //6 プラポリへの合意
-      items[6].on({
+      items[8].on({
         'change': function(){
           console.log('check!');
           var agreeState = $('input[name=agreement]:checked').val();
           if(agreeState == 1){
-            items[6].prop('isSuccess', true);
+            items[8].prop('isSuccess', true);
             $('#submitButton').removeClass('disabled');
           }else{
-            items[6].prop('isSuccess', false);
+            items[8].prop('isSuccess', false);
             $('#submitButton').addClass('disabled');
           }
         }
@@ -841,18 +863,21 @@ $(function() {
       submitButton.on({
         'click': function(){
           checkEmptyText( items[0], '※お名前を入力してください。' );
-          checkEmptyText( items[2], '※メールアドレスをご入力ください。' );
-          if( items[2].prop('isSuccess') ) checkFormatText( items[2], 3, 'アドレスの形式をご確認ください' );
-          checkEmptyText( items[3], '※確認用メールアドレスは必須です。');
-          if( items[3].prop('isSuccess') ){
-            checkFormatText( items[3], 3, '※確認用メールアドレスの形式をご確認ください' );
-            if(items[2].val() != items[3].val()){
-              checkFormatText( items[3], 5, '※メールアドレスが一致しません。' );
+          checkEmptyText( items[1], '※メールアドレスをご入力ください。' );
+          if( items[1].prop('isSuccess') ) checkFormatText( items[1], 3, 'アドレスの形式をご確認ください' );
+          checkEmptyText( items[2], '※確認用メールアドレスは必須です。');
+          if( items[2].prop('isSuccess') ){
+            checkFormatText( items[2], 3, '※確認用メールアドレスの形式をご確認ください' );
+            if(items[1].val() != items[2].val()){
+              checkFormatText( items[2], 5, '※メールアドレスが一致しません。' );
             }
           }
-          if( items[4].prop('isSuccess') ) checkFormatText( items[4], 2, '※電話番号は数字で入力してください。');
-          checkEmptyText( items[5], '※ご相談内容を入力してください。' );
-          items[1].prop('isSuccess', true);
+          checkEmptyText( items[3], '※電話番号を入力してください。' );
+          if( items[3].prop('isSuccess') ) checkFormatText( items[3], 2, '※電話番号は数字で入力してください。');
+          checkEmptyText( items[4], '※会社名を入力してください。' );
+          checkEmptyText( items[5], '※部署名を入力してください。' );
+          checkEmptyText( items[6], '※役職を入力してください。' );
+          checkEmptyText( items[7], '※ご相談内容を入力してください。' );
           checkAll();
           if( errorCount == 0 ){
             processOrderContent();
@@ -872,17 +897,21 @@ $(function() {
       $('#ajaxLoader').addClass('loading_state');
       var yourname = target.find('input[name="yourname"]').val();
       var corpname = target.find('input[name="corpname"]').val();
+      var corpname2 = target.find('input[name="corpname2"]').val();
+      var corpname3 = target.find('input[name="corpname3"]').val();
       var useremail = target.find('input[name="useremail"]').val();
       var userphone = target.find('input[name="userphone"]').val();
       var content = target.find('textarea[name="content"]').val();
       $.ajax({
-        url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeIMsX3yNWyc9ls-dB19AcBR6ekcwsWnp7l8MgLJwnnzAAoTA/formResponse",
+        url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdESxKC0wYDXyckQhZC3K61yaRUzp0h0EenJj6sulhyaWHJXQ/formResponse",
         data: {
-          "entry.8121153": yourname,
-          "entry.1760942905": corpname,
-          "entry.855525706": useremail,
-          "entry.130938451": userphone,
-          "entry.917198729": content,
+          "entry.527306641": corpname,
+          "entry.1056186970": corpname2,
+          "entry.1481268843": corpname3,
+          "entry.309329179": userphone,
+          "entry.2146791683": yourname,
+          "entry.xxxxxxxxxx": useremail,
+          "entry.1646094556": content,
         },
         type: "POST",
         dataType: "xml",
@@ -911,11 +940,11 @@ $(function() {
   if (document.getElementById('contactWrap')) {
     setMyForm($('#contactWrap'));
   }
-  
-  
+
+
   var prevButtonHTML = '<button class="comp-slider-caret prev-arrow"><span class="circle"><svg viewBox="0 0 22.6 19.69"><path class="cls-1" d="M9.33.35L.96,8.72c-.62.62-.62,1.63,0,2.25l8.37,8.37M.73,9.85h21.88"/></svg></span></button>';
   var nextButtonHTML = '<button class="comp-slider-caret next-arrow"><span class="circle"><svg viewBox="0 0 22.6 19.69"><path class="cls-1" d="M13.27.35l8.37,8.37c.62.62.62,1.63,0,2.25l-8.37,8.37M21.88,9.85H0"/></svg></span></button>';
-  
+
   // バナースライダー
   if (document.getElementById('officeSlider')) {
     $('#officeSlider').slick({
@@ -941,7 +970,7 @@ $(function() {
     ]
     });
   }
-  
+
 
 
 

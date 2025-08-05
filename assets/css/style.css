@@ -2422,7 +2422,7 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
   font-family: inherit;
 }
 .comp-form-wrap .form_item .form_box textarea.bg {
-  background-color: #f4f4f4;
+  background-color: #fff;
 }
 .comp-form-wrap .form_item .form_box textarea:focus {
   outline: none;

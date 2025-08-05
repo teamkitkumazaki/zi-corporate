@@ -38,20 +38,11 @@
 							</div>
 							<div class="form_item">
 								<div class="label_wrap">
-									<label class="">会社名</label>
-									<span class="optional">任意</span>
-								</div>
-								<div class="form_box">
-									<input class="bg" type="text" name="corpname" placeholder="株式会社SANABURI">
-								</div>
-							</div>
-							<div class="form_item">
-								<div class="label_wrap">
 									<label class="">メールアドレス</label>
 									<span class="required">必須</span>
 								</div>
 								<div class="form_box">
-									<input class="input-number bg" type="text" name="useremail" placeholder="info@sanaburi.co.jp">
+									<input class="input-number bg" type="text" name="useremail" placeholder="info@zen-intelligence.ai">
 								</div>
 							</div>
 							<div class="form_item">
@@ -60,13 +51,40 @@
 									<span class="required">必須</span>
 								</div>
 								<div class="form_box">
-									<input class="input-number bg" type="text" name="useremail2" placeholder="info@sanaburi.co.jp">
+									<input class="input-number bg" type="text" name="useremail2" placeholder="info@zen-intelligence.ai">
+								</div>
+							</div>
+							<div class="form_item">
+								<div class="label_wrap">
+									<label class="">会社名</label>
+									<span class="required">必須</span>
+								</div>
+								<div class="form_box">
+									<input class="bg" type="text" name="corpname" placeholder="Zen Intelligence株式会社">
+								</div>
+							</div>
+							<div class="form_item">
+								<div class="label_wrap">
+									<label class="">部署名</label>
+									<span class="required">必須</span>
+								</div>
+								<div class="form_box">
+									<input class="bg" type="text" name="corpname2">
+								</div>
+							</div>
+							<div class="form_item">
+								<div class="label_wrap">
+									<label class="">役職名</label>
+									<span class="required">必須</span>
+								</div>
+								<div class="form_box">
+									<input class="bg" type="text" name="corpname3">
 								</div>
 							</div>
 							<div class="form_item">
 								<div class="label_wrap">
 									<label class="">電話番号</label>
-									<span class="optional">任意</span>
+									<span class="required">必須</span>
 								</div>
 								<div class="form_box">
 									<input class="input-number bg" type="text" name="userphone" placeholder="012-3456-7890">
@@ -107,6 +125,7 @@
 				</div><!-- section_inner_inner -->
 			</div><!-- section_inner -->
 		</section>
+		<?php get_template_part("parts/recruit");?>
 	</article>
 	<?php get_template_part("parts/hummenu"); ?>
 	<?php get_template_part("parts/footer"); ?>
