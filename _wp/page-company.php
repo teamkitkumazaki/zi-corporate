@@ -26,7 +26,7 @@
 						<div class="comp-flex-txt-wrap">
 							<h3 class="flex_subttl">Physical AIで、<br>基幹産業を変革する。</h3>
 							<div class="flex_description">
-								<p>Transforming Industrial operations Through Phisical Ai</p>
+								<p>物理的な空間と物理的な業務により社会を支える産業において、担い手・ベテランが急速に減少している。Physical AIで基幹産業が高品質な供給をし続けることと、付加価値を上げ続けることを可能にする。</p>
 							</div>
 						</div>
 					</div><!-- flex_right -->
@@ -35,9 +35,6 @@
 					<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/purpose_img.jpg">
 					<img class="overlay" src="<?php echo get_template_directory_uri();?>/assets/img/corporate/purpose_layer.png">
 				</div><!-- corp_img_wrap -->
-				<div class="purpose_description">
-					<p>物理的な空間と物理的な業務により社会を支える産業において、産業の担い手・ベテランが急速に減少している。基幹産業が高品質な供給をし続けることと、付加価値を上げ続けることを可能にする。</p>
-				</div>
 			</div><!-- section_inner -->
 		</section>
 		<section class="section-industrialization">
@@ -47,7 +44,7 @@
 						<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/industrial_img.png">
 					</div>
 					<div class="industrial_desc">
-						<p>Physical AIを通じて、技術革新の恩恵が行き届かなかった社会の基幹産業に非連続的な変革をもたらし、産業の姿そのものをAIネイティブな形へと再構築する「Re-Industrialization」を目指します。</p>
+						<p>Physical AIを通じて、技術革新の恩恵が行き届かなかった領域に非連続的な変革をもたらし、産業の在り方そのものをAIネイティブな形へと再構築する「Re-Industrialization」を目指します。</p>
 					</div>
 					<div class="industrial_lower_img">
 						<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/industrial_lower.svg">
@@ -223,26 +220,52 @@
 						</div>
 					</div><!-- flex_left -->
 					<div class="flex_right">
-						<div class="comp-partner-list">
-							<div class="partner_item">
-								<div class="partner_img">
+						<div class="comp-usecase-list">
+							<div class="usecase_item">
+								<div class="img_wrap">
 									<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/supporter01.jpg">
 								</div>
-								<p class="partner_name">国土交通省</p>
+								<div class="txt_wrap">
+									<h3 class="usecase_ttl">GENIAC第3期</h3>
+									<div class="usecase_desc">
+										<p>建築現場の施工管理を自動化するAI基盤モデルの開発</p>
+									</div>
+								</div>
 							</div>
-							<div class="partner_item">
-								<div class="partner_img">
+							<div class="usecase_item">
+								<div class="img_wrap">
 									<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/supporter02.jpg">
 								</div>
-								<p class="partner_name">GENIAC</p>
+								<div class="txt_wrap">
+									<h3 class="usecase_ttl">国土交通省 関東地方整備局</h3>
+									<div class="usecase_desc">
+										<p>建設現場における無人化・省人化技術の開発・導入・活用に関するプロジェクト</p>
+									</div>
+								</div>
 							</div>
-							<div class="partner_item">
-								<div class="partner_img">
+							<div class="usecase_item">
+								<div class="img_wrap">
 									<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/supporter03.jpg">
 								</div>
-								<p class="partner_name">FIND X</p>
+								<div class="txt_wrap">
+									<h3 class="usecase_ttl">IPA 未踏アドバンスト事業</h3>
+									<div class="usecase_desc">
+										<p>建築現場を巡回しデータ収集・分析するロボットサービスの実現</p>
+									</div>
+								</div>
 							</div>
-						</div><!-- comp-partner-list -->
+							<div class="usecase_item">
+								<div class="img_wrap">
+									<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/supporter04.jpg">
+								</div>
+								<div class="txt_wrap">
+									<h3 class="usecase_ttl">東京大学 FoundX</h3>
+									<div class="usecase_desc">
+										<p>Founders Program</p>
+									</div>
+								</div>
+							</div>
+						</div><!-- comp-usecase-list -->
 					</div><!-- flex_right -->
 				</div>
 			</div><!-- section_inner -->

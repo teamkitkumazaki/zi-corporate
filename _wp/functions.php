@@ -70,22 +70,22 @@ function show_Linkcard($atts) {
   if(!empty($src)){
     $xLink_img = '<img src="'. $src .'" />';
     $sc_Linkcard .='
-    <div class="comp-ogp-card">
+    <div class="link_box">
       <a target="_blank" href="'. $url .'">
-        <span id="ogpThumb" class="ogp_img">'. $xLink_img .'</span>
-        <span class="ogp_txt">
-          <span class="ogp_ttl">'. $Link_title .'</span>
-          <span class="link_display">'. $url .'</span>
+        <span class="link_img">'. $xLink_img .'</span>
+        <span class="link_txt">
+          <span class="link_ttl">'. $Link_title .'</span>
+          <span class="link_url">'. $url .'</span>
         </span>
       </a>
     </div>';
   }else{
     $sc_Linkcard .='
-    <div class="comp-ogp-card">
+    <div class="link_box">
       <a target="_blank" href="'. $url .'">
-        <span class="ogp_txt">
-          <span class="ogp_ttl">'. $Link_title .'</span>
-          <span class="link_display">'. $url .'</span>
+        <span class="link_txt" style="width: 100%;">
+          <span class="link_ttl">'. $Link_title .'</span>
+          <span class="link_url">'. $url .'</span>
         </span>
       </a>
     </div>';

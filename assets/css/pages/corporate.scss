@@ -13,8 +13,7 @@
           margin-bottom: 5px;
         }
         .flex_description{
-          @include larsseit;
-          font-size: 1.1rem;
+          @include basicP;
         }
       }
     }
@@ -125,9 +124,11 @@
     }
   }
   .section-supporter{
-    padding: 50px 0 20px;
-    .flex_left{
-      margin-bottom: 30px;
+    padding: 50px 0;
+    .flex_layout{
+      .flex_left{
+        margin-bottom: 30px;
+      }
     }
   }
 }
@@ -148,20 +149,21 @@
           margin-bottom: 0px;
         }
         .flex_right{
+          padding-right: 8%;
+          box-sizing: border-box;
           .flex_subttl{
             font-size: 3.2rem;
             margin-bottom: 15px;
           }
           .flex_description{
-            font-size: 2.2rem;
+
           }
         }
       }
       .corp_img_wrap{
         max-width: 1040px;
         height: 582px;
-        margin-left: calc(100% - 1040px);
-        margin-bottom: 50px;
+        margin: 0 auto 50px
       }
       .purpose_description{
         width: 50%;
@@ -250,9 +252,15 @@
       }
     }
     .section-supporter{
-      padding: 120px 0 60px;
-      .flex_left{
-        margin-bottom: 0px;
+      padding: 120px 0;
+      .flex_layout{
+        .flex_left{
+          width: 35%;
+          margin-bottom: 0px;
+        }
+        .flex_right{
+          width: 65%;
+        }
       }
     }
   }

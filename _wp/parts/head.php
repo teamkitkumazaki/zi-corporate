@@ -104,6 +104,8 @@
 	<meta name="twitter:description" content="<?php echo $description; ?>">
 	<meta name="twitter:title" content="<?php echo $site_title; ?>">
 	<meta name="twitter:image" content="<?php echo $thumnail; ?>">
+	<link href="<?php echo get_template_directory_uri();?>/assets/img/icon/icon.png" rel="apple-touch-icon" sizes="180x180">
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/assets/img/icon/icon.png">
 	<!-- font setting -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.0.1/dist/css/yakuhanjp.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">

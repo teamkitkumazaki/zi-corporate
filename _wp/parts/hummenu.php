@@ -23,13 +23,13 @@
       <div class="hummenu_lower">
         <div class="footer_sns">
           <div class="sns_item">
-            <a href="#aaaa"><img src="<?php echo get_template_directory_uri();?>/assets/img/common/icon_linkedin.svg"></a>
+            <a target="_blank" href="https://www.linkedin.com/company/zenintel"><img src="<?php echo get_template_directory_uri();?>/assets/img/common/icon_linkedin.svg"></a>
           </div>
           <div class="sns_item">
-            <a href="#aaaa"><img src="<?php echo get_template_directory_uri();?>/assets/img/common/icon_x.svg"></a>
+            <a target="_blank" href="https://x.com/zenintel_inc"><img src="<?php echo get_template_directory_uri();?>/assets/img/common/icon_x.svg"></a>
           </div>
           <div class="sns_item">
-            <a href="#aaaa"><img src="<?php echo get_template_directory_uri();?>/assets/img/common/icon_note.svg"></a>
+            <a target="_blank" href="https://note.com/zen_intelligence"><img src="<?php echo get_template_directory_uri();?>/assets/img/common/icon_note.svg"></a>
           </div>
         </div>
         <div class="privacy_link">

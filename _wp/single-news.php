@@ -14,7 +14,7 @@
 		$image = get_the_post_thumbnail_url($id, 'full');
 		$image_sp = get_the_post_thumbnail_url($id, 'medium_large');
 		$date = get_the_date('Y.m.d');
-		$sp_main_url = wp_get_attachment_image_src($sp_main, 'medium_large');
+		$sp_main_url = wp_get_attachment_image_src($image_sp, 'medium_large');
 		$page_ttl = get_the_title($post_id);
 		$article_description = SCF::get('article_description',$post_id);
 		$desc_flag = SCF::get('desc_flag',$post_id);
@@ -37,13 +37,22 @@
 					</div><!-- comp-page-bread -->
 					<div class="blog_header">
 						<div class="date_wrapper">
-							<div class="category">プレスリリース</div>
-							<div class="date">2025.06.11</div>
+							<?php if ($terms) :
+								foreach ($terms as $term) {
+									$category_name = $term->name;
+									$category_slug = $term->slug;
+									echo '<div class="category">'.$term->name.'</div>';
+								}
+								endif;
+							?>
+							<div class="date"><?= $date;?></div>
 						</div>
-						<h1 class="blog_ttl">⼀般社団法人日本能率協会の主催する「みらいのたね賞」にzenshotが選出されました。</h1>
-						<div class="blog_thumbs">
-							<img loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/img/news/news_thumb.jpg">
-						</div>
+						<h1 class="blog_ttl"><?= $page_ttl;?></h1>
+						<?php if ($image):?>
+							<div class="blog_thumbs">
+								<img src="<?= $image;?>" srcset="<?= $image;?> 1440w, <?= $image_sp;?> 768w, <?= $image;?> 2048w">
+							</div>
+						<?php endif; ?>
 					</div>
 				</div><!-- article_inner -->
 			</div><!-- section_inner -->
@@ -52,25 +61,30 @@
 			<div class="section_inner">
 				<div class="article_inner">
 					<div class="comp-news-article">
-						<div class="article_item">
-							<div class="description">
-								<p>この度、zenshotが⼀般社団法人日本能率協会様が主催する第一線で活躍する建築家が選ぶ、優れた建築を生み出すことに貢献しうる建材・設備・IT製品「みらいのたね賞」を受賞しました。</p>
+						<?php foreach ($article_content as $d):?>
+							<div class="article_item">
+								<?php if ($d['article_img']):?>
+								<div class="img_wrap">
+									<img
+										class="<?= $d['media_size'];?>"
+										src="<?= wp_get_attachment_image_src($d['article_img'], 'medium_large')[0] ?>"
+										srcset="<?= wp_get_attachment_image_src($d['article_img'], 'medium_large')[0] ?> 1440w, <?= wp_get_attachment_image_src($d['article_img'], 'thumbnail')[0] ?> 768w, <?= wp_get_attachment_image_src($d['article_img'], 'medium_large')[0] ?> 2048w"
+									>
+								</div>
+								<?php endif; ?>
+								<?php if ($d['title_h2']):?>
+									<h2 class="article_ttl"><?= $d['title_h2'];?></h2>
+								<?php endif; ?>
+								<?php if ($d['article_desc']):?>
+									<div class="description">
+										<p style="white-space:pre-line;"><?= $d['article_desc'];?></p>
+									</div>
+								<?php endif; ?>
+								<?php if ($d['outer_link']):?>
+									<?php echo do_shortcode('[sc_Linkcard url="'.$d['outer_link'].'"]'); ?>
+								<?php endif; ?>
 							</div>
-						</div>
-						<div class="article_item">
-							<h2 class="article_ttl">▼詳細は下記をご覧ください</h2>
-							<div class="link_box">
-								<a target="_blank" href="https://jma-news.com/archives/6430">
-									<span class="link_img">
-										<img src="<?php echo get_template_directory_uri();?>/assets/img/news/news_thumb.jpg">
-									</span>
-									<span class="link_txt">
-										<span class="link_ttl">第一線で活躍する建築家が選ぶ、優れた建築を生み出すことに貢献しうる建材・設備・IT製品「みらいのたね賞」14製品と「ゲスト選考賞」1製品を決定！ ｜ 一般社団法人日本能率協会　JMA</span>
-										<span class="link_url">https://jma-news.com/archives/6430</span>
-									</span>
-								</a>
-							</div>
-						</div><!-- article_item -->
+						<?php endforeach; ?>
 					</div><!-- comp-article-contents -->
 				</div><!-- article_inner -->
 			</div><!-- section_inner -->
@@ -82,7 +96,7 @@
 						<div class="comp-section-title">
 							<h2 class="ttl">お知らせ</h2>
 							<div class="comp-link-button">
-								<a href="#aaaa">
+								<a href="/news">
 									<span class="txt">Details</span>
 									<span class="caret">
 										<span class="arrow">
@@ -102,51 +116,45 @@
 					</div>
 					<div class="newslist_contents">
 						<div class="comp-news-list">
+							<?php
+								$order = 0;
+								$param = array(
+									'has_password' => $login_only,
+									'post_type' => 'news',
+									'posts_per_page' => 5,
+									'post_status'  => 'publish',
+									'order' => 'DESC',
+									'paged' => $paged,
+								);
+								$the_query = new WP_Query( $param );
+								$wp_query->query($param);
+								if($wp_query->have_posts()): while($wp_query->have_posts()) : $wp_query->the_post();
+							?>
+							<?php
+								$order = intval($order) + intval(1);
+								$post_id = get_the_ID();
+								$page_ttl = get_the_title($post_id);
+								$date = get_the_date('Y.m.d');
+								/* カテゴリー */
+								$terms = get_the_terms($post->ID, 'news-category');
+								if ($terms) :
+									foreach ($terms as $term) {
+										$category_name = $term->name;
+										$category_slug = $term->slug;
+									}
+
+								endif;
+							 ?>
 							<div class="news_item">
-								<a href="#aaaa">
+								<a href="<?php the_permalink();?>">
 									<span class="news_header">
-										<span class="date">2025.07.15</span>
-										<span class="category">コーポレート</span>
+										<span class="date"><?= $date;?></span>
+										<span class="category"><?= $category_name;?></span>
 									</span>
-									<span class="news_title">Zen Intelligence株式会社への社名変更のお知らせ。Zen Intelligence株式会社への社名変更のお知らせ。Zen Intelligence株式会社への社名変更のお知らせ。</span>
+									<span class="news_title"><?= $page_ttl;?></span>
 								</a>
 							</div>
-							<div class="news_item">
-								<a href="#aaaa">
-									<span class="news_header">
-										<span class="date">2025.06.23</span>
-										<span class="category">コーポレート</span>
-									</span>
-									<span class="news_title">SoftRoid、新オフィス（住友不動産八重洲通ビル）への移転のお知らせ</span>
-								</a>
-							</div>
-							<div class="news_item">
-								<a href="#aaaa">
-									<span class="news_header">
-										<span class="date">2025.06.23</span>
-										<span class="category">コーポレート</span>
-									</span>
-									<span class="news_title">SoftRoid、新オフィス（住友不動産虎ノ門タワー）への移転のお知らせ</span>
-								</a>
-							</div>
-							<div class="news_item">
-								<a href="#aaaa">
-									<span class="news_header">
-										<span class="date">2024.10.25</span>
-										<span class="category">プレスリリース</span>
-									</span>
-									<span class="news_title">⼀般社団法人日本能率協会の主催する「みらいのたね賞」にzenshotが選出されました</span>
-								</a>
-							</div>
-							<div class="news_item">
-								<a href="#aaaa">
-									<span class="news_header">
-										<span class="date">2024.09.13</span>
-										<span class="category">プレスリリース</span>
-									</span>
-									<span class="news_title">週刊東洋経済 すごいベンチャー100 に弊社が選出されました</span>
-								</a>
-							</div>
+							<?php endwhile; else : endif; wp_reset_postdata();?>
 						</div><!-- comp-news-list -->
 					</div><!-- newslist_contents -->
 				</div><!-- newslist_flex -->

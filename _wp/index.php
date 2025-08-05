@@ -11,19 +11,25 @@
 	<section class="section-index-main comp-section-index-main">
 		<div class="title_wrap">
 			<h1 class="site_ttl">Physical AIで、<br>基幹産業を変革する。</h1>
-			<div class="title_en">Transforming Industrial operations Through Phisical Ai</div>
+			<div class="title_en">Transforming Industrial Operations through Physical AI</div>
 		</div>
 		<div class="main_image_wrap">
 			<img class="sp_img" src="<?php echo get_template_directory_uri();?>/assets/img/index/mv.jpg">
-			<img class="pc_img" src="<?php echo get_template_directory_uri();?>/assets/img/index/mv_pc.jpg">
+		</div>
+		<div class="main_movie_wrap">
+			<video id="videoMain" poster="<?php echo get_template_directory_uri();?>/assets/img/index/mv_pc.jpg" webkit-playsinline="" playsinline="" muted="" autoplay="" loop="">
+				<source src="<?php echo get_template_directory_uri();?>/assets/img/index/web_fv.mp4" type="video/mp4">
+			</video>
 		</div>
 	</section>
 	<section class="section-technology">
 		<div class="section_inner">
 			<div class="flex_layout">
 				<div class="flex_right">
-					<div class="img_wrap">
-						<img src="<?php echo get_template_directory_uri();?>/assets/img/index/tech_img.jpg">
+					<div class="movie_wrap">
+						<video id="videoMain" poster="<?php echo get_template_directory_uri();?>/assets/img/index/tech_img.jpg" webkit-playsinline="" playsinline="" muted="" autoplay="" loop="">
+							<source src="<?php echo get_template_directory_uri();?>/assets/img/index/logo_animation.mp4" type="video/mp4">
+						</video>
 					</div>
 				</div><!-- flex_right -->
 				<div class="flex_left">
@@ -94,7 +100,7 @@
 					<div class="comp-section-title white">
 						<h2 class="ttl">会社概要</h2>
 						<div class="ttl_description">
-							<p>Zen Intelligenceのパーパスやバリュー、<span>会社情報・パートナー等について</span></p>
+							<p>Zen Intelligenceのパーパスや<span>バリュー・会社情報について</span></p>
 						</div>
 						<div class="comp-link-button white">
 							<a href="/company">
@@ -145,51 +151,45 @@
 				</div>
 				<div class="newslist_contents">
 					<div class="comp-news-list">
+						<?php
+							$order = 0;
+							$param = array(
+								'has_password' => $login_only,
+								'post_type' => 'news',
+								'posts_per_page' => 5,
+								'post_status'  => 'publish',
+								'order' => 'DESC',
+								'paged' => $paged,
+							);
+							$the_query = new WP_Query( $param );
+							$wp_query->query($param);
+							if($wp_query->have_posts()): while($wp_query->have_posts()) : $wp_query->the_post();
+						?>
+						<?php
+							$order = intval($order) + intval(1);
+							$post_id = get_the_ID();
+							$page_ttl = get_the_title($post_id);
+							$date = get_the_date('Y.m.d');
+							/* カテゴリー */
+							$terms = get_the_terms($post->ID, 'news-category');
+							if ($terms) :
+								foreach ($terms as $term) {
+									$category_name = $term->name;
+									$category_slug = $term->slug;
+								}
+
+							endif;
+						 ?>
 						<div class="news_item">
-							<a href="#aaaa">
+							<a href="<?php the_permalink();?>">
 								<span class="news_header">
-									<span class="date">2025.07.15</span>
-									<span class="category">コーポレート</span>
+									<span class="date"><?= $date;?></span>
+									<span class="category"><?= $category_name;?></span>
 								</span>
-								<span class="news_title">Zen Intelligence株式会社への社名変更のお知らせ。Zen Intelligence株式会社への社名変更のお知らせ。Zen Intelligence株式会社への社名変更のお知らせ。</span>
+								<span class="news_title"><?= $page_ttl;?></span>
 							</a>
 						</div>
-						<div class="news_item">
-							<a href="#aaaa">
-								<span class="news_header">
-									<span class="date">2025.06.23</span>
-									<span class="category">コーポレート</span>
-								</span>
-								<span class="news_title">SoftRoid、新オフィス（住友不動産八重洲通ビル）への移転のお知らせ</span>
-							</a>
-						</div>
-						<div class="news_item">
-							<a href="#aaaa">
-								<span class="news_header">
-									<span class="date">2025.06.23</span>
-									<span class="category">コーポレート</span>
-								</span>
-								<span class="news_title">SoftRoid、新オフィス（住友不動産虎ノ門タワー）への移転のお知らせ</span>
-							</a>
-						</div>
-						<div class="news_item">
-							<a href="#aaaa">
-								<span class="news_header">
-									<span class="date">2024.10.25</span>
-									<span class="category">プレスリリース</span>
-								</span>
-								<span class="news_title">⼀般社団法人日本能率協会の主催する「みらいのたね賞」にzenshotが選出されました</span>
-							</a>
-						</div>
-						<div class="news_item">
-							<a href="#aaaa">
-								<span class="news_header">
-									<span class="date">2024.09.13</span>
-									<span class="category">プレスリリース</span>
-								</span>
-								<span class="news_title">週刊東洋経済 すごいベンチャー100 に弊社が選出されました</span>
-							</a>
-						</div>
+						<?php endwhile; else : endif; wp_reset_postdata();?>
 					</div><!-- comp-news-list -->
 				</div><!-- newslist_contents -->
 			</div><!-- newslist_flex -->

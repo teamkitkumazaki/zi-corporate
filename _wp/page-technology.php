@@ -53,9 +53,9 @@
 							<img src="<?php echo get_template_directory_uri();?>/assets/img/technology/layer01.svg">
 						</div>
 						<div class="layer_desc">
-							<h4 class="subttl">Spatial AI Engine</h4>
+							<h4 class="subttl">Spatial Intelligence</h4>
 							<div class="description">
-								<p>取得した空間データをもとに、空間の変化やコンテキストを読み取り、計算可能な形式に構造化するSpatial AI技術</p>
+								<p>現場の3次元空間とその時間変化の文脈を、AIが理解可能な構造に変換する技術 AI技術</p>
 							</div>
 						</div>
 					</div>
@@ -68,9 +68,9 @@
 							<img src="<?php echo get_template_directory_uri();?>/assets/img/technology/layer02.svg">
 						</div>
 						<div class="layer_desc">
-							<h4 class="subttl">Operational AI Engine</h4>
+							<h4 class="subttl">Operational Intelligence</h4>
 							<div class="description">
-								<p>現場業務を構造化し、業務の知見をシステムに埋め込むことを可能とするAI技術</p>
+								<p>物理空間の中で行われる業務のプロセスや知見を、AIが理解可能な構造に変換する技術</p>
 							</div>
 						</div>
 					</div>
@@ -83,9 +83,9 @@
 							<img src="<?php echo get_template_directory_uri();?>/assets/img/technology/layer03.svg">
 						</div>
 						<div class="layer_desc">
-							<h4 class="subttl">Operational AI Engine</h4>
+							<h4 class="subttl">Physical AI Agent</h4>
 							<div class="description">
-								<p>時系列変化する現場全体の空間のコンテキストを把握し、エキスパートの知見を持ったAIエージェントがデジタル空間を自律的に動き、業務の自動化・省人化を実現する。</p>
+								<p>現場全体のコンテキストを把握し、熟練者のように自律的に行動するAIエージェント。物理的な業務を支援・自動化する。</p>
 							</div>
 						</div>
 					</div>
