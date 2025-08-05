@@ -10,8 +10,8 @@ $borderColor2: #d8d8d8;
 @font-face {
   font-family: 'larsseit';
 	font-weight: 400;
-  src: url('../fonts/larsseit-Regular.eot'),url('../fonts/larsseit-Regular.woff') format('woff'),
-  url('../fonts/larsseit-Regular.ttf') format('truetype'),
+  src: url('../font/larsseit-Regular.eot'),url('../font/larsseit-Regular.woff') format('woff'),
+  url('../font/larsseit-Regular.ttf') format('truetype'),
 }
 
 @mixin larsseit{

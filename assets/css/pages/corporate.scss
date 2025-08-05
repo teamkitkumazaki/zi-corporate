@@ -101,6 +101,21 @@
     padding: 50px 0;
     background: $keyColor;
     color: $fontColorWhite;
+    .flex_layout{
+      .flex_left{
+        text-align: center;
+        margin-bottom: 30px;
+        .comp-section-title{
+          .ttl{
+            &::before{
+              left:0;
+              right:0;
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
   }
   .section-investor{
     padding: 50px 0 20px;
@@ -212,6 +227,20 @@
       padding: 120px 0;
       background: $keyColor;
       color: $fontColorWhite;
+      .flex_layout{
+        .flex_left{
+          text-align: left;
+          margin-bottom: 0px;
+          .comp-section-title{
+            .ttl{
+              &::before{
+                left:0;
+                right:unset;
+              }
+            }
+          }
+        }
+      }
     }
     .section-investor{
       padding: 120px 0 60px;
