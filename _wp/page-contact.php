@@ -4,38 +4,110 @@
 	<?php get_template_part("parts/head"); ?>
 </head>
 <body>
-	<?php get_template_part("parts/header"); ?>
-	<?php
-		$lead_txt = SCF::get('lead_txt', 87);
-	?>
-	<article id="contact" class="page-contact">
-		<section class="section-main comp-underpage-ttl">
-			<div class="main_inner">
-				<div class="comp-section-title white">
-					<span class="ttl_en">Contact</span>
-					<h1 class="ttl_jp">お問い合わせ</h1>
-				</div><!-- comp-section-title -->
-			</div><!-- main_inner -->
-		</section>
-		<section id="headerBlueSection" class="section-contact-form">
+	<header class="underpage">
+		<?php get_template_part("parts/header"); ?>
+	</header>
+	<article id="contact" class="page-underpage">
+		<section class="section-main">
 			<div class="section_inner">
-				<div class="lead_txt">
-					<p><?= $lead_txt;?></span></p>
-				</div>
-				<div class="comp-form-wrap2">
-					<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
-					<script>
-  					hbspt.forms.create({
-    					region: "na1",
-    					portalId: "20891322",
-    					formId: "93755597-f3f0-4bcb-bfc3-29dffed1f3ff"
-  					});
-					</script>
-				</div><!-- comp-form-wrap -->
+				<div class="section_inner_inner">
+					<div class="comp-underpage-title">
+						<h1 class="ttl">お問い合わせ</h1>
+						<div class="title_description">
+							<p>zen intelligenceにご興味をお持ちいただきありがとうございます。<br>お問い合わせはこちらのフォームよりお申し込みください。<br>お問い合わせ後、数日以内に担当者よりご連絡させていただきます。</p>
+						</div>
+					</div><!-- comp-underpage-title -->
+				</div><!-- section_inner_inner -->
+			</div><!-- section_inner -->
+		</section>
+		<section class="section-form">
+			<div class="section_inner">
+				<div class="section_inner_inner">
+					<div class="company_contents">
+						<div id="contactWrap" class="comp-form-wrap">
+							<div class="form_item">
+								<div class="label_wrap">
+									<label class="">お名前</label>
+									<span class="required">必須</span>
+								</div>
+								<div class="form_box">
+									<div class="name_wrap">
+										<input type="text" name="yourname" placeholder="山田太郎" class="bg">
+									</div>
+								</div>
+							</div>
+							<div class="form_item">
+								<div class="label_wrap">
+									<label class="">会社名</label>
+									<span class="optional">任意</span>
+								</div>
+								<div class="form_box">
+									<input class="bg" type="text" name="corpname" placeholder="株式会社SANABURI">
+								</div>
+							</div>
+							<div class="form_item">
+								<div class="label_wrap">
+									<label class="">メールアドレス</label>
+									<span class="required">必須</span>
+								</div>
+								<div class="form_box">
+									<input class="input-number bg" type="text" name="useremail" placeholder="info@sanaburi.co.jp">
+								</div>
+							</div>
+							<div class="form_item">
+								<div class="label_wrap">
+									<label class="">メールアドレス(確認用)</label>
+									<span class="required">必須</span>
+								</div>
+								<div class="form_box">
+									<input class="input-number bg" type="text" name="useremail2" placeholder="info@sanaburi.co.jp">
+								</div>
+							</div>
+							<div class="form_item">
+								<div class="label_wrap">
+									<label class="">電話番号</label>
+									<span class="optional">任意</span>
+								</div>
+								<div class="form_box">
+									<input class="input-number bg" type="text" name="userphone" placeholder="012-3456-7890">
+								</div>
+							</div>
+							<div class="form_item b_none">
+								<div class="label_wrap">
+									<label class="">お問い合わせ内容</label>
+									<span class="required">必須</span>
+								</div>
+								<div class="form_box">
+									<textarea name="content" class="bg"></textarea>
+								</div>
+							</div>
+							<div class="privacy_wrap">
+								<div class="agreement">
+									<div class="agree_wrap">
+										<label>
+											<input id="agreeBox" name="agreement" type="checkbox" value="1">
+											<span class="radio_checker"></span>
+											<span class="name"><a target="_blank" href="/privacy-policy">プライバシーポリシー</a>に同意する</span>
+										</label>
+									</div>
+								</div><!-- agreement -->
+							</div><!-- privacy_wrap -->
+							<div id="ajaxLoader" class="ajax_loader">
+								<span class="loading"></span>
+							</div>
+							<div id="statusMessage" class="status_message hidden"></div>
+							<div id="submitButton" class="submit_wrap disabled">
+								<span class="text_wrap">
+									<span class="ja"><span class="">内容を送信する</span></span>
+									<input type="button" value="内容を送信する" class="ga_contact">
+								</span>
+							</div>
+						</div><!-- comp-form-wrap -->
+					</div><!-- company_contents -->
+				</div><!-- section_inner_inner -->
 			</div><!-- section_inner -->
 		</section>
 	</article>
-	<?php get_template_part("parts/background"); ?>
 	<?php get_template_part("parts/hummenu"); ?>
 	<?php get_template_part("parts/footer"); ?>
 </body>

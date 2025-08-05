@@ -4,7 +4,9 @@
 	<?php get_template_part("parts/head"); ?>
 </head>
 <body>
-	<?php get_template_part("parts/header"); ?>
+	<header class="underpage">
+		<?php get_template_part("parts/header"); ?>
+	</header>
 	<?php
 		$post_id = $post->ID; //ポストID
 		$authorID = $post->post_author; // 著者のID
@@ -21,179 +23,172 @@
 
 		/* カテゴリー */
 		$terms = get_the_terms($post->ID, 'news-category');
-		
+
 	?>
 	<article id="newsDetail" class="page-news-detail">
 		<section class="section-news-header">
-			<div class="comp-page-bread white">
-      	<a href="/news">お知らせ一覧</a>
-      	<!-- <a href="/news-category/<?= $category_slug;?>"><?= $category_name;?></a> -->
-				<span class="current"><?= $page_ttl;?></span>
-    	</div>
-			<div class="header_inner">
-				<h1 class="article_ttl"><?= $page_ttl;?></h1>
-				<div class="header_lower">
-					<div class="article_info">
-						<span class="date"><?= $date;?></span>
-						<?php if ($terms) :
-							foreach ($terms as $term) {
-								$category_name = $term->name;
-								$category_slug = $term->slug;
-								echo '<a class="'.$term->slug.'" href="/news-category/'.$term->slug.'">'. $term->name.'</a>';
-							}
-							endif;
-						?>
-					</div>
-					<div class="comp-sns-share">
-            <div class="sns_item">
-              <a href="https://twitter.com/share?url=<?php echo get_permalink($post_id); ?>" target="_blank">
-                <img src="https://www.srush.co.jp/hubfs/img_blog/icon_x.svg">
-              </a>
-            </div>
-            <div class="sns_item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo get_permalink($post_id); ?>&amp;title=<?= $page_ttl;?>&amp;summary=&amp;source=" target="_blank">
-                <img src="https://www.srush.co.jp/hubfs/img_blog/icon_in.svg">
-              </a>
-            </div>
-            <div class="sns_item">
-              <a href="http://www.facebook.com/share.php?u=<?php echo get_permalink($id)?>" target="_blank" class="social-media__service social-media__service--facebook" aria-label="Share on Facebook">
-                <img src="https://www.srush.co.jp/hubfs/img_blog/icon_fb.svg">
-              </a>
-            </div>
-          </div>
-				</div>
-			</div><!-- header_inner -->
-		</section>
-		<section id="headerBlueSection" class="section-article-contents">
 			<div class="section_inner">
-				<div id="articleContents" class="comp-article-contents">
-					<div class="article_item">
-						<?php if ($image):?>
-						<div class="img_wrap">
-							<img src="<?= $image;?>" srcset="<?= $image;?> 1440w, <?= $image_sp;?> 768w, <?= $image;?> 2048w">
+				<div class="article_inner">
+					<div class="comp-page-bread">
+						<div class="link_wrap">
+							<a href="/">ホーム</a>
+							<a href="/news">お知らせ一覧</a>
 						</div>
-						<?php endif; ?>
-						<?php if ($article_description):?>
-							<?php if ($desc_flag):?>
-							<div class="desc_wrap">
-								<p style="white-space:pre-line;"><?= $article_description;?></p>
-							</div>
-							<?php endif; ?>
-						<?php endif; ?>
+					</div><!-- comp-page-bread -->
+					<div class="blog_header">
+						<div class="date_wrapper">
+							<div class="category">プレスリリース</div>
+							<div class="date">2025.06.11</div>
+						</div>
+						<h1 class="blog_ttl">⼀般社団法人日本能率協会の主催する「みらいのたね賞」にzenshotが選出されました。</h1>
+						<div class="blog_thumbs">
+							<img loading="lazy" src="<?php echo get_template_directory_uri();?>/assets/img/news/news_thumb.jpg">
+						</div>
 					</div>
-					<?php foreach ($article_content as $d):?>
+				</div><!-- article_inner -->
+			</div><!-- section_inner -->
+		</section>
+		<section class="section-news-contents">
+			<div class="section_inner">
+				<div class="article_inner">
+					<div class="comp-news-article">
 						<div class="article_item">
-							<?php if ($d['title_h2']):?>
-								<h2 class="section_ttl"><?= $d['title_h2'];?></h2>
-							<?php endif; ?>
-							<?php if ($d['article_img']):?>
-							<div class="img_wrap">
-								<?php if ($d['media_size'] != 'gif'):?>
-								<img
-									class="<?= $d['media_size'];?>"
-									src="<?= wp_get_attachment_image_src($d['article_img'], 'medium_large')[0] ?>"
-									srcset="<?= wp_get_attachment_image_src($d['article_img'], 'medium_large')[0] ?> 1440w, <?= wp_get_attachment_image_src($d['article_img'], 'thumbnail')[0] ?> 768w, <?= wp_get_attachment_image_src($d['article_img'], 'medium_large')[0] ?> 2048w"
-								>
-								<?php else:?>
-									<img
-										class="<?= $d['media_size'];?>"
-										src="<?= wp_get_attachment_image_src($d['article_img'], 'full')[0] ?>"
-									>
-								<?php endif; ?>
+							<div class="description">
+								<p>この度、zenshotが⼀般社団法人日本能率協会様が主催する第一線で活躍する建築家が選ぶ、優れた建築を生み出すことに貢献しうる建材・設備・IT製品「みらいのたね賞」を受賞しました。</p>
 							</div>
-							<?php endif; ?>
-							<?php if ($d['title_h3']):?>
-								<h3 class="section_sub_ttl"><?= $d['title_h3'];?></h3>
-							<?php endif; ?>
-							<?php if ($d['article_desc']):?>
-							<div class="desc_wrap">
-								<p style="white-space:pre-line;"><?= $d['article_desc'];?></p>
-							</div>
-							<?php endif; ?>
-							<?php if ($d['outer_link']):?>
-								<?php echo do_shortcode('[sc_Linkcard url="'.$d['outer_link'].'"]'); ?>
-							<?php endif; ?>
 						</div>
-					<?php endforeach; ?>
-					<div class="sns_share_wrap">
-						<span class="share_ttl">SHARE</span>
-						<div class="comp-sns-share">
-	            <div class="sns_item">
-	              <a href="https://twitter.com/share?url=<?php echo get_permalink($post_id); ?>" target="_blank">
-	                <img src="https://www.srush.co.jp/hubfs/img_blog/icon_x.svg">
-	              </a>
-	            </div>
-	            <div class="sns_item">
-	              <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo get_permalink($post_id); ?>&amp;title=<?= $page_ttl;?>&amp;summary=&amp;source=" target="_blank">
-	                <img src="https://www.srush.co.jp/hubfs/img_blog/icon_in.svg">
-	              </a>
-	            </div>
-	            <div class="sns_item">
-	              <a href="http://www.facebook.com/share.php?u=<?php echo get_permalink($id)?>" target="_blank" class="social-media__service social-media__service--facebook" aria-label="Share on Facebook">
-	                <img src="https://www.srush.co.jp/hubfs/img_blog/icon_fb.svg">
-	              </a>
-	            </div>
-	          </div>
-					</div>
-				</div><!-- comp-article-contents -->
+						<div class="article_item">
+							<h2 class="article_ttl">▼詳細は下記をご覧ください</h2>
+							<div class="link_box">
+								<a target="_blank" href="https://jma-news.com/archives/6430">
+									<span class="link_img">
+										<img src="<?php echo get_template_directory_uri();?>/assets/img/news/news_thumb.jpg">
+									</span>
+									<span class="link_txt">
+										<span class="link_ttl">第一線で活躍する建築家が選ぶ、優れた建築を生み出すことに貢献しうる建材・設備・IT製品「みらいのたね賞」14製品と「ゲスト選考賞」1製品を決定！ ｜ 一般社団法人日本能率協会　JMA</span>
+										<span class="link_url">https://jma-news.com/archives/6430</span>
+									</span>
+								</a>
+							</div>
+						</div><!-- article_item -->
+					</div><!-- comp-article-contents -->
+				</div><!-- article_inner -->
 			</div><!-- section_inner -->
 		</section>
-		<section class="section-related-news">
+		<section class="section-news-list comp-section-news-list">
 			<div class="section_inner">
-				<div class="comp-news-list related">
-					<?php
-  					$prev_post = get_previous_post( false, '', 'category');
-  					$next_post = get_next_post( false, '', 'category');
-						$terms = get_the_terms($prev_post->ID, 'news-category');
-						if ($terms) :
-							foreach ($terms as $term) {
-								$prev_category_name = $term->name;
-								$prev_category_slug = $term->slug;
-							}
-						endif;
-
-						$terms2 = get_the_terms($next_post->ID, 'news-category');
-						if ($terms2) :
-							foreach ($terms2 as $term) {
-								$next_category_name = $term->name;
-								$next_category_slug = $term->slug;
-							}
-						endif;
-
-					;?>
-					<div class="news_item prev">
-						<?php if( $prev_post ): ?>
-						<a href="<?= get_permalink($prev_post->ID); ?>" class="item_inner">
-							<span class="news_header">
-								<span class="data"><?= get_the_time( 'Y.m.d', $prev_post->ID );?></span>
-								<span class="category <?= $prev_category_slug;?>"><?= $prev_category_name;?></span>
-							</span>
-							<span class="news_title"><?= get_the_title($prev_post->ID); ?></span>
-						</a>
-						<span class="comp-decoration-border"></span>
-						<?php endif; ?>
+				<div class="newslist_flex">
+					<div class="newslist_ttl">
+						<div class="comp-section-title">
+							<h2 class="ttl">お知らせ</h2>
+							<div class="comp-link-button">
+								<a href="#aaaa">
+									<span class="txt">Details</span>
+									<span class="caret">
+										<span class="arrow">
+											<svg viewBox="0 0 21.95 19.13">
+												<path class="cls-1" d="M12.88.35l8.12,8.12c.6.6.6,1.58,0,2.18l-8.12,8.12M21.24,9.57H0" />
+											</svg>
+										</span>
+										<span class="circle">
+											<svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 62.9 62.9">
+												<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -13.0238 31.4424)" class="st1" cx="31.4" cy="31.4" rx="30.9" ry="30.9"></ellipse>
+											</svg>
+										</span>
+									</span>
+								</a>
+							</div><!-- comp-link-button -->
+						</div>
 					</div>
-					<div class="news_item next">
-						<?php if( $next_post ): ?>
-						<a class="item_inner" href="<?= get_permalink($next_post->ID); ?>">
-							<span class="news_header">
-								<span class="data"><?= get_the_time( 'Y.m.d', $next_post->ID );?></span>
-								<span class="category <?= $next_category_slug;?>"><?= $next_category_name;?></span>
-							</span>
-							<span class="news_title"><?= get_the_title($next_post->ID); ?></span>
-						</a>
-						<?php endif; ?>
-					</div>
-				</div><!-- comp-related-news -->
+					<div class="newslist_contents">
+						<div class="comp-news-list">
+							<div class="news_item">
+								<a href="#aaaa">
+									<span class="news_header">
+										<span class="date">2025.07.15</span>
+										<span class="category">コーポレート</span>
+									</span>
+									<span class="news_title">Zen Intelligence株式会社への社名変更のお知らせ。Zen Intelligence株式会社への社名変更のお知らせ。Zen Intelligence株式会社への社名変更のお知らせ。</span>
+								</a>
+							</div>
+							<div class="news_item">
+								<a href="#aaaa">
+									<span class="news_header">
+										<span class="date">2025.06.23</span>
+										<span class="category">コーポレート</span>
+									</span>
+									<span class="news_title">SoftRoid、新オフィス（住友不動産八重洲通ビル）への移転のお知らせ</span>
+								</a>
+							</div>
+							<div class="news_item">
+								<a href="#aaaa">
+									<span class="news_header">
+										<span class="date">2025.06.23</span>
+										<span class="category">コーポレート</span>
+									</span>
+									<span class="news_title">SoftRoid、新オフィス（住友不動産虎ノ門タワー）への移転のお知らせ</span>
+								</a>
+							</div>
+							<div class="news_item">
+								<a href="#aaaa">
+									<span class="news_header">
+										<span class="date">2024.10.25</span>
+										<span class="category">プレスリリース</span>
+									</span>
+									<span class="news_title">⼀般社団法人日本能率協会の主催する「みらいのたね賞」にzenshotが選出されました</span>
+								</a>
+							</div>
+							<div class="news_item">
+								<a href="#aaaa">
+									<span class="news_header">
+										<span class="date">2024.09.13</span>
+										<span class="category">プレスリリース</span>
+									</span>
+									<span class="news_title">週刊東洋経済 すごいベンチャー100 に弊社が選出されました</span>
+								</a>
+							</div>
+						</div><!-- comp-news-list -->
+					</div><!-- newslist_contents -->
+				</div><!-- newslist_flex -->
 			</div><!-- section_inner -->
-			<div class="comp-page-bread">
-				<a href="/news">お知らせ一覧</a>
-				<a href="/news-category/<?= $category_slug;?>"><?= $category_name;?></a>
-				<span class="current"><?= $page_ttl;?></span>
-			</div>
+		</section>
+		<section class="section-recruit comp-section-recruit">
+			<div class="section_inner">
+				<div class="flex_layout">
+					<div class="flex_left">
+						<div class="comp-section-title">
+							<h2 class="ttl">採用情報</h2>
+							<div class="ttl_description">
+								<p>Zen Intelligenceは、ともに基幹産業を変革する<br>仲間を積極的に募集しています。</p>
+							</div>
+							<div class="comp-link-button">
+								<a href="#aaaa">
+									<span class="txt">Details</span>
+									<span class="caret">
+										<span class="arrow">
+											<svg viewBox="0 0 21.95 19.13">
+												<path class="cls-1" d="M12.88.35l8.12,8.12c.6.6.6,1.58,0,2.18l-8.12,8.12M21.24,9.57H0" />
+											</svg>
+										</span>
+										<span class="circle">
+											<svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 62.9 62.9">
+												<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -13.0238 31.4424)" class="st1" cx="31.4" cy="31.4" rx="30.9" ry="30.9"></ellipse>
+											</svg>
+										</span>
+									</span>
+								</a>
+							</div><!-- comp-link-button -->
+						</div>
+					</div><!-- flex_left -->
+					<div class="flex_right">
+						<div class="img_wrap">
+							<img src="<?php echo get_template_directory_uri();?>/assets/img/common/recruit_img.jpg">
+						</div>
+					</div><!-- flex_right -->
+				</div><!-- flex_layout -->
+			</div><!-- section_inner -->
 		</section>
 	</article>
-	<?php get_template_part("parts/background"); ?>
 	<?php get_template_part("parts/hummenu"); ?>
 	<?php get_template_part("parts/footer"); ?>
 </body>

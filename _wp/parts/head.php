@@ -5,44 +5,44 @@
 	<?php $url = $_SERVER['REQUEST_URI']; ?>
 	<?php
 	if ( is_home() || is_front_page() ) {
-  	$site_title = '株式会社Srush';
+  	$site_title = 'Zen Intelligence株式会社';
   	$site_permalink = home_url( '/' );
 		$thumnail = 'https://srush.biz/wp-content/uploads/2024/06/ogp.jpg';
 		$description = strip_tags(get_post_meta(150, 'article_description', true));
 	}else if( is_404()){
-		$site_title = 'ページがみつかりません | 株式会社Srush';
+		$site_title = 'ページがみつかりません | Zen Intelligence株式会社';
 		$site_permalink = get_the_permalink();
 		$thumnail = 'https://srush.biz/wp-content/uploads/2024/06/ogp.jpg';
 		$description = strip_tags(get_post_meta(150, 'article_description', true));
 	}	else if( is_tax()) {
-		$page_title = single_term_title("", false).' | 株式会社Srush';
-		$site_title = single_term_title("", false).' | 株式会社Srush';
+		$page_title = single_term_title("", false).' | Zen Intelligence株式会社';
+		$site_title = single_term_title("", false).' | Zen Intelligence株式会社';
 		$site_permalink = get_the_permalink();
 		$description = strip_tags(term_description());
 	}	else if( is_search()) {
-		$page_title = '「'.get_search_query( $escaped ).'」の検索結果 | 株式会社Srush';
-		$site_title = '「'.get_search_query( $escaped ).'」の検索結果 | 株式会社Srush';
+		$page_title = '「'.get_search_query( $escaped ).'」の検索結果 | Zen Intelligence株式会社';
+		$site_title = '「'.get_search_query( $escaped ).'」の検索結果 | Zen Intelligence株式会社';
 		$site_permalink = get_the_permalink();
-		$description = '株式会社Srushのキーワード検索結果ページです。';
+		$description = 'Zen Intelligence株式会社のキーワード検索結果ページです。';
 	} else if( is_category() || is_tag() ){
-		$page_title = '「'.single_cat_title('',false).'」に関する記事一覧 | 株式会社Srush';
-		$site_title = '「'.single_cat_title('',false).'」に関する記事一覧 | 株式会社Srush';
+		$page_title = '「'.single_cat_title('',false).'」に関する記事一覧 | Zen Intelligence株式会社';
+		$site_title = '「'.single_cat_title('',false).'」に関する記事一覧 | Zen Intelligence株式会社';
 		$site_permalink = get_the_permalink();
 		$cat_desc = category_description();
 		if($cat_desc){
 			$description = strip_tags($cat_desc);
 		}else{
-			$description = '株式会社Srushの'.single_cat_title('',false).'に関する記事一覧ページです。';
+			$description = 'Zen Intelligence株式会社の'.single_cat_title('',false).'に関する記事一覧ページです。';
 		}
 	} else if( is_archive() ){
 		if(strstr($url,'/news')){
-			$page_title = 'お知らせ一覧 | 株式会社Srush';
-			$site_title = 'お知らせ一覧 | 株式会社Srush';
+			$page_title = 'お知らせ一覧 | Zen Intelligence株式会社';
+			$site_title = 'お知らせ一覧 | Zen Intelligence株式会社';
 			$site_permalink = get_the_permalink();
-			$description = '株式会社Srushのお知らせ一覧ページです。';
+			$description = 'Zen Intelligence株式会社のお知らせ一覧ページです。';
 		}
 	} else if( is_single()) {
-		$site_title = strip_tags(get_the_title($post->ID)).' | 株式会社Srush';
+		$site_title = strip_tags(get_the_title($post->ID)).' | Zen Intelligence株式会社';
   	$site_permalink = get_the_permalink($post->ID);
 		$first_image = catch_that_image();
 		$description = strip_tags(get_post_meta($post->ID, 'article_description', true));
@@ -58,7 +58,7 @@
 			$thumnail = 'https://srush.biz/wp-content/uploads/2024/06/ogp.jpg'; // デフォルトのサムネイル画像を出力
 		}
 	}else if(is_page()){
-		$site_title = get_the_title($post->ID).' | 株式会社Srush';
+		$site_title = get_the_title($post->ID).' | Zen Intelligence株式会社';
   	$site_permalink = get_the_permalink($post->ID);
 		$first_image = catch_that_image();
 		if (!empty(get_the_post_thumbnail_url($post->ID, 'large'))) {
@@ -70,8 +70,8 @@
 			$thumnail = 'https://srush.biz/wp-content/uploads/2024/06/ogp.jpg'; // デフォルトのサムネイル画像を出力
 		}
 	} else{
-		$page_title = '株式会社Srush';
-		$site_title = '株式会社Srush';
+		$page_title = 'Zen Intelligence株式会社';
+		$site_title = 'Zen Intelligence株式会社';
   	$site_permalink = get_the_permalink();
 		$description = strip_tags(get_post_meta($post->ID, 'article_description', true));
 		$thumbnail_id = get_post_thumbnail_id($post->ID);
@@ -99,21 +99,17 @@
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="<?php echo $site_title; ?>">
 	<meta property="og:description" content="<?php echo $description; ?>">
-	<meta property="og:site_name" content="株式会社Srush">
+	<meta property="og:site_name" content="Zen Intelligence株式会社">
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:description" content="<?php echo $description; ?>">
 	<meta name="twitter:title" content="<?php echo $site_title; ?>">
 	<meta name="twitter:image" content="<?php echo $thumnail; ?>">
+	<!-- font setting -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.0.1/dist/css/yakuhanjp.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.typekit.net/xjg5sox.css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400,500&display=swap">
 	<script>console.log('<?php echo $url;?>');</script>
-	<?php if(strstr($url,'/vision2030')):?>
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/vision/css/style.css?ver240529_1900">
-	<?php else:?>
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/style.css?<?php echo date('Ymd-Hi');?>">
-	<?php endif;?>
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/style.css?<?php echo date('Ymd-Hi');?>">
 	<?php get_template_part("parts/analytics");?>
 	<?php wp_head(); ?>
