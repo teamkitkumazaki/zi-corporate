@@ -1,0 +1,343 @@
+<!doctype html>
+<html style="--wHeight:100vh; --wHeightPx:100vh; --scroll:0; --wHeightFixedPx:100vh;">
+<head>
+	<?php get_template_part("parts/head"); ?>
+</head>
+<body>
+	<header class="underpage">
+		<?php get_template_part("parts/header"); ?>
+	</header>
+	<?php
+		$corporate_info = SCF::get('corporate_info', 150);
+		$board_member = SCF::get('board_member', 6);
+		$member_link = SCF::get('member_link', 6);
+	?>
+	<article id="privacy" class="page-underpage">
+		<section class="section-main">
+			<div class="section_inner">
+				<div class="section_inner_inner">
+					<div class="comp-underpage-title">
+						<h1 class="ttl">プライバシーポリシー</h1>
+					</div><!-- comp-underpage-title -->
+				</div><!-- section_inner_inner -->
+			</div><!-- section_inner -->
+		</section>
+		<section class="section-privacy-terms">
+			<div class="section_inner">
+				<div class="section_inner_inner">
+					<div class="comp-terms-content">
+							<div class="terms_wrap">
+								<div class="terms_item">
+									<div class="desciption">
+										<p>Zen Intelligence株式会社（以下「当社」といいます。）は、個人情報保護の重要性について認識し、個人情報の保護に関する法律（以下「個人情報保護法」といいます。）を遵守すると共に、以下のプライバシーポリシー（以下「本プライバシーポリシー」といいます。）に従い、適切な取扱い及び保護に努めます。なお、本プライバシーポリシーにおいて別段の定めがない限り、本プライバシーポリシーにおける用語の定義は、個人情報保護法の定めに従います。</p>
+									</div>
+								</div>
+								<div class="terms_item">
+									<div class="item_ttl">1.個人情報の定義</div>
+									<div class="desciption">
+										<p>本プライバシーポリシーにおいて、個人情報とは、個人情報保護法第2条第1項により定義される個人情報を意味するものとします。</p>
+									</div>
+								</div>
+								<div class="terms_item">
+									<div class="item_ttl">2.個人情報の利用目的</div>
+									<div class="desciption">
+										<p>当社は、個人情報を以下の目的で利用いたします。</p>
+										<ul class="number_list">
+											<li>
+												<span class="number">(1)</span>
+												<div class="desc_inner">
+													<p>遠隔での建設プロジェクト管理サービスその他当社が運営するサービス（以下、総称して「当社サービス」といいます。）の提供のため</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(2)</span>
+												<div class="desc_inner">
+													<p>当社サービスに関するご案内、お問い合せ等への対応のため</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(3)</span>
+												<div class="desc_inner">
+													<p>当社の商品、サービス等のご案内のため</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(4)</span>
+												<div class="desc_inner">
+													<p>当社サービスに関する当社の規約、ポリシー等（以下「規約等」といいます。）に違反する行為に対する対応のため</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(5)</span>
+												<div class="desc_inner">
+													<p>当社サービスに関する規約等の変更などを通知するため</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(6)</span>
+												<div class="desc_inner">
+													<p>ユーザーのサービスの利用の状況等に関する情報を分析して当社サービスの改善、新サービスの開発等に役立てるため</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(7)</span>
+												<div class="desc_inner">
+													<p>雇用管理及び社内手続のため（役職員の個人情報について）、人材採用活動における選考及び連絡のため（応募者の個人情報について）</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(8)</span>
+												<div class="desc_inner">
+													<p>株主管理、会社法その他法令上の手続対応のため（株主、新株予約権者等の個人情報について）</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(9)</span>
+												<div class="desc_inner">
+													<p>当社サービスに関連して、個人を識別できない形式に加工した統計データを作成するため</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(10)</span>
+												<div class="desc_inner">
+													<p>その他、上記利用目的に付随する目的のため</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="terms_item">
+									<div class="item_ttl">3.個人情報利用目的の変更</div>
+									<div class="desciption">
+										<p>当社は、個人情報の利用目的を関連性を有すると合理的に認められる範囲内において変更することがあり、変更した場合には個人情報の主体である個人（以下「本人」といいます。）に通知し又は公表します。</p>
+									</div>
+								</div>
+
+								<div class="terms_item">
+									<div class="item_ttl">4.個人情報利用</div>
+									<div class="desciption">
+										<p>4.1　当社は、個人情報保護法その他の法令により許容される場合を除き、本人の同意を得ず、利用目的の達成に必要な範囲を超えて個人情報を取り扱いません。但し、次の場合はこの限りではありません。</p>
+										<ul class="number_list">
+											<li>
+												<span class="number">(1)</span>
+												<div class="desc_inner">
+													<p>法令に基づく場合</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(2)</span>
+												<div class="desc_inner">
+													<p>人の生命、身体又は財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(3)</span>
+												<div class="desc_inner">
+													<p>公衆衛生の向上又は児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難であるとき</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(4)</span>
+												<div class="desc_inner">
+													<p>国の機関もしくは地方公共団体又はその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(5)</span>
+												<div class="desc_inner">
+													<p>学術研究機関等に個人データを提供する場合であって、当該学術研究機関等が当該個人データを学術研究目的で取り扱う必要があるとき（当該個人データを取り扱う目的の一部が学術研究目的である場合を含み、個人の権利利益を不当に侵害するおそれがある場合を除く。）。</p>
+												</div>
+											</li>
+										</ul>
+										<p>4.2　当社は、違法又は不当な行為を助長し、又は誘発するおそれがある方法により個人情報を利用しません。</p>
+									</div>
+								</div>
+								<div class="terms_item">
+									<div class="item_ttl">5.個人情報の適正な取得</div>
+									<div class="desciption">
+										<p>5.1　当社は、適正に個人情報を取得し、偽りその他不正の手段により取得しません。</p>
+										<p>5.2　当社は、次の場合を除き、あらかじめ本人の同意を得ないで、要配慮個人情報（個人情報保護法第2条第3項に定義されるものを意味します。）を取得しません。</p>
+										<ul class="number_list">
+											<li>
+												<span class="number">(1)</span>
+												<div class="desc_inner">
+													<p>第4.1項第1号から第4号までのいずれかに該当する場合</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(2)</span>
+												<div class="desc_inner">
+													<p>学術研究機関等から要配慮個人情報を取得する場合であって、当該要配慮個人情報を学術研究目的で取得する必要があるとき（当該要配慮個人情報を取得する目的の一部が学術研究目的である場合を含み、個人の権利利益を不当に侵害するおそれがある場合を除く。）（当該個人情報取扱事業者と当該学術研究機関等が共同して学術研究を行う場合に限る。）</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(3)</span>
+												<div class="desc_inner">
+													<p>当該要配慮個人情報が、本人、国の機関、地方公共団体、学術研究機関等、個人情報保護法第57条第1項各号に掲げる者その他個人情報保護委員会規則で定める者により公開されている場合</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(4)</span>
+												<div class="desc_inner">
+													<p>本人を目視し、又は撮影することにより、その外形上明らかな要配慮個人情報を取得する場合</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(5)</span>
+												<div class="desc_inner">
+													<p>第三者から要配慮個人情報の提供を受ける場合であって、当該第三者による当該提供が第8.1項各号のいずれかに該当するとき</p>
+												</div>
+											</li>
+										</ul>
+										<p>5.3　当社は、第三者から個人情報の提供を受けるに際しては、個人情報保護委員会規則で定めるところにより、次に掲げる事項の確認を行います。ただし、当該第三者による当該個人情報の提供が第4.1項各号のいずれかに該当する場合又は第8.1項各号のいずれかに該当する場合を除きます。</p>
+										<ul class="number_list">
+											<li>
+												<span class="number">(1)</span>
+												<div class="desc_inner">
+													<p>当該第三者の氏名又は名称及び住所、並びに法人の場合はその代表者（法人でない団体で代表者又は管理人の定めのあるものの場合は、その代表者又は管理人）の氏名</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(2)</span>
+												<div class="desc_inner">
+													<p>当該第三者による当該個人情報の取得の経緯</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="terms_item">
+									<div class="item_ttl">6.個人情報の安全管理</div>
+									<div class="desciption">
+										<p>当社は、個人情報の紛失、破壊、改ざん及び漏洩などのリスクに対して、個人情報の安全管理が図られるよう、当社の従業員に対し、必要かつ適切な監督を行います。また、当社は、個人情報の取扱いの全部又は一部を委託する場合は、委託先において個人情報の安全管理が図られるよう、必要かつ適切な監督を行います。当社の保有個人データに関する具体的な安全管理措置の内容は、以下のとおりです。</p>
+									</div>
+									<div class="comp-corporate-profile">
+										<div class="profile_item">
+											<div class="profile_ttl">基本方針の策定</div>
+											<div class="profile_contents">
+												<p>個人データの適正な取扱いの確保のため、「関係法令・ガイドライン等の遵守」、「質問及び苦情処理の窓口」等についての基本方針として、本プライバシーポリシーを策定</p>
+											</div>
+										</div>
+										<div class="profile_item">
+											<div class="profile_ttl">個人データの取扱いに係る規律の整備</div>
+											<div class="profile_contents">
+												<p>取得、利用、保存、提供、削除・廃棄等の段階ごとに、取扱方法、責任者・担当者及びその任務等について個人データの取扱規程を策定</p>
+											</div>
+										</div>
+										<div class="profile_item">
+											<div class="profile_ttl">組織的安全管理措置</div>
+											<div class="profile_contents">
+												<p>1）個人データの取扱いに関する責任者を設置するとともに、個人データを取り扱う従業者及び当該従業者が取り扱う個人データの範囲を明確化し、法や取扱規程に違反している事実又は兆候を把握した場合の責任者への報告連絡体制を整備</p>
+												<p>2）個人データの取扱状況について、定期的に自己点検を実施するとともに、他部署や外部の者による監査を実施</p>
+											</div>
+										</div>
+										<div class="profile_item">
+											<div class="profile_ttl">人的安全管理措置</div>
+											<div class="profile_contents">
+												<p>1）個人データの取扱いに関する留意事項について、従業者に定期的な研修を実施</p>
+												<p>2）個人データについての秘密保持に関する事項を就業規則に記載</p>
+											</div>
+										</div>
+										<div class="profile_item">
+											<div class="profile_ttl">物理的安全管理措置</div>
+											<div class="profile_contents">
+												<p>1）個人データを取り扱う区域において、従業者の入退室管理及び持ち込む機器等の制限を行うとともに、権限を有しない者による個人データの閲覧を防止する措置を実施</p>
+												<p>2）個人データを取り扱う機器、電子媒体及び書類等の盗難又は紛失等を防止するための措置を講じるとともに、事業所内の移動を含め、当該機器、電子媒体等を持ち運ぶ場合、容易に個人データが判明しないよう措置を実施</p>
+											</div>
+										</div>
+										<div class="profile_item">
+											<div class="profile_ttl">技術的安全管理措置</div>
+											<div class="profile_contents">
+												<p>1）アクセス制御を実施して、担当者及び取り扱う個人情報データベース等の範囲を限定</p>
+												<p>2）個人データを取り扱う情報システムを外部からの不正アクセス又は不正ソフトウェアから保護する仕組みを導入</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="terms_item">
+									<div class="item_ttl">7.漏洩時の報告等</div>
+									<div class="desciption">
+										<p>当社は、当社の取り扱う個人情報の漏洩、滅失、毀損等の事態が生じた場合において、個人情報保護法の定めに基づき個人情報保護委員会への報告及び本人への通知を要する場合には、かかる報告及び通知を行います。</p>
+									</div>
+								</div>
+								<div class="terms_item">
+									<div class="item_ttl">8.第三者提供</div>
+									<div class="desciption">
+										<p>8.1　当社は、第4項各号のいずれかに該当する場合を除くほか、あらかじめ本人の同意を得ないで、個人情報を第三者に提供しません。但し、次に掲げる場合は上記に定める第三者への提供には該当しません。</p>
+										<ul class="number_list">
+											<li>
+												<span class="number">(1)</span>
+												<div class="desc_inner">
+													<p>利用目的の達成に必要な範囲内において個人情報の取扱いの全部又は一部を委託することに伴って個人情報を提供する場合</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(2)</span>
+												<div class="desc_inner">
+													<p>合併その他の事由による事業の承継に伴って個人情報が提供される場合</p>
+												</div>
+											</li>
+											<li>
+												<span class="number">(3)</span>
+												<div class="desc_inner">
+													<p>個人情報保護法の定めに基づき共同利用する場合</p>
+												</div>
+											</li>
+										</ul>
+										<p>8.2　第8.1項の定めにかかわらず、当社は、第4.1項各号のいずれかに該当する場合を除くほか、外国（個人情報保護法第28条に基づき個人情報保護委員会規則で指定される国を除きます。）にある第三者（個人情報保護法第28条に基づき個人情報保護委員会規則で指定される基準に適合する体制を整備している者を除きます。）に個人情報を提供する場合には、あらかじめ外国にある第三者への提供を認める旨の本人の同意を得るものとします。</p>
+										<p>8.3　当社は、個人情報を第三者に提供したときは、個人情報保護法第29条に従い、記録の作成及び保存を行います。</p>
+										<p>8.4　当社は、第三者から個人情報の提供を受けるに際しては、個人情報保護法第30条に従い、必要な確認を行い、当該確認にかかる記録の作成及び保存を行うものとします。</p>
+									</div>
+								</div>
+								<div class="terms_item">
+									<div class="item_ttl">9.個人情報等の開示</div>
+									<div class="desciption">
+										<p>9.1　当社は、本人から、個人情報保護法の定めに基づき個人情報の開示を求められたときは、本人ご自身からのご請求であることを確認の上で、本人に対し、遅滞なく開示を行います（当該個人情報が存在しないときにはその旨を通知いたします。）。但し、個人情報保護法その他の法令により、当社が開示の義務を負わない場合は、この限りではありません。なお、個人情報の開示につきましては、手数料（1件あたり1000円）を頂戴しておりますので、あらかじめ御了承ください。</p>
+										<p>9.2　前項の定めは、本人が識別される個人情報にかかる、第</p>
+									</div>
+								</div>
+								<div class="terms_item">
+									<div class="item_ttl">10.個人情報の訂正等</div>
+									<div class="desciption">
+										<p>当社は、本人から、個人情報が真実でないという理由によって、個人情報保護法の定めに基づきその内容の訂正、追加又は削除（以下「訂正等」といいます。）を求められた場合には、本人ご自身からのご請求であることを確認の上で、利用目的の達成に必要な範囲内において、遅滞なく必要な調査を行い、その結果に基づき、個人情報の内容の訂正等を行い、その旨を本人に通知します（訂正等を行わない旨の決定をしたときは、本人に対しその旨を通知いたします。）。但し、個人情報保護法その他の法令により、当社が訂正等の義務を負わない場合は、この限りではありません。</p>
+									</div>
+								</div>
+								<div class="terms_item">
+									<div class="item_ttl">11.個人情報の利用停止等</div>
+									<div class="desciption">
+										<p>当社は、本人から、(1)本人の個人情報が、あらかじめ公表された利用目的の範囲を超えて取り扱われている、若しくは違法若しくは不当な行為を助長し、若しくは誘発するおそれがある方法により利用されているという理由により、又は本人の個人情報が偽りその他不正の手段により取得されたものであるという理由により、個人情報保護法の定めに基づきその利用の停止又は消去（以下「利用停止等」といいます。）を求められた場合、(2)個人情報がご本人の同意なく第三者に提供されているという理由により、個人情報保護法の定めに基づきその提供の停止（以下「提供停止」といいます。）を求められた場合、又は(3)当社が本人の個人情報を利用する必要がなくなった場合、本人の個人情報にかかる個人情報保護法第26条第1項本文に規定する事態が生じた場合その他本人の個人情報の取扱により本人の権利又は正当な利益が害されるおそれがある場合に該当するという理由により、個人情報保護法の定めに基づきその利用停止等又は提供停止を求められた場合において、そのご請求に理由があることが判明した場合には、本人ご自身からのご請求であることを確認の上で、遅滞なく個人情報の利用停止等又は提供停止を行い、その旨を本人に通知します。但し、個人情報保護法その他の法令により、当社が利用停止等又は提供停止の義務を負わない場合は、この限りではありません。</p>
+									</div>
+								</div>
+								<div class="terms_item">
+									<div class="item_ttl">12.Cookie（クッキー）その他の技術の利用</div>
+									<div class="desciption">
+										<p>当社サービスは、Cookie及びこれに類する技術を利用することがあります。また、当社サービスはこれらの技術と併せてGoogleアナリティクスその他サービスを利用することがあります。これらの技術及びサービスは、当社による当社サービスの利用状況等の把握に役立ち、サービス向上に資するものです。Cookieを無効化されたいユーザーは、ウェブブラウザの設定を変更することによりCookieを無効化することができます。但し、Cookieを無効化すると、当社サービスの一部の機能をご利用いただけなくなる場合があります。</p>
+										<p>Googleアナリティクスでデータが収集、処理される仕組みについては、下記URLのGoogleアナリティクスのウェブサイトでご確認いただけます。<br><a target="_blank" href="www.google.com/policies/privacy/partners/">www.google.com/policies/privacy/partners/</a></p>
+									</div>
+								</div>
+								<div class="terms_item">
+									<div class="item_ttl">13.お問い合わせ</div>
+									<div class="desciption">
+										<p>開示等のお申出、ご意見、ご質問、苦情のお申出その他個人情報の取扱いに関するお問い合わせは、下記の窓口までお願い致します。</p>
+										<p>個人情報取扱事業者の名称、住所及び代表者氏名<br>株式会社SoftRoid （代表取締役 野﨑大幹）<br>お問い合わせ窓口<br>E-mail</p>
+										<p>※なお、受付時間は、平日10時から17時までとさせていただきます。</p>
+									</div>
+								</div>
+								<div class="terms_item">
+									<div class="item_ttl">14.継続的改善</div>
+									<div class="desciption">
+										<p>当社は、個人情報の取扱いに関する運用状況を適宜見直し、継続的な改善に努めるものとし、必要に応じて、本プライバシーポリシーを変更することがあります。</p>
+										<p>【2021年4月30日制定】</p>
+									</div>
+								</div>
+							</div><!-- terms_wrap -->
+						</div>
+				</div><!-- section_inner_inner -->
+			</div><!-- section_inner -->
+		</section>
+	</article>
+	<?php get_template_part("parts/hummenu"); ?>
+	<?php get_template_part("parts/footer"); ?>
+</body>
+<?php get_template_part("parts/script"); ?>
+</html>

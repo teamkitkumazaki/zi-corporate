@@ -27,8 +27,8 @@
         }
       }
       .layer_ttl{
-        writing-mode: vertical-rl;
-        font-size: 1.6rem;
+        writing-mode: unset;
+        font-size: 1.5rem;
         font-weight: 400;
         letter-spacing: 0.3em;
       }
@@ -36,10 +36,10 @@
     .layer_img{
       width: calc(100% - 125px);
       img{
-        max-width: 130%;
-        width: 130%;
-        transform: translate(-25%, 0px);
-        margin-top: 50px;
+        max-width: 125%;
+        width: 125%;
+        transform: translate(-20%, 0px);
+        margin-top: 70px;
       }
     }
     .layer_desc{
@@ -112,7 +112,7 @@
         }
       }
       .layer_desc{
-        width: calc(100% - 530px);
+        width: calc(100% - 430px);
         padding-top: 0px;
         margin-top: 0px;
         border-top: 0px solid $keyColor;

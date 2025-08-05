@@ -12,11 +12,14 @@
   .section-form{
     padding-bottom: 60px;
   }
+  .section-privacy-terms{
+    padding-bottom: 60px;
+  }
 }
 
 @media screen and (min-width: 768px){
   .page-underpage{
-    padding-top: 200px;
+    padding-top: 160px;
     .section-main{
       margin-bottom: 60px;
       .comp-news-category{
@@ -27,6 +30,9 @@
       padding-bottom: 120px;
     }
     .section-form{
+      padding-bottom: 120px;
+    }
+    .section-privacy-terms{
       padding-bottom: 120px;
     }
   }

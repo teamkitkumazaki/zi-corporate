@@ -24,7 +24,7 @@
 					</div><!-- flex_left -->
 					<div class="flex_right">
 						<div class="comp-flex-txt-wrap">
-							<h3 class="flex_subttl">物理作業領域に、生成AIによる技術革新をもたらす</h3>
+							<h3 class="flex_subttl">物理作業領域に、<br>生成AIによる技術革新をもたらす</h3>
 							<div class="flex_description">
 								<p>生成AIの普及により、非定型の事務作業領域の業務効率化が急速に進みつつあります。一方で、物理作業を伴う領域においては、生成AIによる効率化・自動化の効果は依然として限定的です。<br>Zen Intelligenceは、物理空間・物理業務のデータ化と、現場のコンテキストを理解した生成AIにより、基幹産業を変革していきます。</p>
 							</div>
