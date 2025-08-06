@@ -6,7 +6,7 @@
 	if ( is_home() || is_front_page() ) {
   	$site_title = 'Zen Intelligence株式会社';
   	$site_permalink = home_url( '/' );
-		$thumnail = '/wp-content/themes/zi-corporate/assets/img/ogp/ogp.jpg';
+		$thumnail = 'https://zi.noske.design/wp-content/themes/zi-corporate/assets/img/ogp/ogp.jpg';
 
 		$description = strip_tags(get_post_meta(150, 'article_description', true));
 	}else if( is_404()){
