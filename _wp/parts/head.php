@@ -1,18 +1,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
-	<meta name=“google-site-verification” content=“8BpoTfu9GtyrDRRsSmmWaSHOvQeNmEsLHq6rtbclvtY”>
 	<?php $url = $_SERVER['REQUEST_URI']; ?>
 	<?php
 	if ( is_home() || is_front_page() ) {
   	$site_title = 'Zen Intelligence株式会社';
   	$site_permalink = home_url( '/' );
-		$thumnail = 'https://srush.biz/wp-content/uploads/2024/06/ogp.jpg';
+		$thumnail = '/wp-content/themes/zi-corporate/assets/img/ogp/ogp.jpg';
+
 		$description = strip_tags(get_post_meta(150, 'article_description', true));
 	}else if( is_404()){
 		$site_title = 'ページがみつかりません | Zen Intelligence株式会社';
 		$site_permalink = get_the_permalink();
-		$thumnail = 'https://srush.biz/wp-content/uploads/2024/06/ogp.jpg';
+		$thumnail = '/wp-content/themes/zi-corporate/assets/img/ogp/ogp.jpg';
 		$description = strip_tags(get_post_meta(150, 'article_description', true));
 	}	else if( is_tax()) {
 		$page_title = single_term_title("", false).' | Zen Intelligence株式会社';

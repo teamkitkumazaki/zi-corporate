@@ -44,12 +44,19 @@ $(function() {
 
       $(".effect").each(function() {
         var imgPos = $(this).offset().top;
-        var scroll = $(window).scrollTop();
         var windowHeight = $(window).height();
+        var scroll = $(window).scrollTop();
         if (scroll > imgPos - windowHeight + windowHeight / 7) {
           $(this).removeClass('effect');
         };
       });
+
+      if (document.getElementById('palarax')) {
+        var scroll = $(window).scrollTop();
+        if (scroll > 50) {
+          $('#palarax').addClass('palarax');
+        };
+      }
 
     }
 

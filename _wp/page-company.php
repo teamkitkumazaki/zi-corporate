@@ -31,7 +31,7 @@
 						</div>
 					</div><!-- flex_right -->
 				</div><!-- flex_layout -->
-				<div class="corp_img_wrap">
+				<div id="palarax" class="corp_img_wrap">
 					<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/purpose_img.jpg">
 					<img class="overlay" src="<?php echo get_template_directory_uri();?>/assets/img/corporate/purpose_layer.png">
 				</div><!-- corp_img_wrap -->
@@ -40,27 +40,29 @@
 		<section class="section-industrialization">
 			<div class="section_inner">
 				<div class="industrial_wrapper">
-					<div class="industrial_image">
+					<div class="industrial_image effect animate-fadeup">
 						<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/industrial_img.png">
 					</div>
-					<div class="industrial_desc">
-						<p>Physical AIを通じて、技術革新の恩恵が行き届かなかった領域に非連続的な変革をもたらし、産業の在り方そのものをAIネイティブな形へと再構築する「Re-Industrialization」を目指します。</p>
-					</div>
-					<div class="industrial_lower_img">
-						<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/industrial_lower.svg">
+					<div class="effect animate-fadeup">
+						<div class="industrial_desc">
+							<p>Physical AIを通じて、技術革新の恩恵が行き届かなかった領域に非連続的な変革をもたらし、産業の在り方そのものをAIネイティブな形へと再構築する「Re-Industrialization」を目指します。</p>
+						</div>
+						<div class="industrial_lower_img">
+							<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/industrial_lower.svg">
+						</div>
 					</div>
 				</div><!-- industrial_wrapper -->
 			</div><!-- section_inner -->
 		</section>
 		<section class="section-values">
 			<div class="section_inner">
-				<div class="value_ttl_wrap">
+				<div class="value_ttl_wrap effect animate-fadeup">
 					<div class="comp-section-title">
 						<h2 class="ttl">バリュー</h2>
 					</div>
 					<h3 class="value_subttl">異常な時間軸でアウトプットを出し続けることを是とする文化。<br>そのベースとなる3つのバリュー。</h3>
 				</div>
-				<div class="comp-value-list">
+				<div class="comp-value-list effect animate-fadeup">
 					<div class="value_item">
 						<div class="value_txt">
 							<h4 class="value_en">SPEED&IMPACT</h4>
@@ -98,7 +100,7 @@
 		</section>
 		<section class="section-corporate">
 			<div class="section_inner">
-				<div class="flex_layout">
+				<div class="flex_layout effect animate-fadeup">
 					<div class="flex_left">
 						<div class="comp-section-title white">
 							<h2 class="ttl">会社概要</h2>
@@ -128,12 +130,12 @@
 								<div class="profile_ttl">所在地</div>
 								<div class="profile_contents">
 									<p>〒104-0032<br>東京都中央区八丁堀2丁目14番1号 住友不動産八重洲通ビル6F</p>
-									<div class="iframe_wrap">
-										<iframe
-											src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.0011664054705!2d139.77403437588265!3d35.67697327258863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601889738037ba55%3A0x6c40d69139be01b5!2z5L2P5Y-L5LiN5YuV55Sj5YWr6YeN5rSy6YCa44OT44Or!5e0!3m2!1sja!2sjp!4v1754308255827!5m2!1sja!2sjp"
-											width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-									</div>
 								</div>
+							</div>
+							<div class="iframe_wrap">
+								<iframe
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.0011664054705!2d139.77403437588265!3d35.67697327258863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601889738037ba55%3A0x6c40d69139be01b5!2z5L2P5Y-L5LiN5YuV55Sj5YWr6YeN5rSy6YCa44OT44Or!5e0!3m2!1sja!2sjp!4v1754308255827!5m2!1sja!2sjp"
+									width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 							</div>
 						</div><!-- comp-corporate-profile -->
 					</div><!-- flex_right -->
@@ -142,7 +144,7 @@
 		</section>
 		<section class="section-office">
 			<div class="section_inner">
-				<div class="flex_layout">
+				<div class="flex_layout effect animate-fadeup">
 					<div class="flex_left">
 						<div class="comp-section-title white">
 							<h2 class="ttl">オフィス</h2>
@@ -177,7 +179,7 @@
 		</section>
 		<section class="section-investor">
 			<div class="section_inner">
-				<div class="flex_layout">
+				<div class="flex_layout effect animate-fadeup">
 					<div class="flex_left">
 						<div class="comp-section-title">
 							<h2 class="ttl">投資家</h2>
@@ -222,7 +224,7 @@
 		</section>
 		<section class="section-supporter">
 			<div class="section_inner">
-				<div class="flex_layout">
+				<div class="flex_layout effect animate-fadeup">
 					<div class="flex_left">
 						<div class="comp-section-title">
 							<h2 class="ttl">採択実績</h2>

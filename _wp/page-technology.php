@@ -40,11 +40,11 @@
 		</section>
 		<section class="section-layer-chart">
 			<div class="section_inner">
-				<div class="layer_ttl_wrap">
+				<div class="layer_ttl_wrap effect animate-fadeup">
 					<h2 class="layer_subttl">基幹産業を変革する、<br>Physical AIを構成する技術</h2>
 				</div>
 				<div class="comp-layer-chart">
-					<div class="chart_item">
+					<div class="chart_item effect animate-fadeup">
 						<div class="ttl_wrap">
 							<div class="layer_num">Layer 01</div>
 							<h3 class="layer_ttl">空間</h3>
@@ -59,7 +59,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="chart_item">
+					<div class="chart_item effect animate-fadeup">
 						<div class="ttl_wrap">
 							<div class="layer_num">Layer 02</div>
 							<h3 class="layer_ttl">業務</h3>
@@ -74,7 +74,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="chart_item">
+					<div class="chart_item effect animate-fadeup">
 						<div class="ttl_wrap">
 							<div class="layer_num">Layer 03</div>
 							<h3 class="layer_ttl">エージェント</h3>

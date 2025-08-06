@@ -1,7 +1,7 @@
 <section class="section-recruit comp-section-recruit">
   <div class="section_inner">
     <div class="flex_layout">
-      <div class="flex_left">
+      <div class="flex_left effect animate-fadeup">
         <div class="comp-section-title">
           <h2 class="ttl">採用情報</h2>
           <div class="ttl_description">
@@ -26,7 +26,7 @@
           </div><!-- comp-link-button -->
         </div>
       </div><!-- flex_left -->
-      <div class="flex_right">
+      <div class="flex_right effect animate-fadeup">
         <div class="img_wrap">
           <img src="<?php echo get_template_directory_uri();?>/assets/img/common/recruit_img.jpg">
         </div>
