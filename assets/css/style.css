@@ -1877,6 +1877,114 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
     padding-bottom: 120px;
   }
 }
+.page-404 {
+  padding-top: 0;
+  margin-bottom: 0px;
+}
+.page-404 .section-404 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 500px;
+}
+.page-404 .section-404 .comp-admin-title {
+  margin-top: 0;
+}
+.page-404 .section-404 .title404 {
+  font-size: 3.2rem;
+  font-weight: 400;
+  text-align: center;
+  font-family: larsseit, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-bottom: 15px;
+  margin-top: 40px;
+}
+.page-404 .section-404 .description_404 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.page-404 .section-404 .description_404 .sub_ttl_404 {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+}
+.page-404 .section-404 .description_404 .desc_404 {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+.page-404 .section-404 .back_button {
+  margin: 30px auto 0;
+  max-width: 80%;
+}
+.page-404 .section-404 .back_button a {
+  display: block;
+  text-align: center;
+  padding: 15px 0;
+  color: #FAFAFA;
+  background: #000000;
+  font-size: 1.6rem;
+  border-radius: 200px;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  will-change: opacity;
+}
+.page-404 .section-404 .back_button a:hover {
+  opacity: 0.75;
+}
+
+@media screen and (min-width: 768px) {
+  .page-404 {
+    padding-top: 0;
+    margin-bottom: 0px;
+  }
+  .page-404 .section-404 {
+    min-height: 750px;
+  }
+  .page-404 .section-404 .title404 {
+    font-size: 4.2rem;
+    margin-bottom: 30px;
+    margin-top: 60px;
+  }
+  .page-404 .section-404 .description_404 {
+    margin-bottom: 40px;
+  }
+  .page-404 .section-404 .description_404 .sub_ttl_404 {
+    font-size: 1.9rem;
+    margin-bottom: 30px;
+  }
+  .page-404 .section-404 .description_404 .desc_404 {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+  }
+  .page-404 .section-404 .back_button {
+    margin: 40px auto 0;
+    max-width: 380px;
+  }
+  .page-404 .section-404 .back_button a {
+    display: block;
+    text-align: center;
+    padding: 15px 0;
+    color: #FAFAFA;
+    background: #000000;
+    font-size: 1.6rem;
+    border-radius: 200px;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    will-change: opacity;
+  }
+  .page-404 .section-404 .back_button a:hover {
+    opacity: 0.75;
+  }
+}
 /*########## コンポーネント ##########*/
 /* 共通パーツ */
 .comp-section-title .ttl {
