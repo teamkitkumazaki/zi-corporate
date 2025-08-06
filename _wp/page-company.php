@@ -160,6 +160,15 @@
 								<div class="item_box slick-slide">
 									<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/office03.jpg">
 								</div>
+								<div class="item_box slick-slide">
+									<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/office04.jpg">
+								</div>
+								<div class="item_box slick-slide">
+									<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/office05.jpg">
+								</div>
+								<div class="item_box slick-slide">
+									<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/office06.jpg">
+								</div>
 							</div><!-- slick-slider -->
 						</div><!-- comp-news-slider -->
 					</div><!-- flex_right -->

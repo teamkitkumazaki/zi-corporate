@@ -69,18 +69,14 @@
   .section-values{
     padding: 50px 0;
     .value_ttl_wrap{
-      @include flexSet;
-      .comp-section-title{
-        width: 50%;
-      }
       .value_subttl{
-        width: 50%;
-        margin-top: 0px;
-        font-size: 3.0rem;
+        margin-top: 25px;
+        font-weight: 400;
+        font-size: 2.0rem;
         line-height: 1.5;
-        margin-bottom: 80px;
+        margin-bottom: 30px;
         br{
-          display: block;
+          display: none;
         }
       }
     }
@@ -136,7 +132,7 @@
 @media screen and (min-width: 768px){
   .page-corporate{
     .section-corp-header{
-      padding-top: 130px;
+      padding-top: 115px;
       padding-bottom: 0px;
       border-bottom: 0px solid $borderColor;
       .section_inner{
@@ -203,14 +199,20 @@
     }
     .section-values{
       padding: 120px 0;
-      .value_subttl{
-        margin-top: 25px;
-        font-weight: 400;
-        font-size: 2.0rem;
-        line-height: 1.5;
-        margin-bottom: 30px;
-        br{
-          display: none;
+      .value_ttl_wrap{
+        @include flexSet;
+        .comp-section-title{
+          width: 50%;
+        }
+        .value_subttl{
+          width: 50%;
+          margin-top: 0px;
+          font-size: 3.0rem;
+          line-height: 1.5;
+          margin-bottom: 80px;
+          br{
+            display: block;
+          }
         }
       }
     }

@@ -159,13 +159,14 @@ header{
             @include flexSet;
             align-items: center;
             li{
-              margin-right: 20px;
+              margin-right: 50px;
               a{
                 position: relative;
                 display: block;
                 font-size: 1.6rem;
                 color: inherit;
                 padding: 10px 0;
+                letter-spacing:0.2em;
                 &::before{
                   position: absolute;
                   display: block;
@@ -194,13 +195,14 @@ header{
               align-items: center;
               justify-content:center;
               color: $keyColor;
-              padding: 0 20px;
+              padding: 0 40px;
               background: $bgColor;
               transition: background .2s;
               will-change: background;
               @include hover;
+              letter-spacing:0.2em;
               .txt{
-                font-size: 1.5rem;
+                font-size: 1.6rem;
                 margin-right: 6px;
               }
               .outer{
