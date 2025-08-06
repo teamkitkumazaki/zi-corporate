@@ -20,7 +20,7 @@ header{
     background: $keyColor;
     transition: background .2s, color;
     will-change: background, color;
-    opacity: calc(calc(var(--scroll) * 10) - 2000);
+    opacity: calc(calc(var(--scroll) * 10) - 200);
   }
   .header_inner {
     position:relative;

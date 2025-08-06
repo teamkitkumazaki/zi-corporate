@@ -1,3 +1,14 @@
+@-webkit-keyframes circle {
+  0% {
+    stroke-dasharray: 80, 20;
+    transform: rotate(0deg);
+  }
+  100% {
+    stroke-dasharray: 80, 20;
+    transform: rotate(360deg);
+  }
+}
+
 .comp-link-button{
   a{
     @include flexSet;
@@ -28,6 +39,9 @@
       @include flexSet;
       align-items: center;
       justify-content: center;
+      transform-origin: center center;
+      transition: transform .5s;
+      will-change: transform;
       .arrow{
         width: 20px;
         .cls-1{
@@ -45,8 +59,14 @@
           fill: none;
           stroke: $keyColor;
           stroke-miterlimit: 10;
-          stroke-dasharray: 80, 0;
+          transform-origin: center center;
+          animation: circle 3s linear infinite;
         }
+      }
+    }
+    &:hover{
+      .caret{
+        transform: scale(1.1);
       }
     }
   }

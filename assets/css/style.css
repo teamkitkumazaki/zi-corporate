@@ -510,7 +510,7 @@ header::before {
   -webkit-transition: background 0.2s, color;
   transition: background 0.2s, color;
   will-change: background, color;
-  opacity: calc(var(--scroll) * 10 - 2000);
+  opacity: calc(var(--scroll) * 10 - 200);
 }
 header .header_inner {
   position: relative;
@@ -3203,6 +3203,18 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
     margin: 30px auto 0;
   }
 }
+@-webkit-keyframes circle {
+  0% {
+    stroke-dasharray: 80, 20;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    stroke-dasharray: 80, 20;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
 .comp-link-button a {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3249,6 +3261,13 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  will-change: transform;
 }
 .comp-link-button a .caret .arrow {
   width: 20px;
@@ -3268,7 +3287,14 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
   fill: none;
   stroke: #000000;
   stroke-miterlimit: 10;
-  stroke-dasharray: 80, 0;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-animation: circle 3s linear infinite;
+          animation: circle 3s linear infinite;
+}
+.comp-link-button a:hover .caret {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .comp-link-button.white a {
   color: #EEEDED;
