@@ -33,7 +33,7 @@
 				</div><!-- flex_layout -->
 				<div id="palarax" class="corp_img_wrap">
 					<img src="<?php echo get_template_directory_uri();?>/assets/img/corporate/purpose_img.jpg">
-					<img class="overlay" src="<?php echo get_template_directory_uri();?>/assets/img/corporate/purpose_layer.png">
+					<img class="overlay" src="http://zen-intelligence.ai/wp-content/uploads/2025/08/purpose_layer2.png">
 				</div><!-- corp_img_wrap -->
 			</div><!-- section_inner -->
 		</section>

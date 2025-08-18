@@ -7,10 +7,13 @@ footer{
     .footer_upper{
       margin-bottom: 40px;
       .footer_logo{
-        width: 80%;
+        width: 260px;
         margin: 0 auto 30px;
         a{
           display: block;
+          img{
+            width: 100%;
+          }
         }
       }
       .footer_sns{

@@ -166,6 +166,8 @@ header{
                 color: inherit;
                 padding: 10px 0;
                 letter-spacing:0.2em;
+                transition: opacity .3s;
+                will-change: opacity;
                 &::before{
                   position: absolute;
                   display: block;
@@ -179,8 +181,9 @@ header{
                   will-change: width;
                 }
                 &:hover{
+                  opacity: 0.6;
                   &::before{
-                    width: 80%;
+                    width: 35px;
                   }
                 }
               }
