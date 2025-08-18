@@ -85,7 +85,6 @@ header{
     .header_inner {
       border-bottom: 1px solid $keyColor;
       .header_left{
-        padding-left: 15px;
         a{
           filter:unset;
         }
@@ -134,7 +133,7 @@ header{
   }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 980px){
   header{
     color: $bgColor;
     .header_inner {

@@ -16,6 +16,7 @@
 		$date = get_the_date('Y.m.d');
 		$sp_main_url = wp_get_attachment_image_src($image_sp, 'medium_large');
 		$page_ttl = get_the_title($post_id);
+		$article_subttl = SCF::get('article_subttl',$post_id);
 		$article_description = SCF::get('article_description',$post_id);
 		$desc_flag = SCF::get('desc_flag',$post_id);
 		$article_content = SCF::get('article_contents',$post_id);
@@ -48,6 +49,9 @@
 							<div class="date"><?= $date;?></div>
 						</div>
 						<h1 class="blog_ttl"><?= $page_ttl;?></h1>
+						<?php if ($article_subttl):?>
+						<h2 class="blog_subttl"><?= $article_subttl;?></h2>
+						<?php endif; ?>
 						<?php if ($image):?>
 							<div class="blog_thumbs">
 								<img src="<?= $image;?>" srcset="<?= $image;?> 1440w, <?= $image_sp;?> 768w, <?= $image;?> 2048w">
@@ -67,8 +71,8 @@
 								<div class="img_wrap">
 									<img
 										class="<?= $d['media_size'];?>"
-										src="<?= wp_get_attachment_image_src($d['article_img'], 'medium_large')[0] ?>"
-										srcset="<?= wp_get_attachment_image_src($d['article_img'], 'medium_large')[0] ?> 1440w, <?= wp_get_attachment_image_src($d['article_img'], 'thumbnail')[0] ?> 768w, <?= wp_get_attachment_image_src($d['article_img'], 'medium_large')[0] ?> 2048w"
+										src="<?= wp_get_attachment_image_src($d['article_img'], 'full')[0] ?>"
+										srcset="<?= wp_get_attachment_image_src($d['article_img'], 'full')[0] ?> 1440w, <?= wp_get_attachment_image_src($d['article_img'], 'medium_large')[0] ?> 768w, <?= wp_get_attachment_image_src($d['article_img'], 'full')[0] ?> 2048w"
 									>
 								</div>
 								<?php endif; ?>
@@ -82,6 +86,26 @@
 								<?php endif; ?>
 								<?php if ($d['outer_link']):?>
 									<?php echo do_shortcode('[sc_Linkcard url="'.$d['outer_link'].'"]'); ?>
+								<?php endif; ?>
+								<?php if ($d['voice_description']):?>
+								<div class="article_voice">
+									<?php if ($d['voice_img']):?>
+									<div class="voice_img">
+										<img
+											src="<?= wp_get_attachment_image_src($d['voice_img'], 'medium_large')[0] ?>"
+											srcset="<?= wp_get_attachment_image_src($d['voice_img'], 'medium_large')[0] ?> 1440w, <?= wp_get_attachment_image_src($d['voice_img'], 'medium_large')[0] ?> 768w, <?= wp_get_attachment_image_src($d['voice_img'], 'medium_large')[0] ?> 2048w"
+										>
+									</div>
+									<?php endif; ?>
+									<div class="voice_contents">
+										<?php if ($d['voice_name']):?>
+										<h3 class="voice_name"><?= $d['voice_name'];?></h3>
+										<?php endif; ?>
+										<div class="voice_description">
+											<p><?= $d['voice_description'];?></p>
+										</div>
+									</div>
+								</div>
 								<?php endif; ?>
 							</div>
 						<?php endforeach; ?>

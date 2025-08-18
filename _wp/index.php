@@ -13,12 +13,12 @@
 			<h1 class="site_ttl">Physical AIで、<br>基幹産業を変革する。</h1>
 			<div class="title_en">Transforming Industrial Operations through Physical AI</div>
 		</div>
-		<div class="main_image_wrap">
-			<img class="sp_img" src="<?php echo get_template_directory_uri();?>/assets/img/index/mv.jpg">
-		</div>
-		<div class="main_movie_wrap">
-			<video id="videoMain" poster="<?php echo get_template_directory_uri();?>/assets/img/index/mv_pc.jpg" webkit-playsinline="" playsinline="" muted="" autoplay="" loop="">
-				<source src="<?php echo get_template_directory_uri();?>/assets/img/index/web_fv.mp4" type="video/mp4">
+		<div id="mainMovie" class="main_movie_wrap">
+			<video class="sp_movie" poster="<?php echo get_template_directory_uri();?>/assets/img/index/mv.jpg" webkit-playsinline="" playsinline="" muted="" autoplay="" loop="">
+				<source src="<?php echo get_template_directory_uri();?>/assets/img/index/web_fv_sp.mp4" type="video/mp4">
+			</video>
+			<video class="pc_movie" poster="<?php echo get_template_directory_uri();?>/assets/img/index/mv_pc.jpg" webkit-playsinline="" playsinline="" muted="" autoplay="" loop="">
+				<source src="<?php echo get_template_directory_uri();?>/assets/img/index/web_fv_h.mp4" type="video/mp4">
 			</video>
 		</div>
 	</section>
@@ -126,8 +126,8 @@
 	</section>
 	<section class="section-news-list comp-section-news-list">
 		<div class="section_inner">
-			<div class="newslist_flex">
-				<div class="newslist_ttl effect animate-fadeup">
+			<div class="newslist_flex effect animate-fadeup">
+				<div class="newslist_ttl">
 					<div class="comp-section-title white">
 						<h2 class="ttl">お知らせ</h2>
 						<div class="comp-link-button white">

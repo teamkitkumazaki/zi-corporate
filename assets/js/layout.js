@@ -65,6 +65,12 @@ $(function() {
     }
 
     function init() {
+      if (document.getElementById('mainMovie')) {
+        setTimeout(function() {
+          $('#mainMovie').addClass('loaded');
+        }, 1000);
+      }
+      
       /*const scrollButton = document.querySelector('#returnTop');
       scrollButton.addEventListener( 'click' , scrollTop );*/
       function scrollTop(){
@@ -912,12 +918,12 @@ $(function() {
       $.ajax({
         url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdESxKC0wYDXyckQhZC3K61yaRUzp0h0EenJj6sulhyaWHJXQ/formResponse",
         data: {
+          "entry.1282559236": useremail,
           "entry.527306641": corpname,
           "entry.1056186970": corpname2,
           "entry.1481268843": corpname3,
           "entry.309329179": userphone,
           "entry.2146791683": yourname,
-          "entry.xxxxxxxxxx": useremail,
           "entry.1646094556": content,
         },
         type: "POST",

@@ -4,16 +4,15 @@
 	<?php $url = $_SERVER['REQUEST_URI']; ?>
 	<?php
 	if ( is_home() || is_front_page() ) {
-  	$site_title = 'Zen Intelligence株式会社';
+  	$site_title = 'Zen Intelligence株式会社 - Physical AIで、基幹産業を変革する。';
   	$site_permalink = home_url( '/' );
 		$thumnail = 'https://zi.noske.design/wp-content/themes/zi-corporate/assets/img/ogp/ogp.jpg';
-
-		$description = strip_tags(get_post_meta(150, 'article_description', true));
+		$description = strip_tags(SCF::get('article_description',116));
 	}else if( is_404()){
 		$site_title = 'ページがみつかりません | Zen Intelligence株式会社';
 		$site_permalink = get_the_permalink();
 		$thumnail = '/wp-content/themes/zi-corporate/assets/img/ogp/ogp.jpg';
-		$description = strip_tags(get_post_meta(150, 'article_description', true));
+		$description = strip_tags(SCF::get('article_description',116));
 	}	else if( is_tax()) {
 		$page_title = single_term_title("", false).' | Zen Intelligence株式会社';
 		$site_title = single_term_title("", false).' | Zen Intelligence株式会社';
@@ -45,17 +44,14 @@
 		$site_title = strip_tags(get_the_title($post->ID)).' | Zen Intelligence株式会社';
   	$site_permalink = get_the_permalink($post->ID);
 		$first_image = catch_that_image();
-		$description = strip_tags(get_post_meta($post->ID, 'article_description', true));
-		if(!($description)){
-			$description = get_the_excerpt($post->ID);
-		}
+		$description = strip_tags(SCF::get('article_description',$post_id));
 		if (!empty(get_the_post_thumbnail_url($post->ID, 'large'))) {
 			$image = get_the_post_thumbnail_url($post->ID, 'large');
 			$thumnail = $image;  // サムネイル画像を出力
 		} else if ($first_image != 'no_image') {
 			$thumnail = $first_image; // function.php定義した投稿1枚目の画像を出力
 		} else {
-			$thumnail = 'https://srush.biz/wp-content/uploads/2024/06/ogp.jpg'; // デフォルトのサムネイル画像を出力
+			$thumnail = 'https://zi.noske.design/wp-content/themes/zi-corporate/assets/img/ogp/ogp.jpg'; // デフォルトのサムネイル画像を出力
 		}
 	}else if(is_page()){
 		$site_title = get_the_title($post->ID).' | Zen Intelligence株式会社';
@@ -67,13 +63,13 @@
 		} else if ($first_image != 'no_image') {
 			$thumnail = $first_image; // function.php定義した投稿1枚目の画像を出力
 		} else {
-			$thumnail = 'https://srush.biz/wp-content/uploads/2024/06/ogp.jpg'; // デフォルトのサムネイル画像を出力
+			$thumnail = 'https://zi.noske.design/wp-content/themes/zi-corporate/assets/img/ogp/ogp.jpg'; // デフォルトのサムネイル画像を出力
 		}
 	} else{
 		$page_title = 'Zen Intelligence株式会社';
 		$site_title = 'Zen Intelligence株式会社';
   	$site_permalink = get_the_permalink();
-		$description = strip_tags(get_post_meta($post->ID, 'article_description', true));
+		$description = strip_tags(SCF::get('article_description',$post_id));
 		$thumbnail_id = get_post_thumbnail_id($post->ID);
 		$site_image_attach = wp_get_attachment_image_src( $thumbnail_id, 'large' );
 		if (!empty($site_image_attach)) {
@@ -82,8 +78,7 @@
 	}
 
   	if (empty($description)) {
-			$description = strip_tags(get_post_meta($post->ID, 'article_description', true));
-			$description = strip_tags(get_post_meta(150, 'article_description', true));
+			$description = strip_tags(SCF::get('article_description',$post_id));
   	}
 
 		$site_image = "";

@@ -10,6 +10,7 @@
 }
 
 .comp-link-button{
+  max-width: 140px;
   a{
     @include flexSet;
     align-items: center;
