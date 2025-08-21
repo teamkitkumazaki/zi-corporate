@@ -4535,14 +4535,12 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
 }
 .comp-news-article .article_item .article_voice {
   margin-top: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 .comp-news-article .article_item .article_voice .voice_img {
   margin-bottom: 25px;
+}
+.comp-news-article .article_item .article_voice .voice_img img {
+  width: 100%;
 }
 .comp-news-article .article_item .article_voice .voice_contents .voice_name {
   font-size: 1.8rem;
@@ -4617,6 +4615,11 @@ footer .footer_inner .footer_lower .copyright_wrap .copyright {
   }
   .comp-news-article .article_item .article_voice {
     margin-top: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .comp-news-article .article_item .article_voice .voice_img {
     width: 200px;

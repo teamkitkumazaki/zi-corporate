@@ -50,9 +50,11 @@
     }
     .article_voice{
       margin-top: 20px;
-      @include flexSet;
       .voice_img{
         margin-bottom: 25px;
+        img{
+          width: 100%;
+        }
       }
       .voice_contents{
         .voice_name{
@@ -111,6 +113,7 @@
       }
       .article_voice{
         margin-top: 30px;
+        @include flexSet;
         .voice_img{
           width: 200px;
           margin-right: 25px;

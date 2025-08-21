@@ -28,7 +28,7 @@
       </div><!-- flex_left -->
       <div class="flex_right effect animate-fadeup">
         <div class="img_wrap">
-          <img src="http://zen-intelligence.ai/wp-content/uploads/2025/08/recruit_img3.jpg">
+          <img src="http://zen-intelligence.ai/wp-content/uploads/2025/08/recruit_img4.jpg">
         </div>
       </div><!-- flex_right -->
     </div><!-- flex_layout -->
