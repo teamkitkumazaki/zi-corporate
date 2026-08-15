@@ -8,6 +8,7 @@
       margin-right: 0;
     }
     .partner_img{
+      border: 1px solid $borderColor;
       margin-bottom: 12px;
     }
     .partner_name{
@@ -16,7 +17,7 @@
   }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 980px){
   .comp-partner-list{
     @include flexSet;
     .partner_item{

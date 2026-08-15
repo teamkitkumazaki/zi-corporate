@@ -7,10 +7,13 @@ footer{
     .footer_upper{
       margin-bottom: 40px;
       .footer_logo{
-        width: 80%;
+        width: 260px;
         margin: 0 auto 30px;
         a{
           display: block;
+          img{
+            width: 100%;
+          }
         }
       }
       .footer_sns{
@@ -117,7 +120,7 @@ footer{
   }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 980px){
   footer{
     padding: 80px 0;
     .footer_inner{

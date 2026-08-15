@@ -1,0 +1,73 @@
+$fontColor: #000000;
+$fontColorWhite: #EEEDED;
+$keyColor: #000000;
+$bgColor: #FAFAFA;
+$hoverColor: #251e1c;
+$hoverYellow: #DCB922;
+$borderColor: #979797;
+$borderColor2: #d8d8d8;
+
+@font-face {
+  font-family: 'larsseit';
+	font-weight: 400;
+  src: url('../font/larsseit-Regular.eot'),url('../font/larsseit-Regular.woff') format('woff'),
+  url('../font/larsseit-Regular.ttf') format('truetype'),
+}
+
+@mixin larsseit{
+  font-family: larsseit, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+@mixin wrapper{
+  width: 87vw;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (min-width: 720px){
+    width: 86%;
+    max-width: 1590px;
+  }
+}
+@mixin flexSet {
+	display: flex;
+	flex-wrap: wrap;
+}
+@mixin bgSet{
+  background:{
+    repeat: no-repeat;
+    position: center center;
+    size: cover;
+  }
+}
+@mixin hover{
+  transition: opacity .3s;
+  will-change: opacity;
+  &:hover{
+    opacity: 0.75;
+  }
+}
+@mixin txtHover{
+  transition: color .2s;
+  will-change: color;
+  &:hover{
+    color: #979797;
+  }
+}
+
+@mixin basicP{
+  font-size: 1.3rem;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  box-sizing: border-box;
+  p{
+    margin-bottom: 1em;
+    &:nth-last-of-type(1){
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (min-width: 1100px){
+    font-size: 1.5rem;
+    padding: 0;
+  }
+}

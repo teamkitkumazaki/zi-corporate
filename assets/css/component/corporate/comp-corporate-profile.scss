@@ -15,22 +15,22 @@
     .profile_contents{
       line-height: 1.78;
     }
-    .iframe_wrap{
-      position: relative;
+  }
+  .iframe_wrap{
+    position: relative;
+    width: 100%;
+    height: 66vw;
+    margin-top: 25px;
+    iframe{
+      position: absolute;
       width: 100%;
-      height: 66vw;
-      margin-top: 25px;
-      iframe{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        filter: grayscale(.8);
-      }
+      height: 100%;
+      filter: grayscale(.8);
     }
   }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 980px){
   .comp-corporate-profile{
     border-top: 1px solid $borderColor;
     .profile_item{
@@ -78,12 +78,12 @@
       .profile_contents{
         width: calc(100% - 130px);
       }
-      .iframe_wrap{
-        position: relative;
-        width: 100%;
-        height: 300px;
-        margin-top: 40px;
-      }
+    }
+    .iframe_wrap{
+      position: relative;
+      width: 100%;
+      height: 350px;
+      margin-top: 40px;
     }
   }
 }

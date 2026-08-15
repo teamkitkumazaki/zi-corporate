@@ -1,0 +1,11 @@
+.comp-flex-txt-wrap{
+  .flex_subttl{
+    font-size: 2.4rem;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  .flex_description{
+    @include basicP;
+  }
+}

@@ -44,8 +44,8 @@ $(function() {
 
       $(".effect").each(function() {
         var imgPos = $(this).offset().top;
-        var scroll = $(window).scrollTop();
         var windowHeight = $(window).height();
+        var scroll = $(window).scrollTop();
         if (scroll > imgPos - windowHeight + windowHeight / 7) {
           $(this).removeClass('effect');
         };
@@ -58,6 +58,12 @@ $(function() {
     }
 
     function init() {
+      if (document.getElementById('mainMovie')) {
+        setTimeout(function() {
+          $('#mainMovie').addClass('loaded');
+        }, 1000);
+      }
+
       /*const scrollButton = document.querySelector('#returnTop');
       scrollButton.addEventListener( 'click' , scrollTop );*/
       function scrollTop(){
@@ -169,361 +175,18 @@ $(function() {
     mainKvShifter();
   }
 
-  //商品詳細ページ サムネイルの切り替え
-  function thumbSwitcher(target){
-    let thumbButton = [];
-    let thumbSrc = [];
-    let thumbSrcSet = [];
-    let thumbBox = target.find('.thumb_img');
-    let thumbImage = thumbBox.find('img');
-    let slideNum = target.find('.thumbnails').find('img').length;
-    const time = 200;
-    let currentSlide = 0;
-    console.log('slideNum:' + slideNum);
 
-    function switchImage(num){
-      console.log('num:' + num);
-      thumbBox.stop().animate({ opacity: 0 }, time, function() {
-          thumbImage.attr('src', thumbSrc[num]);
-          thumbImage.attr('srcset', thumbSrcSet[num]);
-          $('.active_thumb').removeClass('active_thumb');
-          thumbButton[num].addClass('active_thumb');
-          thumbBox.stop().animate({ opacity: 1 }, time);
-      });
-    }
 
-    function thumbHeightControll(){
-      var thumbHeight = thumbImage.outerHeight();
-      $('#thumnails').css({'max-height': thumbHeight + 'px'});
-      requestAnimationFrame(thumbHeightControll);
-    }
-
-    function slideNext(){
-      if (currentSlide < slideNum - 1) {
-        currentSlide = currentSlide + 1;
-      } else {
-        currentSlide = 0;
-      }
-      thumbButton[currentSlide].click();
-      /*switchImage(currentSlide);*/
-    };
-
-    function slidePrev(){
-      if (currentSlide == 0) {
-        currentSlide = slideNum - 1;
-      } else {
-        currentSlide = currentSlide - 1;
-      }
-      thumbButton[currentSlide].click();
-      /*switchImage(currentSlide);*/
-    };
-
-    function tabTouch(){
-      if(startTouchX - endTouchX > 50){
-        slideNext();
-      }else if(startTouchX - endTouchX < - 50){
-        slidePrev();
-      }
-    };
-
-    function windowDrag() {
-      if (startDragX - endDragX > 100) {
-        slideNext();
-      } else if (startDragX - endDragX < -100) {
-        slidePrev();
-      }
-    };
-
-    function init(){
-      thumbHeightControll();
-      $.each(target.find('.thumbnails').find('button'), function(index) {
-        thumbButton[index] = $(this);
-        thumbSrc[index] = $(this).find('img').attr("src");
-        thumbSrcSet[index] = $(this).find('img').attr("srcset");
-        thumbButton[index].on({
-          'click': function() {
-            switchImage(index);
-          }
-        });
-      });
-
-      thumbBox.find('img').on({
-        'dragstart': function(e) {
-          event.preventDefault();
-          startDragX = event.pageX;
-        },
-        'dragend': function(e) {
-          endDragX = event.pageX;
-          windowDrag();
-        }
-      });
-
-      thumbBox.find('img').on({
-        'touchstart' : function(e){
-          event.preventDefault();
-          startTouchX = event.changedTouches[0].pageX;
-        },
-        'touchmove' : function(e){
-        },
-        'touchend' : function(e){
-          endTouchX = event.changedTouches[0].pageX;
-          tabTouch();
-        }
-      });
-
-      $(window).on({
-        'resize': function(){
-          thumbHeightControll();
-        }
-      });
-    }
-
-    init();
-
+  function corporateAnimation(){
+    setTimeout(function() {
+      $('#palarax').addClass('palarax');
+    }, 1000);
   }
 
-  if (document.getElementById('product')) {
-    thumbSwitcher($('#prodImages'));
+  if (document.getElementById('palarax')) {
+    corporateAnimation();
   }
 
-
-  //商品詳細ページ 購入数の増減 & バリエーションの切り替え
-  function cartWrapControll(){
-    var minusButton = $('#minusButton');
-    var plusButton = $('#plusButton');
-    var quantityInput = $('#quantityInput');
-    var quantityNum = 1;
-    var optionSelector = $('#optionSelector');
-    var optionLabel = [];
-    var labelState = [];
-
-    var purchaseButton = $('#purchaseButton');
-    var buttonProdID = purchaseButton.attr('prodID');
-    var cartURL = 'https://shop.sanaburi.co.jp/cart/'
-
-    function controllQuantity(vector){
-      quantityNum = quantityInput.val();
-      if(vector == 1){
-        quantityInput.attr('value', Number(quantityNum) + 1);
-        quantityNum = quantityInput.val();
-      }else{
-        if(quantityNum != 1){
-          quantityInput.attr('value', Number(quantityNum) - 1);
-          quantityNum = quantityInput.val();
-        }
-      }
-      purchaseButton.attr('href', cartURL + buttonProdID + ':' + quantityNum);
-    }
-
-    function changeProductOption(e){
-      if(labelState[e] == 0){
-        optionLabel[e].addClass('active_label');
-        labelState[e] = 1;
-      }else{
-        optionLabel[e].removeClass('active_label');
-        labelState[e] = 0;
-      }
-    }
-
-    function init(){
-
-      minusButton.on({
-        'click': function() {
-          event.preventDefault();
-          controllQuantity(-1);
-        }
-      });
-
-      plusButton.on({
-        'click': function() {
-          event.preventDefault();
-          controllQuantity(1);
-        }
-      });
-
-      // 通常購入のサイズ切り替え
-      $.each(optionSelector.find('label'), function(index) {
-        optionLabel[index] = $(this);
-        labelState[index] = 0;
-        optionLabel[index].on({
-          'click': function() {
-            event.preventDefault();
-            changeProductOption(index);
-          }
-        });
-      });
-
-
-
-    };
-
-    init();
-
-  }
-
-  if (document.getElementById('product')) {
-    cartWrapControll();
-  }
-
-  // 商品詳細ページ 蛇腹式レイアウト
-  function toggleControl(target){
-    let toggleItem = [];
-    let toggleButton = [];
-    let toggleContents = [];
-    let toggleInner = [];
-    let toggleType = [];
-    let toggleState = [];
-    let toggleState2 = [];
-    let toggleInToggle = [];
-    let windowWidth;
-    let spWidth = 721;
-
-
-    function toggleMove(e) {
-      var buttonHeight = toggleButton[e].outerHeight();
-      var tagetHeight = toggleInner[e].outerHeight();
-      if (toggleState[e] == -1 || toggleState[e] == 0) {
-        toggleButton[e].addClass('open');
-        toggleContents[e].css({
-          'height': tagetHeight + 'px'
-        });
-        toggleState[e] = 1;
-      } else {
-        toggleButton[e].removeClass('open');
-        var toggleHeight = toggleButton[e].outerHeight();
-          toggleContents[e].css({
-            'height': 0 + 'px'
-          });
-        toggleState[e] = 0;
-      }
-    }
-
-    function init(){
-      windowWidth = $(window).width();
-      $.each(target.find('.toggle_item'), function(index) {
-        toggleItem[index] = $(this);
-        toggleButton[index] = $(this).find('.toggle_button');
-        toggleContents[index] = $(this).find('.toggle_contents');
-        toggleInner[index] = $(this).find('.toggle_inner');
-        toggleType[index] = toggleItem[index].attr('type');
-        var tagetHeight = toggleInner[index].outerHeight();
-        if(toggleType[index] == 'open'){
-          toggleContents[index].css({'height': tagetHeight + 'px'});
-          toggleState[index] = 1;
-          toggleState2[index] = -1;
-        }else if(toggleType[index] == 'close'){
-          toggleContents[index].css({'height': 0 + 'px'});
-          toggleState[index] = 0;
-          toggleState2[index] = -1;
-        }else{
-          toggleContents[index].css({'height': tagetHeight + 'px'});
-          toggleState[index] = 1;
-          toggleState2[index] = -1;
-        }
-        toggleButton[index].on({
-          'click': function() {
-            toggleMove(index);
-          }
-        });
-
-      });
-    }
-
-    init();
-
-  }
-
-  if (document.getElementById('product')) {
-    toggleControl($('#toggles'))
-  }
-
-  // メンバー紹介ポップアップ
-  function peopleProfilePop(target){
-
-    var profilePop = $('#profilePop');
-    var profileBg = $('#profileBg');
-    var profileClose = $('#profileClose');
-    var profileInner = $('#profileInner');
-
-    var profileImg = $('#profileImg');
-    var basicProfile = $('#basicProfile');
-    var profileWrapper = $('#profileWrapper');
-    var profileState = 0;
-
-
-    var peopleItem = [];
-    var peopleItemImg = [];
-    var peopleItemName = [];
-    var peopleItemProfile = [];
-    var peopleButton = [];
-
-    function getScrollHeight(){
-      var scrollHeight = document.getElementById('profileInner').scrollTop;
-      var wrapperHeight = $('#profileInner').outerHeight();
-      var contentsHeight = $('#profileContent').outerHeight();
-      var scroll = contentsHeight - wrapperHeight;
-      var indicator = scrollHeight / scroll * 100;
-      $('#indicatorGauge').css({'height': indicator + '%'});
-    }
-
-    function closePop(){
-      profilePop.removeClass('open');
-    }
-
-
-    function displayPop(e){
-      profileImg.attr('src',peopleItemImg[e]);
-      basicProfile.html(peopleItemName[e]);
-      profileWrapper.html(peopleItemProfile[e]);
-      setTimeout(function() {
-        profilePop.addClass('open');
-      }, 100);
-    }
-
-    function init(){
-
-      profileInner.on({
-        'scroll': function() {
-          getScrollHeight();
-        }
-      });
-
-      $.each(target.find('.people_item'), function(index) {
-        peopleItem[index] = $(this);
-        peopleItemImg[index] = $(this).find('.portrait').attr('src');
-        peopleItemName[index] = $(this).find('.txt_wrap').html();
-        peopleItemProfile[index] = $(this).find('.profile_wrapper').html();
-        peopleButton[index] = $(this).find('button');
-        peopleButton[index].on({
-          'click': function(){
-            displayPop(index);
-          }
-        });
-
-      });
-
-      profileBg.on({
-        'click': function(){
-          closePop();
-        }
-      });
-
-      profileClose.on({
-        'click': function(){
-          closePop();
-        }
-      });
-
-    }
-
-    init();
-
-  }
-
-
-  if (document.getElementById('peopleList')) {
-    peopleProfilePop($('#peopleList'));
-  }
 
   // 記事コンテンツのHTML整形
   function arrangeArticleHTML(target){
@@ -560,44 +223,6 @@ $(function() {
     arrangeArticleHTML($('#articleContent'));
   }
 
-  // 記事詳細ページ リンクをコピーボタン
-
-  function linkCopyButtons(){
-    console.log('linkCopyButtons');
-    var copyButton = $('#urlCopyButton');
-
-    function copyUrl() {
-      console.log('copy!');
-      const element = document.createElement('input');
-      element.value = location.href;
-      document.body.appendChild(element);
-      element.select();
-      document.execCommand('copy');
-      document.body.removeChild(element);
-      copyButton.addClass('copied');
-      copyButton.find('.txt').html('コピーしました')
-      setTimeout(function() {
-        copyButton.removeClass('copied');
-        copyButton.find('.txt').html('URLをコピー')
-      }, 2000);
-    }
-
-    function init(){
-
-      copyButton.on({
-        'click': function() {
-          copyUrl();
-        }
-      });
-    }
-
-    init();
-
-  }
-
-  if (document.getElementById('newsDetail')) {
-    linkCopyButtons();
-  }
 
   /* お問い合わせフォームのGAS連動とバリデーション */
   function setMyForm(target){
@@ -748,10 +373,12 @@ $(function() {
       //input要素を配列に格納
       items = [
         target.find('input[name="yourname"]'), //0 お名前
-        target.find('input[name="corpname"]'), //1 会社名
-        target.find('input[name="useremail"]'), //2 メールアドレス
-        target.find('input[name="useremail2"]'), //3 メールアドレス確認用
-        target.find('input[name="userphone"]'), //4 電話番号
+        target.find('input[name="useremail"]'), //1 メールアドレス
+        target.find('input[name="useremail2"]'), //2 メールアドレス確認用
+        target.find('input[name="userphone"]'), //3 電話番号
+        target.find('input[name="corpname"]'), //4 会社名
+        target.find('input[name="corpname2"]'), //5 部署名
+        target.find('input[name="corpname3"]'), //6 役職
         target.find('textarea[name="content"]'), //5 ご相談内容
         target.find('input[name=agreement]'), //6 プラポリへの合意
       ];
@@ -774,26 +401,23 @@ $(function() {
         }
       });
 
-      //1 会社名
-      items[1].prop('isSuccess', true);
-
       //2 メールアドレス
-      items[2].on({
+      items[1].on({
         'blur': function(){
-          checkEmptyText( items[2], '※メールアドレスをご入力ください。' );
-          if( items[2].prop('isSuccess') ) checkFormatText( items[2], 3, 'アドレスの形式をご確認ください' );
+          checkEmptyText( items[1], '※メールアドレスをご入力ください。' );
+          if( items[1].prop('isSuccess') ) checkFormatText( items[1], 3, 'アドレスの形式をご確認ください' );
           checkAll();
         }
       });
 
       //3 メールアドレス(確認用)
-      items[3].on({
+      items[2].on({
         'blur': function(){
-          checkEmptyText( items[3], '※確認用メールアドレスは必須です。');
-          if( items[3].prop('isSuccess') ){
-            checkFormatText( items[3], 3, '※確認用メールアドレスの形式をご確認ください' );
-            if(items[2].val() != items[3].val()){
-              checkFormatText( items[3], 5, '※メールアドレスが一致しません。' );
+          checkEmptyText( items[2], '※確認用メールアドレスは必須です。');
+          if( items[2].prop('isSuccess') ){
+            checkFormatText( items[2], 3, '※確認用メールアドレスの形式をご確認ください' );
+            if(items[1].val() != items[2].val()){
+              checkFormatText( items[2], 5, '※メールアドレスが一致しません。' );
             }
           }
 
@@ -802,37 +426,60 @@ $(function() {
         }
       });
 
-      //4 電話番号
-      items[4].prop('isSuccess', true);
-
-      items[4].on({
+      //3 電話番号
+      items[3].on({
         'blur': function(){
           hankaku2Zenkaku($(this));
-          /*if( items[4].prop('isSuccess') ) checkFormatText( items[4], 2, '※電話番号は数字で入力してください。');*/
+          checkEmptyText( items[3], '※電話番号を入力してください。' );
+          if( items[3].prop('isSuccess') ) checkFormatText( items[3], 2, '※電話番号は数字で入力してください。');
           checkAll();
         }
       });
 
-      //5 ご相談内容
+      //4 会社名
+      items[4].on({
+        'blur': function(){
+          checkEmptyText( items[4], '※会社名を入力してください。' );
+          checkAll();
+        }
+      });
+
+      //5 部署名
       items[5].on({
         'blur': function(){
-          checkEmptyText( items[5], '※ご相談内容を入力してください。' );
+          checkEmptyText( items[5], '※部署名を入力してください。' );
           checkAll();
         }
       });
 
-      console.log('items[6]:' + items[6].attr('id'));
+      //6 役職
+      items[6].on({
+        'blur': function(){
+          checkEmptyText( items[6], '※役職を入力してください。' );
+          checkAll();
+        }
+      });
+
+
+      //7 ご相談内容
+      items[7].on({
+        'blur': function(){
+          checkEmptyText( items[7], '※ご相談内容を入力してください。' );
+          checkAll();
+        }
+      });
+
 
       //6 プラポリへの合意
-      items[6].on({
+      items[8].on({
         'change': function(){
           console.log('check!');
           var agreeState = $('input[name=agreement]:checked').val();
           if(agreeState == 1){
-            items[6].prop('isSuccess', true);
+            items[8].prop('isSuccess', true);
             $('#submitButton').removeClass('disabled');
           }else{
-            items[6].prop('isSuccess', false);
+            items[8].prop('isSuccess', false);
             $('#submitButton').addClass('disabled');
           }
         }
@@ -841,18 +488,21 @@ $(function() {
       submitButton.on({
         'click': function(){
           checkEmptyText( items[0], '※お名前を入力してください。' );
-          checkEmptyText( items[2], '※メールアドレスをご入力ください。' );
-          if( items[2].prop('isSuccess') ) checkFormatText( items[2], 3, 'アドレスの形式をご確認ください' );
-          checkEmptyText( items[3], '※確認用メールアドレスは必須です。');
-          if( items[3].prop('isSuccess') ){
-            checkFormatText( items[3], 3, '※確認用メールアドレスの形式をご確認ください' );
-            if(items[2].val() != items[3].val()){
-              checkFormatText( items[3], 5, '※メールアドレスが一致しません。' );
+          checkEmptyText( items[1], '※メールアドレスをご入力ください。' );
+          if( items[1].prop('isSuccess') ) checkFormatText( items[1], 3, 'アドレスの形式をご確認ください' );
+          checkEmptyText( items[2], '※確認用メールアドレスは必須です。');
+          if( items[2].prop('isSuccess') ){
+            checkFormatText( items[2], 3, '※確認用メールアドレスの形式をご確認ください' );
+            if(items[1].val() != items[2].val()){
+              checkFormatText( items[2], 5, '※メールアドレスが一致しません。' );
             }
           }
-          if( items[4].prop('isSuccess') ) checkFormatText( items[4], 2, '※電話番号は数字で入力してください。');
-          checkEmptyText( items[5], '※ご相談内容を入力してください。' );
-          items[1].prop('isSuccess', true);
+          checkEmptyText( items[3], '※電話番号を入力してください。' );
+          if( items[3].prop('isSuccess') ) checkFormatText( items[3], 2, '※電話番号は数字で入力してください。');
+          checkEmptyText( items[4], '※会社名を入力してください。' );
+          checkEmptyText( items[5], '※部署名を入力してください。' );
+          checkEmptyText( items[6], '※役職を入力してください。' );
+          checkEmptyText( items[7], '※ご相談内容を入力してください。' );
           checkAll();
           if( errorCount == 0 ){
             processOrderContent();
@@ -872,17 +522,21 @@ $(function() {
       $('#ajaxLoader').addClass('loading_state');
       var yourname = target.find('input[name="yourname"]').val();
       var corpname = target.find('input[name="corpname"]').val();
+      var corpname2 = target.find('input[name="corpname2"]').val();
+      var corpname3 = target.find('input[name="corpname3"]').val();
       var useremail = target.find('input[name="useremail"]').val();
       var userphone = target.find('input[name="userphone"]').val();
       var content = target.find('textarea[name="content"]').val();
       $.ajax({
-        url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeIMsX3yNWyc9ls-dB19AcBR6ekcwsWnp7l8MgLJwnnzAAoTA/formResponse",
+        url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdESxKC0wYDXyckQhZC3K61yaRUzp0h0EenJj6sulhyaWHJXQ/formResponse",
         data: {
-          "entry.8121153": yourname,
-          "entry.1760942905": corpname,
-          "entry.855525706": useremail,
-          "entry.130938451": userphone,
-          "entry.917198729": content,
+          "entry.1282559236": useremail,
+          "entry.527306641": corpname,
+          "entry.1056186970": corpname2,
+          "entry.1481268843": corpname3,
+          "entry.309329179": userphone,
+          "entry.2146791683": yourname,
+          "entry.1646094556": content,
         },
         type: "POST",
         dataType: "xml",
@@ -911,11 +565,11 @@ $(function() {
   if (document.getElementById('contactWrap')) {
     setMyForm($('#contactWrap'));
   }
-  
-  
+
+
   var prevButtonHTML = '<button class="comp-slider-caret prev-arrow"><span class="circle"><svg viewBox="0 0 22.6 19.69"><path class="cls-1" d="M9.33.35L.96,8.72c-.62.62-.62,1.63,0,2.25l8.37,8.37M.73,9.85h21.88"/></svg></span></button>';
   var nextButtonHTML = '<button class="comp-slider-caret next-arrow"><span class="circle"><svg viewBox="0 0 22.6 19.69"><path class="cls-1" d="M13.27.35l8.37,8.37c.62.62.62,1.63,0,2.25l-8.37,8.37M21.88,9.85H0"/></svg></span></button>';
-  
+
   // バナースライダー
   if (document.getElementById('officeSlider')) {
     $('#officeSlider').slick({
@@ -941,7 +595,7 @@ $(function() {
     ]
     });
   }
-  
+
 
 
 

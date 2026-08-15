@@ -53,8 +53,7 @@ article{
 section{
 	.section_inner{
 		@include wrapper;
-		@media screen and (min-width: 720px){
-			min-width: 1200px;
+		@media screen and (min-width: 980px){
 			.section_inner_inner{
 				max-width: 820px;
 				margin: 0 auto;

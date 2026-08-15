@@ -1,0 +1,40 @@
+.comp-partner-list{
+  @include flexSet;
+  .partner_item{
+    width: 48%;
+    margin-right: 4%;
+    margin-bottom: 40px;
+    &:nth-of-type(2n){
+      margin-right: 0;
+    }
+    .partner_img{
+      margin-bottom: 12px;
+    }
+    .partner_name{
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px){
+  .comp-partner-list{
+    @include flexSet;
+    .partner_item{
+      width: 30%;
+      margin-right: 5%;
+      margin-bottom: 60px;
+      &:nth-of-type(2n){
+        margin-right: 5%;
+      }
+      &:nth-of-type(3n){
+        margin-right: 0;
+      }
+      .partner_img{
+        margin-bottom: 20px;
+      }
+      .partner_name{
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

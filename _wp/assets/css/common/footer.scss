@@ -1,0 +1,269 @@
+footer{
+  padding: 50px 0;
+  background: $keyColor;
+  color: $fontColorWhite;
+  .footer_inner{
+    @include wrapper;
+    .footer_upper{
+      margin-bottom: 40px;
+      .footer_logo{
+        width: 80%;
+        margin: 0 auto 30px;
+        a{
+          display: block;
+        }
+      }
+      .footer_sns{
+        @include flexSet;
+        justify-content: center;
+        align-items: center;
+        .sns_item{
+          margin-right: 15px;
+          &:nth-last-of-type(1){
+            margin-right: 0;
+          }
+          a{
+            display: block;
+            img{
+              height: 18px;
+            }
+          }
+        }
+      }
+    }
+    .footer_lower{
+      .footer_navigation{
+        margin-bottom: 40px;
+        ul{
+          @include flexSet;
+          justify-content: center;
+          margin-bottom: 40px;
+          li{
+            position: relative;
+            margin-right: 20px;
+            padding-right:20px;
+            &::after{
+              display: block;
+              content: "";
+              width: 1px;
+              height: 15px;
+              background: $fontColorWhite;
+              position: absolute;
+              top:0;
+              right:0;
+              bottom:0;
+              margin: auto;
+            }
+            a{
+              font-size: 1.5rem;
+              color: $fontColorWhite;
+            }
+            &:nth-of-type(2),
+            &:nth-last-of-type(1){
+              margin-right: 0;
+              padding-right: 0;
+              &::after{
+                display: none;
+              }
+            }
+            &.dummy{
+              width: 100%;
+              height: 20px;
+              &::after{
+                display: none;
+              }
+            }
+          }
+        }
+        .saiyo_link{
+          a{
+            @include flexSet;
+            justify-content: center;
+            border: 1px solid $fontColorWhite;
+            border-radius: 200px;
+            padding: 15px 0;
+            color: $fontColorWhite;
+            .txt{
+              font-size: 1.5rem;
+              margin-right: 6px;
+            }
+            .outer{
+              width: 9px;
+              svg{
+                .cls-1{
+                  fill:none;
+                  stroke:#fff;
+                }
+              }
+            }
+          }
+        }
+      }
+      .copyright_wrap{
+        text-align: center;
+        .privacy_link{
+          margin-bottom: 35px;
+          a{
+            text-align: center;
+            font-size: 1.3rem;
+            color: inherit;
+          }
+        }
+        .copyright{
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px){
+  footer{
+    padding: 80px 0;
+    .footer_inner{
+      @include wrapper;
+      @include flexSet;
+      align-items: flex-start;
+      justify-content: space-between;
+      .footer_upper{
+        margin-bottom: 0px;
+        .footer_logo{
+          width: 320px;
+          margin: 0 auto 30px;
+          a{
+            @include hover;
+            img{
+              width: 100%;
+            }
+          }
+        }
+        .footer_sns{
+          padding-left: 5px;
+          justify-content: flex-start;
+          .sns_item{
+            margin-right: 20px;
+            &:nth-last-of-type(1){
+              margin-right: 0;
+            }
+            a{
+              @include hover;
+              img{
+                height: 20px;
+              }
+            }
+          }
+        }
+      }
+      .footer_lower{
+        .footer_navigation{
+          @include flexSet;
+          align-items: center;
+          justify-content: flex-end;
+          margin-bottom: 30px;
+          ul{
+            @include flexSet;
+            justify-content: center;
+            margin-bottom: 0px;
+            li{
+              margin-right: 20px;
+              padding-right:0px;
+              &::after{
+                display: none;
+              }
+              a{
+                position: relative;
+                font-size: 1.6rem;
+                padding: 10px 0;
+                &::before{
+                  position: absolute;
+                  display: block;
+                  content: "";
+                  top:0;
+                  left:0;
+                  width: 0;
+                  height: 1px;
+                  background: $fontColorWhite;
+                  transition: width .2s;
+                  will-change: width;
+                }
+                &:hover{
+                  &::before{
+                    width: 80%;
+                  }
+                }
+              }
+              &:nth-of-type(2),
+              &:nth-last-of-type(1){
+                margin-right: 20px;
+              }
+              &.dummy{
+                display: none;
+              }
+            }
+          }
+          .saiyo_link{
+            a{
+              padding: 10px 20px;
+              transition: background .2s, color .2s;
+              will-change: background, color;
+              .txt{
+                font-size: 1.5rem;
+                margin-right: 6px;
+              }
+              .outer{
+                svg{
+                  .cls-1{
+                    transition: stroke .2s;
+                    will-change: stroke;
+                  }
+                }
+              }
+              &:hover{
+                background: $fontColorWhite;
+                color: $keyColor;
+                .outer{
+                  svg{
+                    .cls-1{
+                      stroke: $keyColor;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .copyright_wrap{
+          @include flexSet;
+          align-items: center;
+          justify-content: flex-end;
+          text-align: left;
+          .privacy_link{
+            position: relative;
+            padding-right: 15px;
+            margin-right: 15px;
+            margin-bottom: 0px;
+            &::after{
+              display: block;
+              content: "";
+              position: absolute;
+              top:2px;
+              bottom:0;
+              right:0;
+              margin: auto;
+              width: 1px;
+              height: 15px;
+              background: $fontColorWhite;
+            }
+            a{
+              font-size: 1.3rem;
+              @include hover;
+            }
+          }
+          .copyright{
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,24 +1,29 @@
-.comp-layer-chart{
-  .chart_item{
+.comp-layer-chart {
+  .chart_item {
     @include flexSet;
+    justify-content: space-between;
     margin-bottom: 50px;
-    &:nth-last-of-type(1){
+
+    &:nth-last-of-type(1) {
       margin-bottom: 0;
     }
-    .ttl_wrap{
+
+    .ttl_wrap {
       width: 125px;
       border-top: 1px solid $keyColor;
       padding-top: 20px;
-      .layer_num{
+
+      .layer_num {
         position: relative;
         @include larsseit;
         font-size: 1.6rem;
         padding-bottom: 25px;
         margin-bottom: 25px;
-        &::after{
+
+        &::after {
           position: absolute;
-          bottom:0;
-          left:0;
+          bottom: 0;
+          left: 0;
           display: block;
           content: "";
           width: 15px;
@@ -26,99 +31,114 @@
           background: $keyColor;
         }
       }
-      .layer_ttl{
-        writing-mode: vertical-rl;
-        font-size: 1.6rem;
+
+      .layer_ttl {
+        writing-mode: unset;
+        font-size: 1.5rem;
         font-weight: 400;
         letter-spacing: 0.3em;
       }
     }
-    .layer_img{
+
+    .layer_img {
       width: calc(100% - 125px);
-      img{
-        max-width: 130%;
-        width: 130%;
-        transform: translate(-25%, 0px);
-        margin-top: 50px;
+      max-width: 420px;
+      img {
+        max-width: 125%;
+        width: 125%;
+        transform: translate(-20%, 0px);
+        margin-top: 70px;
       }
     }
-    .layer_desc{
+
+    .layer_desc {
       width: 100%;
       padding-top: 25px;
       margin-top: 25px;
       border-top: 1px solid $keyColor;
-      .subttl{
+
+      .subttl {
         font-size: 2.0rem;
         font-weight: 400;
         @include larsseit;
         margin-bottom: 15px;
       }
-      .description{
+
+      .description {
         @include basicP;
       }
     }
   }
 }
-
-@media screen and (min-width: 768px){
-  .comp-layer-chart{
-    .chart_item{
+@media screen and (min-width: 980px) {
+  .comp-layer-chart {
+    .chart_item {
       position: relative;
       border-top: 1px solid $keyColor;
       padding: 30px 0;
       margin-bottom: 0;
-      &:nth-last-of-type(1){
+
+      &:nth-last-of-type(1) {
         padding-bottom: 0;
       }
-      &::before{
+
+      &::before {
         display: block;
         content: "";
         position: absolute;
-        top:-1px;
+        top: -1px;
         left: 160px;
         width: 30px;
         height: 2px;
         background: $bgColor;
       }
-      .ttl_wrap{
+
+      .ttl_wrap {
         width: 140px;
         height: 247px;
         margin-right: 20px;
-        border-top: 0px solid $keyColor;
-        padding-top: 0px;
-        .layer_num{
+        border-top: 0 solid $keyColor;
+        padding-top: 0;
+
+        .layer_num {
           position: relative;
           @include larsseit;
           font-size: 1.6rem;
           padding-bottom: 25px;
           margin-bottom: 70px;
-          &::after{
+
+          &::after {
             width: 20px;
           }
         }
-        .layer_ttl{
+
+        .layer_ttl {
           writing-mode: unset;
           font-size: 1.6rem;
         }
       }
-      .layer_img{
+
+      .layer_img {
         width: 240px;
         margin-left: 30px;
-        img{
+
+        img {
           max-width: 100%;
           width: 100%;
           transform: translate(0px, 0px);
-          margin-top: 0px;
+          margin-top: 0;
         }
       }
-      .layer_desc{
-        width: calc(100% - 530px);
-        padding-top: 0px;
-        margin-top: 0px;
-        border-top: 0px solid $keyColor;
+
+      .layer_desc {
+        width: calc(100% - 430px);
+        padding-top: 0;
+        margin-top: 0;
+        border-top: 0 solid $keyColor;
         @include flexSet;
         align-items: center;
-        .subttl{
+
+        .subttl {
           width: 345px;
           text-align: center;
           font-size: 2.4rem;
@@ -126,8 +146,28 @@
           @include larsseit;
           margin-bottom: 15px;
         }
-        .description{
+
+        .description {
           width: calc(100% - 345px);
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .comp-layer-chart {
+      .chart_item {
+        align-items: center;
+        .layer_desc {
+          display: block;
+          box-sizing: border-box;
+          padding-left: 40px;
+          .subttl {
+            width: 100%;
+            text-align: left;
+          }
+          .description {
+            width: 100%;
+          }
         }
       }
     }

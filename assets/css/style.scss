@@ -18,6 +18,7 @@
 @import 'pages/corporate.scss';
 @import 'pages/newsDetail.scss';
 @import 'pages/underpage.scss';
+@import 'pages/404.scss';
 
 
 /*########## コンポーネント ##########*/
@@ -26,6 +27,8 @@
 @import 'component/common/comp-section-title.scss';
 @import 'component/common/comp-page-title.scss';
 @import 'component/common/comp-flex-txt-wrap.scss';
+@import 'component/common/comp-terms-content.scss';
+
 
 @import 'component/common/comp-underpage-title.scss';
 @import 'component/common/comp-form-wrap.scss';
@@ -48,6 +51,7 @@
 @import 'component/corporate/comp-corporate-profile.scss';
 @import 'component/corporate/comp-partner-list.scss';
 @import 'component/corporate/comp-office-slider.scss';
+@import 'component/corporate/comp-usecase-list.scss';
 
 
 

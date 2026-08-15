@@ -6,10 +6,25 @@ header{
   margin: auto;
   width: 100%;
   z-index: 1000;
-  background: $keyColor;
+  background: transparent;
   transition: background .2s, color;
   will-change: background, color;
+  &::before{
+    display: block;
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: $keyColor;
+    transition: background .2s, color;
+    will-change: background, color;
+    opacity: calc(calc(var(--scroll) * 10) - 200);
+  }
   .header_inner {
+    position:relative;
+    z-index: 15;
     width: 100%;
     @include flexSet;
     align-items: center;
@@ -64,11 +79,12 @@ header{
     }
   }
   &.underpage{
-    background: $bgColor;
+    &::before{
+      background: $bgColor;
+    }
     .header_inner {
       border-bottom: 1px solid $keyColor;
       .header_left{
-        padding-left: 15px;
         a{
           filter:unset;
         }
@@ -76,9 +92,9 @@ header{
       .header_right{
         .hummenu_wrap {
           button {
-            border-left: 1px solid $bgColor;
+            border-left: 1px solid $keyColor;
             span {
-              background: $bgColor;
+              background: $keyColor;
             }
           }
         }
@@ -86,8 +102,10 @@ header{
     }
   }
   &.hum_open{
-    background: $keyColor;
     color: #fff;
+    &::before{
+      background: $keyColor;
+    }
     .header_inner {
       border-bottom: 1px solid $bgColor;
       .header_left{
@@ -115,16 +133,8 @@ header{
   }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 980px){
   header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 100%;
-    z-index: 1000;
-    background: $keyColor;
     color: $bgColor;
     .header_inner {
       width: 100%;
@@ -148,13 +158,16 @@ header{
             @include flexSet;
             align-items: center;
             li{
-              margin-right: 20px;
+              margin-right: 50px;
               a{
                 position: relative;
                 display: block;
                 font-size: 1.6rem;
                 color: inherit;
                 padding: 10px 0;
+                letter-spacing:0.2em;
+                transition: opacity .3s;
+                will-change: opacity;
                 &::before{
                   position: absolute;
                   display: block;
@@ -168,8 +181,9 @@ header{
                   will-change: width;
                 }
                 &:hover{
+                  opacity: 0.6;
                   &::before{
-                    width: 80%;
+                    width: 35px;
                   }
                 }
               }
@@ -183,13 +197,14 @@ header{
               align-items: center;
               justify-content:center;
               color: $keyColor;
-              padding: 0 20px;
+              padding: 0 40px;
               background: $bgColor;
               transition: background .2s;
               will-change: background;
               @include hover;
+              letter-spacing:0.2em;
               .txt{
-                font-size: 1.5rem;
+                font-size: 1.6rem;
                 margin-right: 6px;
               }
               .outer{
@@ -210,7 +225,6 @@ header{
       }
     }
     &.underpage{
-      background: $bgColor;
       color: $keyColor;
       .header_inner {
         border-bottom: 1px solid $keyColor;

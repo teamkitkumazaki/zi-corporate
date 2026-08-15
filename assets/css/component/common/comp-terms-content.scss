@@ -1,0 +1,190 @@
+.comp-terms-content{
+  .content_header{
+    margin-bottom: 30px;
+  }
+  .terms_wrap{
+    margin-bottom: 60px;
+    &:nth-last-of-type(1){
+      margin-bottom: 0;
+    }
+    .section_ttl{
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .terms_item{
+      margin-bottom: 30px;
+      .item_ttl{
+        font-size: 1.8rem;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+      .desciption{
+        font-size: 1.3rem;
+        line-height: 1.6;
+        p{
+          word-break: break-all;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          &:nth-last-of-type(1){
+            margin-bottom:0;
+          }
+        }
+        a{
+          display: inline;
+          color: inherit;
+          text-decoration: underline;
+        }
+      }
+      .number_list{
+        margin-top: 12px;
+        margin-bottom: 20px;
+        &:nth-last-of-type(1){
+          margin-bottom:0;
+        }
+        li{
+          @include flexSet;
+          line-height: 1.6;
+          margin-bottom: 7px;
+          .number{
+            width: 2em !important;;
+          }
+          p{
+            margin-top: 0;
+          }
+          .desc_inner{
+            width: calc(100% - 2.2em) !important;
+          }
+          &.number_list{
+            margin-top: 10px;
+            .number{
+              width: 2em !important;;
+            }
+            .desc_inner{
+              width: calc(100% - 2.2em)!important;
+            }
+          }
+        }
+      }
+      .normal_list{
+        margin-top: 15px;
+        margin-bottom: 20px;
+        .img_wrap{
+          margin: 20px 0 20px;
+          img{
+            width: auto;
+            height: 30px;
+            background: #fff;
+            padding: 10px;
+          }
+        }
+        &:nth-last-of-type(1){
+          margin-bottom:0;
+        }
+        li{
+          @include flexSet;
+          line-height: 1.6;
+          margin-bottom: 10px;
+          .number{
+            width: 1.5em !important;
+          }
+          .ttl, .desc_inner{
+            width: calc(100% - 1.8em) !important;
+            font-size: 1.3rem;
+            margin-bottom: 0px;
+          }
+        }
+      }
+      .comp-corporate-profile{
+        border-top: 1px solid $borderColor;
+        margin-top: 20px;
+        padding-top: 20px;
+        .profile_item .profile_ttl{
+          font-size: 1.6rem;
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 980px){
+  .comp-terms-content{
+    margin-top: -20px;
+    .content_header{
+      margin-bottom: 60px;
+      .content_ttl{
+        font-size: 2.8rem;
+      }
+    }
+    .terms_wrap{
+      margin-bottom: 80px;
+      &:nth-last-of-type(1){
+        margin-bottom: 0;
+      }
+      .section_ttl{
+        font-size: 2.0rem;
+        margin-bottom: 40px;
+      }
+      .terms_item{
+        margin-bottom: 40px;
+        &:nth-last-of-type(1){
+          margin-bottom: 0;
+        }
+        .item_ttl{
+          font-size: 2.0rem;
+          margin-bottom: 10px;
+        }
+        .desciption{
+          font-size: 1.5rem;
+          line-height: 1.6;
+        }
+        ul{
+          margin-top: 10px;
+          .img_wrap{
+            margin: 30px 0;
+            img{
+              width: auto;
+              height: 45px;
+              padding: 15px;
+            }
+          }
+          li{
+            .ttl, .desc_inner{
+              font-size: 1.4rem;
+              margin-bottom: 0px;
+            }
+          }
+        }
+        .number_list{
+          margin-top: 15px;
+          margin-bottom: 30px;
+        }
+        .comp-corporate-profile{
+          border-top: 1px solid $borderColor;
+          border-bottom: 1px solid $borderColor;
+          margin-top: 40px;
+          padding-bottom: 30px;
+          padding-top: 0px;
+          .profile_item{
+            &::before,&::after{
+              display: none;
+            }
+            .profile_ttl{
+              width: 30%;
+              margin-right: 0;
+              padding-right: 30px;
+              border-right: 0px;
+              font-size: 1.6rem;
+              line-height: 1.5;
+              margin-bottom: 12px;
+            }
+            .profile_contents{
+              width: 70%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

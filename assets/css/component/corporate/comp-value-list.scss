@@ -7,11 +7,16 @@
       border-bottom: 0px;
       .value_en{
         font-size: 2.0rem;
-        font-weight: 400;
+        font-weight: 500;
         margin-bottom: 5px;
       }
       .value_jp{
         font-size: 1.2rem;
+      }
+    }
+    .value_img{
+      img{
+        width: 100%;
       }
     }
     .spacer{
@@ -32,7 +37,7 @@
   }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 980px){
   .comp-value-list{
     @include flexSet;
     align-items: center;
@@ -45,7 +50,7 @@
           margin-bottom: 10px;
         }
         .value_jp{
-          font-size: 1.4rem;
+          font-size: 1.3rem;
         }
       }
     }
